@@ -1,0 +1,107 @@
+import { Category } from "./types";
+import { IoMdAnalytics } from "react-icons/io";
+import { BiDesktop } from "react-icons/bi";
+import { BsCameraVideoFill, BsFillGearFill } from "react-icons/bs";
+
+export const products: Category[] = [
+  {
+    name: "Studio",
+    subLabel: "AI Based Video Analytics Platform",
+    id: "studio",
+    description:
+      "A state of the art AI based Video Analytics platform which provides with valuable insights to your game.",
+    icon: IoMdAnalytics,
+    featureImage: "https://kutty.netlify.app/hero.jpg",
+  },
+  {
+    name: "Whiteboard",
+    subLabel: "Whiteboard for Sports teaching",
+    id: "whiteboard",
+    description: "A  unique Whiteboard like app tailored to teach Soprts.",
+    icon: BiDesktop,
+    featureImage: "https://kutty.netlify.app/hero.jpg",
+  },
+  {
+    name: "Training Equipment",
+    subLabel: "IoT Enabled Training Machines",
+    id: "training-equipment",
+    description:
+      "A collection of IoT enable Training Equipments which can provide very useful insights to your training.",
+    icon: BsFillGearFill,
+    featureImage: "https://kutty.netlify.app/hero.jpg",
+  },
+  {
+    name: "Vision Camera",
+    subLabel: "Low-cost Camera Solutions",
+    id: "vision-camera",
+    description:
+      "A very low-cost Camera for recording High Quality video for analysing your game.",
+    icon: BsCameraVideoFill,
+    featureImage: "https://kutty.netlify.app/hero.jpg",
+  },
+];
+
+export const resources: Category[] = [
+  {
+    name: "Product Documentation",
+    subLabel: "Product Documentation",
+    id: "product-documentation",
+  },
+  {
+    name: "Customer Stories",
+    subLabel: "Customer Stories",
+    id: "customer-stories",
+  },
+  {
+    name: "Blog",
+    subLabel: "",
+    id: "blog",
+  },
+  {
+    name: "Events",
+    subLabel: "",
+    id: "events",
+  },
+];
+
+export const companyLinks: Category[] = [
+  {
+    name: "About Us",
+    subLabel: "",
+    id: "about-us",
+  },
+  {
+    name: "Team",
+    subLabel: "",
+    id: "team",
+  },
+  {
+    name: "Careers",
+    subLabel: "",
+    id: "careers",
+    show: false,
+  },
+  {
+    name: "Contact Us",
+    subLabel: "",
+    id: "contact-us",
+  },
+];
+
+export const solutions: Category[] = [
+  {
+    name: "Basic",
+    subLabel: "Basic",
+    id: "basic",
+  },
+  {
+    name: "Pro",
+    subLabel: "Pro",
+    id: "pro",
+  },
+  {
+    name: "Elite",
+    subLabel: "Elite",
+    id: "elite",
+  },
+];
