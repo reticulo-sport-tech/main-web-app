@@ -2,23 +2,23 @@ import Product from "@/components/Product";
 import { Section } from "@/components/Product/Section";
 import { chakra, Icon, useColorModeValue } from "@chakra-ui/react";
 import { FeatureType, ItemPlacement } from "data/types";
-import { IoMdAnalytics } from "react-icons/io";
+import { BiDesktop } from "react-icons/bi";
 
-const Studio = () => {
+const Whiteboard = () => {
   return (
     <Product
-      name={"Studio"}
+      name={"Whiteboard"}
       icon={
         <Icon
           boxSize={8}
           aria-hidden="true"
-          as={IoMdAnalytics}
+          as={BiDesktop}
           color={useColorModeValue("white", "gray.900")}
         />
       }
-      simpleDescription={"AI Based Video Analytics Platform"}
+      simpleDescription={"Understanding the game from scratch"}
       description={
-        "A state of the art AI based Video Analytics platform which provides with valuable insights to your game."
+        "Theory based fundamentals are the building blocks of an intelligent and successful player who grows into a champion."
       }
       sections={[
         <Section
@@ -42,4 +42,4 @@ const Studio = () => {
   );
 };
 
-export default Studio;
+export default Whiteboard;

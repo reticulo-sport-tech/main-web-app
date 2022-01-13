@@ -2,23 +2,23 @@ import Product from "@/components/Product";
 import { Section } from "@/components/Product/Section";
 import { chakra, Icon, useColorModeValue } from "@chakra-ui/react";
 import { FeatureType, ItemPlacement } from "data/types";
-import { IoMdAnalytics } from "react-icons/io";
+import { BsCameraVideoFill } from "react-icons/bs";
 
-const Studio = () => {
+const VCam = () => {
   return (
     <Product
-      name={"Studio"}
+      name={"Vison Smart Camera"}
       icon={
         <Icon
           boxSize={8}
           aria-hidden="true"
-          as={IoMdAnalytics}
+          as={BsCameraVideoFill}
           color={useColorModeValue("white", "gray.900")}
         />
       }
-      simpleDescription={"AI Based Video Analytics Platform"}
+      simpleDescription={"High Quality Imaging and Video Recording"}
       description={
-        "A state of the art AI based Video Analytics platform which provides with valuable insights to your game."
+        "Low cost High Quality Smart Camera that can do heavy processing and record your videos."
       }
       sections={[
         <Section
@@ -42,4 +42,4 @@ const Studio = () => {
   );
 };
 
-export default Studio;
+export default VCam;

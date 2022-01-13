@@ -2,23 +2,23 @@ import Product from "@/components/Product";
 import { Section } from "@/components/Product/Section";
 import { chakra, Icon, useColorModeValue } from "@chakra-ui/react";
 import { FeatureType, ItemPlacement } from "data/types";
-import { IoMdAnalytics } from "react-icons/io";
+import { BsFillGearFill } from "react-icons/bs";
 
-const Studio = () => {
+const TrainEx = () => {
   return (
     <Product
-      name={"Studio"}
+      name={"TrainEx"}
       icon={
         <Icon
           boxSize={8}
           aria-hidden="true"
-          as={IoMdAnalytics}
+          as={BsFillGearFill}
           color={useColorModeValue("white", "gray.900")}
         />
       }
-      simpleDescription={"AI Based Video Analytics Platform"}
+      simpleDescription={"Sensor based Training Equipments"}
       description={
-        "A state of the art AI based Video Analytics platform which provides with valuable insights to your game."
+        "These equipments have sensors that track your performance in training to give useful insights about fitness levels and efforts put in training."
       }
       sections={[
         <Section
@@ -42,4 +42,4 @@ const Studio = () => {
   );
 };
 
-export default Studio;
+export default TrainEx;

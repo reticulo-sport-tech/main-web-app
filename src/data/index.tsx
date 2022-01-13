@@ -17,14 +17,14 @@ export const products: Category[] = [
     name: "Whiteboard",
     subLabel: "Whiteboard for Sports teaching",
     id: "whiteboard",
-    description: "A  unique Whiteboard like app tailored to teach Soprts.",
+    description: "A unique Whiteboard like app tailored to teach basics of the sport in a fun and intuitive way.",
     icon: BiDesktop,
     featureImage: "https://kutty.netlify.app/hero.jpg",
   },
   {
     name: "Training Equipment",
     subLabel: "IoT Enabled Training Machines",
-    id: "training-equipment",
+    id: "trainex",
     description:
       "A collection of IoT enable Training Equipments which can provide very useful insights to your training.",
     icon: BsFillGearFill,
@@ -33,7 +33,7 @@ export const products: Category[] = [
   {
     name: "Vision Camera",
     subLabel: "Low-cost Camera Solutions",
-    id: "vision-camera",
+    id: "vcam",
     description:
       "A very low-cost Camera for recording High Quality video for analysing your game.",
     icon: BsCameraVideoFill,
