@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://reticulo.in
+
+# Sitemaps
+Sitemap: https://reticulo.in/sitemap.xml

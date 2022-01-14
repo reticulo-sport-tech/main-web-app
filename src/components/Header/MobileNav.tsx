@@ -17,10 +17,16 @@ import { NAV_ITEMS, NavItem } from "@/components/Header/navData";
 
 interface MobileNavProps {
   isOpen: boolean;
+  onClose?: () => void;
 }
 
-export const MobileNav = ({ isOpen }: MobileNavProps) => {
+export const MobileNav = ({ isOpen, onClose = () => {} }: MobileNavProps) => {
   const bg = useColorModeValue("gray.50", "gray.700");
+  const bgColor = useColorModeValue(
+    "rgba(255, 255, 255, 0.8)",
+    "rgba(26, 32, 44, 0.8)"
+  );
+
   if (!isOpen) return null;
 
   return (
@@ -35,20 +41,23 @@ export const MobileNav = ({ isOpen }: MobileNavProps) => {
       bg={bg}
       css={{
         backdropFilter: "saturate(180%) blur(5px)",
-        backgroundColor: useColorModeValue(
-          "rgba(255, 255, 255, 0.8)",
-          "rgba(26, 32, 44, 0.8)"
-        ),
+        backgroundColor: bgColor,
       }}
     >
       {NAV_ITEMS.map((navItem) => (
-        <MobileNavItem key={navItem.label} {...navItem} />
+        <MobileNavItem key={navItem.label} {...navItem} onClose={onClose} />
       ))}
     </Stack>
   );
 };
 
-const MobileNavItem = ({ href, children, label, show }: NavItem) => {
+const MobileNavItem = ({
+  href,
+  children,
+  label,
+  show,
+  onClose,
+}: NavItem & { onClose: () => void }) => {
   const { isOpen, onToggle } = useDisclosure();
 
   const handleToggle = (e: SyntheticEvent) => {
@@ -99,7 +108,7 @@ const MobileNavItem = ({ href, children, label, show }: NavItem) => {
           {children &&
             children.map((child) => (
               <NextLink href={child.href!} passHref={true} key={child.href!}>
-                <Link key={child.label} py={2} hidden={child.show === false}>
+                <Link key={child.label} py={2} hidden={child.show === false} onClick={onClose}>
                   {child.label}
                 </Link>
               </NextLink>

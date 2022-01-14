@@ -4,7 +4,7 @@ import Router from "next/router";
 import Head from "next/head";
 import { ChakraProvider } from "@chakra-ui/react";
 import NProgress from "nprogress";
-// import splitbee from '@splitbee/web';
+import PlausibleProvider from "next-plausible";
 
 import "@fontsource/poppins/500.css";
 import "@fontsource/poppins/700.css";
@@ -30,15 +30,23 @@ function App({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <ChakraProvider theme={theme}>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="shortcut icon" type="image/x-icon" href="/favicon.png" />
-      </Head>
-      <AppLayout>
-        <Component {...pageProps} />
-      </AppLayout>
-    </ChakraProvider>
+    <PlausibleProvider
+      domain="reticulo.in"
+      selfHosted={true}
+      customDomain="https://analytics.reticulo.in"
+      trackOutboundLinks={true}
+      enabled={false}
+    >
+      <ChakraProvider theme={theme}>
+        <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="shortcut icon" type="image/x-icon" href="/favicon.png" />
+        </Head>
+        <AppLayout>
+          <Component {...pageProps} />
+        </AppLayout>
+      </ChakraProvider>
+    </PlausibleProvider>
   );
 }
 

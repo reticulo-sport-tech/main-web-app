@@ -1,11 +1,13 @@
 import Product from "@/components/Product";
 import { Section } from "@/components/Product/Section";
+import { SEOWrapper } from "@/components/SEO";
 import { chakra, Icon, useColorModeValue } from "@chakra-ui/react";
 import { FeatureType, ItemPlacement } from "data/types";
 import { BsCameraVideoFill } from "react-icons/bs";
 
 const VCam = () => {
   return (
+    <SEOWrapper title="Reticulo | VCam">
     <Product
       name={"Vison Smart Camera"}
       icon={
@@ -39,6 +41,7 @@ const VCam = () => {
         />,
       ]}
     />
+    </SEOWrapper>
   );
 };
 

@@ -1,12 +1,14 @@
 import Product from "@/components/Product";
 import { Section } from "@/components/Product/Section";
+import { SEOWrapper } from "@/components/SEO";
 import { chakra, Icon, useColorModeValue } from "@chakra-ui/react";
 import { FeatureType, ItemPlacement } from "data/types";
 import { BsFillGearFill } from "react-icons/bs";
 
 const TrainEx = () => {
   return (
-    <Product
+    <SEOWrapper title="Reticulo | TrainEx">
+      <Product
       name={"TrainEx"}
       icon={
         <Icon
@@ -39,6 +41,7 @@ const TrainEx = () => {
         />,
       ]}
     />
+    </SEOWrapper>
   );
 };
 

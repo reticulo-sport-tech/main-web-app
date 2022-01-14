@@ -6,6 +6,7 @@ import {
   Stack,
   Image,
   Flex,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { products } from "data";
@@ -23,9 +24,15 @@ const EcosystemComponent = ({
   img?: string;
   isLeft?: boolean;
 }) => {
+  const descColor = useColorModeValue("gray.500", "gray.300");
+  const linkColor = useColorModeValue("white", "black");
+  const linkBgColor = useColorModeValue("brand.600", "brand.500");
+  const linkHoverBgColor = useColorModeValue("brand.700", "brand.600");
+  const isMobile = useBreakpointValue({ base: true, md: false })
+
   const mainSection = (isLeft: boolean) => (
     <>
-      {!isLeft && (
+      {!isLeft && !isMobile && (
         <Box w={{ base: "full", md: 10 / 12 }} mx="auto" textAlign="center">
           <Image
             w="full"
@@ -48,14 +55,11 @@ const EcosystemComponent = ({
           lineHeight="shorter"
           mb={6}
           mt={6}
+          display="block"
         >
-          <chakra.h1 display="block">{title}</chakra.h1>
+          {title}
         </chakra.h1>
-        <chakra.p
-          mb={6}
-          fontSize={{ base: "lg", md: "xl" }}
-          color={useColorModeValue("gray.500", "gray.300")}
-        >
+        <chakra.p mb={6} fontSize={{ base: "lg", md: "xl" }} color={descColor}>
           {description}
         </chakra.p>
         <Stack
@@ -75,10 +79,10 @@ const EcosystemComponent = ({
                 fontWeight="bold"
                 w="full"
                 rounded="md"
-                color={useColorModeValue("white")}
-                bg={useColorModeValue("brand.600", "brand.500")}
+                color={linkColor}
+                bg={linkBgColor}
                 _hover={{
-                  bg: useColorModeValue("brand.700", "brand.600"),
+                  bg: linkHoverBgColor,
                 }}
               >
                 Learn More
@@ -87,7 +91,7 @@ const EcosystemComponent = ({
           </Box>
         </Stack>
       </Box>
-      {isLeft && (
+      {(isLeft || isMobile) && (
         <Box w={{ base: "full", md: 10 / 12 }} mx="auto" textAlign="center">
           <Image
             w="full"
@@ -105,7 +109,7 @@ const EcosystemComponent = ({
     <Flex
       direction={{ base: "column", md: "row" }}
       px={8}
-      py={{base: 8 , md: 24}}
+      py={{ base: 8, md: 24 }}
       mx="auto"
       maxW={"5xl"}
     >

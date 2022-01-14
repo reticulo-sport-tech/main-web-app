@@ -27,6 +27,7 @@ import {
   BsTwitter,
 } from "react-icons/bs";
 import { MdEmail, MdOutlineEmail } from "react-icons/md";
+import { SEOWrapper } from "@/components/SEO";
 
 const confetti = {
   light: {
@@ -47,6 +48,7 @@ export default function ContactFormWithSocialButtons() {
   const { hasCopied, onCopy } = useClipboard(CONTACT_EMAIL);
 
   return (
+    <SEOWrapper title="Contact Us">
     <Flex
       bg={useColorModeValue("gray.100", "gray.900")}
       align="center"
@@ -209,5 +211,6 @@ export default function ContactFormWithSocialButtons() {
         </Box>
       </Box>
     </Flex>
+    </SEOWrapper>
   );
 }

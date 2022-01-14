@@ -22,7 +22,7 @@ import { MobileNav } from "@/components/Header/MobileNav";
 import { DesktopNav } from "@/components/Header/DesktopNav";
 
 export const Header = () => {
-  const { isOpen: isMobileNavOpen, onToggle } = useDisclosure();
+  const { isOpen: isMobileNavOpen, onToggle, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   const bg = useColorModeValue("gray.50", "gray.700");
 
@@ -85,7 +85,7 @@ export const Header = () => {
                   fontSize={"xl"}
                   display={{ base: "none", md: "block" }}
                 >
-                  <TextUnderline>Reticulo</TextUnderline> Sport Tech.
+                  <TextUnderline>Reticulo</TextUnderline>
                 </Heading>
               </Stack>
             </NextLink>
@@ -148,7 +148,7 @@ export const Header = () => {
           </Stack>
         </Container>
       </Flex>
-      <MobileNav isOpen={isMobileNavOpen} />
+      <MobileNav isOpen={isMobileNavOpen} onClose={onClose} />
     </Box>
   );
 };

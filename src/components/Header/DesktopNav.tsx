@@ -18,40 +18,43 @@ import { NAV_ITEMS, NavItem } from "@/components/Header/navData";
 import { ChevronRightIcon, ChevronDownIcon } from "@chakra-ui/icons";
 
 export const DesktopNav = (props: BoxProps) => {
+  const linkColor = useColorModeValue("gray.600", "gray.200");
+  const linkHoverColor = useColorModeValue("gray.800", "white");
+  const popoverBgColor = useColorModeValue("white", "gray.800");
   return (
     <Stack direction={"row"} spacing={4} {...props}>
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label} hidden={navItem.show === false}>
-          <Popover trigger={"hover"} placement={"bottom-start"}>
-            <PopoverTrigger>
+          <Popover
+            trigger={"hover"}
+            placement={"bottom-start"}
+            id={`${navItem.label}-popover`}
+          >
+            <PopoverTrigger key={`${navItem.label}-popover-trigger`}>
               <Link
                 p={2}
                 href={navItem.href ?? "#"}
                 fontSize={"sm"}
                 fontWeight={500}
-                color={useColorModeValue("gray.600", "gray.200")}
+                color={linkColor}
                 _hover={{
                   textDecoration: "none",
-                  color: useColorModeValue("gray.800", "white"),
+                  color: linkHoverColor,
                 }}
               >
                 {navItem.label}
                 {navItem.children && (
-                  <Icon
-                    color={useColorModeValue("gray.600", "gray.200")}
-                    w={5}
-                    h={5}
-                    as={ChevronDownIcon}
-                  />
+                  <Icon color={linkColor} w={5} h={5} as={ChevronDownIcon} />
                 )}
               </Link>
             </PopoverTrigger>
 
             {navItem.children && (
               <PopoverContent
+                id={`${navItem.label}-popover-content`}
                 border={0}
                 boxShadow={"xl"}
-                bg={useColorModeValue("white", "gray.800")}
+                bg={popoverBgColor}
                 p={4}
                 minW={"sm"}
                 rounded={"xl"}
@@ -70,7 +73,7 @@ export const DesktopNav = (props: BoxProps) => {
   );
 };
 
-const DesktopSubNav = ({ label, href, subLabel ,show}: NavItem) => {
+const DesktopSubNav = ({ label, href, subLabel, show }: NavItem) => {
   return (
     <NextLink href={href!} passHref={true}>
       <Link
