@@ -42,7 +42,7 @@ export default function MainUSP() {
             fontSize="lg"
             fontWeight="bold"
             lineHeight="6"
-            color={useColorModeValue("gray.900")}
+            color={useColorModeValue("gray.900", "white")}
           >
             {title}
           </chakra.dt>
@@ -77,7 +77,7 @@ export default function MainUSP() {
         >
           <Box alignSelf="start">
             <chakra.h2
-              color={useColorModeValue("brand.500")}
+              color={useColorModeValue("brand.500", "gray.500")}
               fontWeight="semibold"
               textTransform="uppercase"
               letterSpacing="wide"
@@ -89,7 +89,7 @@ export default function MainUSP() {
               fontSize={{ base: "3xl", md: "4xl" }}
               fontWeight="extrabold"
               textAlign={{ base: "center", sm: "left" }}
-              color={useColorModeValue("black")}
+              color={useColorModeValue("black", "black")}
               lineHeight="shorter"
               letterSpacing="tight"
             >

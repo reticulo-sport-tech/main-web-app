@@ -17,8 +17,13 @@ import {
   useColorModeValue,
   VStack,
 } from "@chakra-ui/react";
-import { INSTAGRAM_LINK, LINKEDIN_PAGE_LINK, TWITTER_LINK, CONTACT_EMAIL } from "../constants";
-import React from "react";
+import {
+  INSTAGRAM_LINK,
+  LINKEDIN_PAGE_LINK,
+  TWITTER_LINK,
+  CONTACT_EMAIL,
+} from "../constants";
+import React, { useState } from "react";
 import {
   BsGithub,
   BsInstagram,
@@ -46,171 +51,186 @@ const CONFETTI_DARK = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2
 
 export default function ContactFormWithSocialButtons() {
   const { hasCopied, onCopy } = useClipboard(CONTACT_EMAIL);
+  const [message, setMessage] = useState("");
+  const [name, setName] = useState("");
 
   return (
     <SEOWrapper title="Contact Us">
-    <Flex
-      bg={useColorModeValue("gray.100", "gray.900")}
-      align="center"
-      justify="center"
-      css={{
-        backgroundImage: useColorModeValue(CONFETTI_LIGHT, CONFETTI_DARK),
-        backgroundAttachment: "fixed",
-      }}
-      id="contact"
-    >
-      <Box
-        borderRadius="lg"
-        m={{ base: 5, md: 16, lg: 10 }}
-        p={{ base: 5, lg: 16 }}
+      <Flex
+        bg={useColorModeValue("gray.100", "gray.900")}
+        align="center"
+        justify="center"
+        css={{
+          backgroundImage: useColorModeValue(CONFETTI_LIGHT, CONFETTI_DARK),
+          backgroundAttachment: "fixed",
+        }}
+        id="contact"
       >
-        <Box>
-          <VStack spacing={{ base: 4, md: 8, lg: 20 }}>
-            <Heading
-              fontSize={{
-                base: "4xl",
-                md: "5xl",
-              }}
-            >
-              Get in Touch
-            </Heading>
+        <Box
+          borderRadius="lg"
+          m={{ base: 5, md: 16, lg: 10 }}
+          p={{ base: 5, lg: 16 }}
+        >
+          <Box>
+            <VStack spacing={{ base: 4, md: 8, lg: 20 }}>
+              <Heading
+                fontSize={{
+                  base: "4xl",
+                  md: "5xl",
+                }}
+              >
+                Get in Touch
+              </Heading>
 
-            <Stack
-              spacing={{ base: 4, md: 8, lg: 20 }}
-              direction={{ base: "column", md: "row" }}
-            >
               <Stack
-                align="center"
-                justify="space-around"
-                direction={{ base: "row", md: "column" }}
+                spacing={{ base: 4, md: 8, lg: 20 }}
+                direction={{ base: "column", md: "row" }}
               >
-                <Tooltip
-                  label={hasCopied ? "Email Copied!" : "Copy Email"}
-                  closeOnClick={false}
-                  hasArrow
+                <Stack
+                  align="center"
+                  justify="space-around"
+                  direction={{ base: "row", md: "column" }}
                 >
-                  <IconButton
-                    aria-label="email"
-                    variant="ghost"
-                    size="lg"
-                    fontSize="3xl"
-                    icon={<MdEmail />}
-                    _hover={{
-                      bg: "brand.500",
-                      color: useColorModeValue("white", "gray.700"),
-                    }}
-                    onClick={onCopy}
-                    isRound
-                  />
-                </Tooltip>
-
-                <Link href={INSTAGRAM_LINK} isExternal>
-                  <IconButton
-                    aria-label="instagram"
-                    variant="ghost"
-                    size="lg"
-                    fontSize="3xl"
-                    icon={<BsInstagram />}
-                    _hover={{
-                      bg: "brand.500",
-                      color: useColorModeValue("white", "gray.700"),
-                    }}
-                    isRound
-                  />
-                </Link>
-
-                <Link href={TWITTER_LINK} isExternal>
-                  <IconButton
-                    aria-label="twitter"
-                    variant="ghost"
-                    size="lg"
-                    icon={<BsTwitter size="28px" />}
-                    _hover={{
-                      bg: "brand.500",
-                      color: useColorModeValue("white", "gray.700"),
-                    }}
-                    isRound
-                  />
-                </Link>
-
-                <Link href={LINKEDIN_PAGE_LINK} isExternal>
-                  <IconButton
-                    aria-label="linkedin"
-                    variant="ghost"
-                    size="lg"
-                    icon={<BsLinkedin size="28px" />}
-                    _hover={{
-                      bg: "brand.500",
-                      color: useColorModeValue("white", "gray.700"),
-                    }}
-                    isRound
-                  />
-                </Link>
-              </Stack>
-
-              <Box
-                bg={useColorModeValue("white", "gray.700")}
-                borderRadius="lg"
-                p={8}
-                color={useColorModeValue("gray.700", "whiteAlpha.900")}
-                shadow="base"
-              >
-                <VStack spacing={5}>
-                  <FormControl isRequired>
-                    <FormLabel>Name</FormLabel>
-
-                    <InputGroup>
-                      <InputLeftElement>
-                        <BsPerson />
-                      </InputLeftElement>
-                      <Input type="text" name="name" placeholder="Your Name" />
-                    </InputGroup>
-                  </FormControl>
-
-                  <FormControl isRequired>
-                    <FormLabel>Email</FormLabel>
-
-                    <InputGroup>
-                      <InputLeftElement>
-                        <MdOutlineEmail />
-                      </InputLeftElement>
-                      <Input
-                        type="email"
-                        name="email"
-                        placeholder="Your Email"
-                      />
-                    </InputGroup>
-                  </FormControl>
-
-                  <FormControl isRequired>
-                    <FormLabel>Message</FormLabel>
-
-                    <Textarea
-                      name="message"
-                      placeholder="Your Message"
-                      rows={6}
-                      resize="none"
-                    />
-                  </FormControl>
-
-                  <Button
-                    colorScheme="brand"
-                    bg="brand.400"
-                    color="white"
-                    _hover={{
-                      bg: "brand.500",
-                    }}
-                    isFullWidth
+                  <Tooltip
+                    label={hasCopied ? "Email Copied!" : "Copy Email"}
+                    closeOnClick={false}
+                    hasArrow
                   >
-                    Send Message
-                  </Button>
-                </VStack>
-              </Box>
-            </Stack>
-          </VStack>
+                    <IconButton
+                      aria-label="email"
+                      variant="ghost"
+                      size="lg"
+                      fontSize="3xl"
+                      icon={<MdEmail />}
+                      _hover={{
+                        bg: "brand.500",
+                        color: useColorModeValue("white", "gray.700"),
+                      }}
+                      onClick={onCopy}
+                      isRound
+                    />
+                  </Tooltip>
+
+                  <Link href={INSTAGRAM_LINK} isExternal>
+                    <IconButton
+                      aria-label="instagram"
+                      variant="ghost"
+                      size="lg"
+                      fontSize="3xl"
+                      icon={<BsInstagram />}
+                      _hover={{
+                        bg: "brand.500",
+                        color: useColorModeValue("white", "gray.700"),
+                      }}
+                      isRound
+                    />
+                  </Link>
+
+                  <Link href={TWITTER_LINK} isExternal>
+                    <IconButton
+                      aria-label="twitter"
+                      variant="ghost"
+                      size="lg"
+                      icon={<BsTwitter size="28px" />}
+                      _hover={{
+                        bg: "brand.500",
+                        color: useColorModeValue("white", "gray.700"),
+                      }}
+                      isRound
+                    />
+                  </Link>
+
+                  <Link href={LINKEDIN_PAGE_LINK} isExternal>
+                    <IconButton
+                      aria-label="linkedin"
+                      variant="ghost"
+                      size="lg"
+                      icon={<BsLinkedin size="28px" />}
+                      _hover={{
+                        bg: "brand.500",
+                        color: useColorModeValue("white", "gray.700"),
+                      }}
+                      isRound
+                    />
+                  </Link>
+                </Stack>
+
+                <Box
+                  bg={useColorModeValue("white", "gray.700")}
+                  borderRadius="lg"
+                  p={8}
+                  color={useColorModeValue("gray.700", "whiteAlpha.900")}
+                  shadow="base"
+                >
+                  <VStack spacing={5}>
+                    <FormControl isRequired>
+                      <FormLabel>Name</FormLabel>
+
+                      <InputGroup>
+                        <InputLeftElement>
+                          <BsPerson />
+                        </InputLeftElement>
+                        <Input
+                          type="text"
+                          name="name"
+                          placeholder="Your Name"
+                          value={name}
+                          onChange={(e) => setName(e.target.value)}
+                        />
+                      </InputGroup>
+                    </FormControl>
+
+                    <FormControl isRequired>
+                      <FormLabel>Email</FormLabel>
+
+                      <InputGroup>
+                        <InputLeftElement>
+                          <MdOutlineEmail />
+                        </InputLeftElement>
+                        <Input
+                          type="email"
+                          name="email"
+                          placeholder="Your Email"
+                        />
+                      </InputGroup>
+                    </FormControl>
+
+                    <FormControl isRequired>
+                      <FormLabel>Message</FormLabel>
+
+                      <Textarea
+                        name="message"
+                        placeholder="Your Message"
+                        rows={6}
+                        resize="none"
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                      />
+                    </FormControl>
+
+                    <Link
+                      href={`mailto:${CONTACT_EMAIL}?subject=Contact Query&body=Hello my name is ${name} and this is my query :\n ${message}`}
+                      isExternal
+                    >
+                      <Button
+                        colorScheme="brand"
+                        bg="brand.400"
+                        color="white"
+                        _hover={{
+                          bg: "brand.500",
+                        }}
+                        isFullWidth
+                      >
+                        Send Message
+                      </Button>
+                    </Link>
+                  </VStack>
+                </Box>
+              </Stack>
+            </VStack>
+          </Box>
         </Box>
-      </Box>
-    </Flex>
+      </Flex>
     </SEOWrapper>
   );
 }
