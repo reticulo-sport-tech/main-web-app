@@ -1,0 +1,111 @@
+{
+  "apps": {
+    "http": {
+      "servers": {
+        "srv0": {
+          "listen": [":443", ":80"],
+          "routes": [
+            {
+              "handle": [
+                {
+                  "handler": "subroute",
+                  "routes": [
+                    { "handle": [{ "handler": "vars", "root": "/srv" }] },
+                    {
+                      "handle": [
+                        {
+                          "handler": "headers",
+                          "response": {
+                            "set": { "Cache-Control": ["max-age=31536000"] }
+                          }
+                        }
+                      ],
+                      "match": [{ "path": ["/_next/static/*"] }]
+                    },
+                    {
+                      "handle": [
+                        {
+                          "handler": "headers",
+                          "response": {
+                            "set": { "Cache-Control": ["max-age=5184000"] }
+                          }
+                        }
+                      ],
+                      "match": [
+                        {
+                          "file": {},
+                          "path": [
+                            "*.gif",
+                            "*.jpg",
+                            "*.jpeg",
+                            "*.png",
+                            "*.svg",
+                            "*.woff"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "handle": [
+                        {
+                          "handler": "rewrite",
+                          "uri": "{http.matchers.file.relative}"
+                        }
+                      ],
+                      "match": [
+                        {
+                          "file": {
+                            "try_files": [
+                              "{http.request.uri.path}",
+                              "{http.request.uri.path}.html"
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "handle": [
+                        {
+                          "handler": "rewrite",
+                          "uri": "{http.matchers.file.relative}"
+                        }
+                      ],
+                      "match": [
+                        {
+                          "file": {
+                            "try_files": [
+                              "{http.request.uri.path}",
+                              "/index.html"
+                            ]
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "handle": [
+                        {
+                          "encodings": { "gzip": {}, "zstd": {} },
+                          "handler": "encode",
+                          "prefer": ["zstd", "gzip"]
+                        },
+                        { "handler": "file_server", "hide": ["./Caddyfile"] }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "terminal": true
+            }
+          ],
+          "automatic_https": {
+            "disable": false,
+            "disable_redirects": false,
+            "skip": [""],
+            "skip_certificates": [""],
+            "ignore_loaded_certificates": false
+          }
+        }
+      }
+    }
+  }
+}

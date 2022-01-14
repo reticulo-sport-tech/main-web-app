@@ -18,6 +18,6 @@ RUN yarn export
 FROM caddy:alpine
 
 COPY --from=builder /app/out /srv
-COPY Caddyfile .
+COPY caddy.json .
 
-CMD [ "caddy", "run", "--config", "Caddyfile" ]
+CMD [ "caddy", "run", "--config", "caddy.json" ]
