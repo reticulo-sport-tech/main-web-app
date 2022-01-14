@@ -23,4 +23,4 @@ export const SEO_TWITTER_IMAGE = "https://reticulo.in/favicon.png";
 /**
  * Email constants
  */
-export const CONTACT_EMAIL = "contact@reticulo.in";
+export const CONTACT_EMAIL = "support@reticulo.in";

@@ -82,16 +82,6 @@ export default function Product({
           w={"full"}
           borderRadius={"2%"}
         >
-          <AspectRatio w="100%" mt={{ base: 12, sm: 16 }} ratio={16 / 9}>
-            <iframe
-              title="naruto"
-              src="https://www.youtube.com/embed/nI4axFAvBdM"
-              allowFullScreen
-              style={{
-                borderRadius: "2%",
-              }}
-            />
-          </AspectRatio>
         </Flex>
         {sections?.map((s) => s)}
       </Stack>
