@@ -126,12 +126,12 @@ export const Header = () => {
                 Sign In
               </Button>
             </Link> */}
-            <NextLink href="/contact-us" passHref>
+            {/* <NextLink href="/contact-us" passHref>
               <Button fontSize={"sm"} fontWeight={400} variant={"ghost"}>
                 Sign In
               </Button>
-            </NextLink>
-            <NextLink href="/contact-us" passHref>
+            </NextLink> */}
+            {/* <NextLink href="/contact-us" passHref>
               <Button
                 display={{ base: "none", md: "inline-flex" }}
                 fontSize={"sm"}
@@ -144,7 +144,7 @@ export const Header = () => {
               >
                 Get Started
               </Button>
-            </NextLink>
+            </NextLink> */}
           </Stack>
         </Container>
       </Flex>
