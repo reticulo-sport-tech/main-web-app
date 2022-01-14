@@ -6,7 +6,9 @@ import {
   Text,
   Button,
   AspectRatio,
+  Image
 } from "@chakra-ui/react";
+import next from "next";
 import NextLink from "next/link";
 
 export default function MainCTA() {
@@ -52,10 +54,11 @@ export default function MainCTA() {
           </NextLink>
         </Stack>
         <Flex w={"full"}>
-          <AspectRatio w="100%" mt={{ base: 12, sm: 16 }} ratio={16 / 9}>
-            <iframe
+          <AspectRatio w="100%" ratio={16 / 9}>
+            <Image
+              alt="naruto"
               title="naruto"
-              src="https://www.youtube.com/embed/nI4axFAvBdM"
+              src="/sports-Data-Analytics.jpg"
               allowFullScreen
               style={{
                 borderRadius: "2%",
