@@ -71,11 +71,6 @@ export const companyLinks: Category[] = [
     id: "about-us",
   },
   {
-    name: "Team",
-    subLabel: "",
-    id: "team",
-  },
-  {
     name: "Careers",
     subLabel: "",
     id: "careers",

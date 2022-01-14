@@ -13,7 +13,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 
-const AboutUs = () => {
+const Team = () => {
   return (
     <Container maxW={"5xl"}>
       <Stack
@@ -35,7 +35,7 @@ const AboutUs = () => {
         <SimpleGrid columns={{ base: 1, md: 4 }} spacing={1}>
           <GridItem colSpan={1}>
             <MemberCard
-              name={"Arya Bhivpatahnki"}
+              name={"Arya Bhivpathaki"}
               title={"Co-Founder & CEO"}
               bio={""}
               image={"/arya.jpeg"}
@@ -74,4 +74,4 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default Team;
