@@ -32,9 +32,10 @@ export default function MainCTA() {
         </Heading>
         <Text color={"gray.500"} maxW={"3xl"}>
           We provide revolutionary technology based solutions for improving your
-          Sport Performance.
+          Sport Performance. Our products cater to all levels of players, from novices to professionals,
+          based on their requirements.
         </Text>
-        <Stack spacing={6} direction={"row"}>
+        {/* <Stack spacing={6} direction={"row"}>
           <NextLink href="/contact-us">
             <Button
               rounded={"full"}
@@ -45,14 +46,14 @@ export default function MainCTA() {
             >
               Get started
             </Button>
-          </NextLink>
+          </NextLink> 
 
           <NextLink href="/contact-us">
             <Button rounded={"full"} px={6}>
               Learn more
             </Button>
           </NextLink>
-        </Stack>
+        </Stack> */}
         <Flex w={"full"}>
           <AspectRatio w="100%" ratio={16 / 9}>
             <Image
