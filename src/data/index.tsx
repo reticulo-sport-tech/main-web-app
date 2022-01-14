@@ -28,7 +28,7 @@ export const products: Category[] = [
     description:
       "A collection of Smart Training Equipments which can provide very useful insights to your training.",
     icon: BsFillGearFill,
-    featureImage: "https://kutty.netlify.app/hero.jpg",
+    featureImage: "/TrainEx/IOT.png",
   },
   {
     name: "Vision Camera",
