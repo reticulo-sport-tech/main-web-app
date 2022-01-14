@@ -1,0 +1,6 @@
+node_modules
+tools
+proto
+.firebase
+out
+.next

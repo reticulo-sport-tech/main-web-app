@@ -1,0 +1,29 @@
+
+https://reticulo.in {
+    log
+	encode zstd gzip
+	root * /srv
+	file_server
+	header /_next/static/* Cache-Control max-age=31536000
+	@static {
+		file
+		path *.gif *.jpg *.jpeg *.png *.svg *.woff
+	}
+	header @static Cache-Control max-age=5184000
+    try_files {path} {path}.html
+    try_files {path} /index.html
+}
+http://localhost:80 {
+	log
+	encode zstd gzip
+	header /_next/static/* Cache-Control max-age=31536000
+	@static {
+		file
+		path *.gif *.jpg *.jpeg *.png *.svg *.woff
+	}
+	header @static Cache-Control max-age=5184000
+	root * /srv
+	file_server
+    try_files {path} {path}.html
+    try_files {path} /index.html
+}
