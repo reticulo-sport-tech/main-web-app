@@ -23,19 +23,19 @@ const VCam = () => {
       sections={[
         <Section
           key={0}
-          name="How it Works"
-          description="AI Based Analysis"
+          name="Machine Vision"
+          description="VCam comes with a High Quality Image sensor which records upto 1080p @ 60 fps and has fast computation units (VPU) built-in which are compatible with Reticulo's Studio AI"
           featurePlacement={ItemPlacement.RIGHT}
-          featureType={FeatureType.YOUTUBE_VIDEO}
-          featureUrl="https://www.youtube.com/embed/nI4axFAvBdM"
+          featureType={FeatureType.IMAGE}
+          featureUrl="/VCam/rpi-camera.jpg"
         />,
         <Section
           key={1}
-          name="How it Works"
-          description="AI Based Analysis"
+          name="On Edge Analysis"
+          description="This Smart Camera carries out analysis which can be performed by Reticulo's Studio AI without drawing too much power"
           featurePlacement={ItemPlacement.LEFT}
           featureType={FeatureType.IMAGE}
-          featureUrl="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80"
+          featureUrl="/VCam/editor-2.png"
         />,
       ]}
     />

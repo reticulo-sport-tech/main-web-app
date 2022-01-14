@@ -11,7 +11,7 @@ export const products: Category[] = [
     description:
       "A state of the art AI based Video Analytics platform which provides with valuable insights to your game.",
     icon: IoMdAnalytics,
-    featureImage: "https://kutty.netlify.app/hero.jpg",
+    featureImage: "/Studio/stats.png",
   },
   {
     name: "Whiteboard",
@@ -19,14 +19,14 @@ export const products: Category[] = [
     id: "whiteboard",
     description: "A unique Whiteboard like app tailored to teach basics of the sport in a fun and intuitive way.",
     icon: BiDesktop,
-    featureImage: "https://kutty.netlify.app/hero.jpg",
+    featureImage: "/Whiteboard/wb-dash.png",
   },
   {
     name: "Training Equipment",
-    subLabel: "IoT Enabled Training Machines",
+    subLabel: "Smart Training Machines",
     id: "trainex",
     description:
-      "A collection of IoT enable Training Equipments which can provide very useful insights to your training.",
+      "A collection of Smart Training Equipments which can provide very useful insights to your training.",
     icon: BsFillGearFill,
     featureImage: "https://kutty.netlify.app/hero.jpg",
   },
@@ -37,7 +37,7 @@ export const products: Category[] = [
     description:
       "A Low-cost Camera for recording High Quality video for analysing your game.",
     icon: BsCameraVideoFill,
-    featureImage: "https://kutty.netlify.app/hero.jpg",
+    featureImage: "/VCam/rpi-camera.jpg",
   },
 ];
 
