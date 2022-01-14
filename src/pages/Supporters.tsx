@@ -24,14 +24,9 @@ const Supporters = () => {
         py={{ base: 20, md: 28 }}
       >
         <Heading
-          fontWeight={600}
-          fontSize={{ base: "3xl", sm: "4xl", md: "6xl" }}
           lineHeight={"110%"}
         >
-          We are {" "}
-          <Text as={"span"} color={"brand.400"}>
-            Backed by
-          </Text>
+          We are Backed by
         </Heading>
         <Center>
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing={1}>
