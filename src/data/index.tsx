@@ -35,7 +35,7 @@ export const products: Category[] = [
     subLabel: "Low-cost Camera Solutions",
     id: "vcam",
     description:
-      "A very low-cost Camera for recording High Quality video for analysing your game.",
+      "A Low-cost Camera for recording High Quality video for analysing your game.",
     icon: BsCameraVideoFill,
     featureImage: "https://kutty.netlify.app/hero.jpg",
   },
