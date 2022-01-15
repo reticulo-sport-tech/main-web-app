@@ -37,7 +37,7 @@ export const Section = ({
       case FeatureType.YOUTUBE_VIDEO:
         feature = (
           <iframe
-            title="naruto"
+            title={name}
             src={featureUrl}
             allowFullScreen
             style={{
@@ -51,7 +51,7 @@ export const Section = ({
         feature = (
           <Image
             src={featureUrl}
-            alt="naruto"
+            alt={name}
             borderRadius={"2%"}
           />
         );

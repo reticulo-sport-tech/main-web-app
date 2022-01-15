@@ -57,8 +57,8 @@ export default function MainCTA() {
         <Flex w={"full"}>
           <AspectRatio w="100%" ratio={16 / 9}>
             <Image
-              alt="naruto"
-              title="naruto"
+              alt="Sports Data Analytics"
+              title="Sports Data Analytics"
               src="/sports-Data-Analytics.jpg"
               allowFullScreen
               style={{

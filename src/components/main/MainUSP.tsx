@@ -57,7 +57,7 @@ export default function MainUSP() {
   return (
     <Flex
       bg={useColorModeValue("#F9FAFB", "gray.600")}
-      p={20}
+      p={{ base: 8, md: 20 }}
       w="auto"
       justifyContent="center"
       alignItems="center"

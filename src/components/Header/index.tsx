@@ -51,7 +51,7 @@ export const Header = () => {
             flex={{ base: "0", xl: "auto" }}
             ml={{ base: -2 }}
             mr={{ base: 6, xl: 0 }}
-            display={{ base: "flex", xl: "none" }}
+            display={{ base: "flex", md: "none" }}
           >
             <IconButton
               onClick={onToggle}
@@ -70,7 +70,7 @@ export const Header = () => {
 
           <Flex
             flex={{ base: 1, md: "auto" }}
-            justify={{ base: "start", md: "start" }}
+            justify={{ base: "center", md: "start" }}
           >
             <NextLink href={"/"} passHref>
               <Stack
@@ -83,7 +83,7 @@ export const Header = () => {
                 <Heading
                   as={"h1"}
                   fontSize={"xl"}
-                  display={{ base: "none", md: "block" }}
+                  display={{ base: "block" }}
                 >
                   <TextUnderline>Reticulo</TextUnderline>
                 </Heading>
@@ -98,7 +98,7 @@ export const Header = () => {
             flex={{ base: 1, md: "auto" }}
             justify={"flex-end"}
           >
-            <DesktopNav display={{ base: "none", xl: "flex" }} />
+            <DesktopNav display={{ base: "none", md: "flex" }} />
             <IconButton
               size={"sm"}
               variant={"ghost"}
@@ -112,15 +112,7 @@ export const Header = () => {
                 )
               }
             />
-          </Stack>
-
-          <Stack
-            pl={{ base: 2 }}
-            flex={{ base: 1, md: 0 }}
-            justify={"flex-end"}
-            direction={"row"}
-            spacing={6}
-          >
+        
             {/*  <Link style={{ textDecoration: "none" }} href="https://app.reticulo.in">
               <Button fontSize={"sm"} fontWeight={400} variant={"ghost"}>
                 Sign In
