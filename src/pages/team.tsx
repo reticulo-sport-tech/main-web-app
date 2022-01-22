@@ -32,7 +32,7 @@ const Team = () => {
             Team
           </Text>
         </Heading>
-        <SimpleGrid columns={{ base: 1, md: 4 }} spacing={1}>
+        <SimpleGrid columns={{ base: 1, md: 5 }} spacing={1}>
           <GridItem colSpan={1}>
             <MemberCard
               name={"Arya Bhivpathaki"}
@@ -53,19 +53,28 @@ const Team = () => {
 
           <GridItem colSpan={1}>
             <MemberCard
-              name={"Aniket Velhankar"}
-              title={"AI & ML Lead"}
+              name={`Raghav Khare`}
+              title={"Business Analyst"}
               bio={""}
-              image={"/aniket.jpeg"}
+              image={"/raghav.jpeg"}
             />
           </GridItem>
 
           <GridItem colSpan={1}>
             <MemberCard
-              name={"Raghav Khare"}
-              title={"Business Analyst"}
+              name={"Ashish Chitale"}
+              title={"Business Advisor"}
               bio={""}
-              image={"/raghav.jpeg"}
+              image={"/ashish.jpeg"}
+            />
+          </GridItem>
+
+          <GridItem colSpan={1}>
+            <MemberCard
+              name={"Siddharth Mayur"}
+              title={"Mentor"}
+              bio={""}
+              image={"/siddharth.jpg"}
             />
           </GridItem>
         </SimpleGrid>
