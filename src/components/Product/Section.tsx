@@ -10,6 +10,7 @@ import {
   GridItem,
   Box,
   Image,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { FeatureType, ItemPlacement } from "data/types";
 import { ReactNode } from "react";
@@ -31,6 +32,8 @@ export const Section = ({
   name,
   title,
 }: Props) => {
+  const isMobile = useBreakpointValue({ base: true, md: false });
+
   const featureSection = () => {
     var feature: ReactNode;
     switch (featureType) {
@@ -48,13 +51,7 @@ export const Section = ({
         break;
 
       case FeatureType.IMAGE:
-        feature = (
-          <Image
-            src={featureUrl}
-            alt={name}
-            borderRadius={"2%"}
-          />
-        );
+        feature = <Image src={featureUrl} alt={name} borderRadius={"2%"} />;
         break;
 
       default:
@@ -106,6 +103,7 @@ export const Section = ({
         >
           {(featurePlacement === ItemPlacement.TOP ||
             featurePlacement === ItemPlacement.LEFT) &&
+            !isMobile &&
             featureSection()}
           <GridItem colSpan={1}>
             <Center h="full">
@@ -126,7 +124,8 @@ export const Section = ({
           </GridItem>
 
           {(featurePlacement === ItemPlacement.BOTTOM ||
-            featurePlacement === ItemPlacement.RIGHT) &&
+            featurePlacement === ItemPlacement.RIGHT ||
+            isMobile) &&
             featureSection()}
         </SimpleGrid>
       </Stack>

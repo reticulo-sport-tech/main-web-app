@@ -47,6 +47,7 @@ export const MobileNav = ({ isOpen, onClose = () => {} }: MobileNavProps) => {
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} onClose={onClose} />
       ))}
+      <Box onClick={onClose} h="100rem"/>
     </Stack>
   );
 };

@@ -21,13 +21,9 @@ const Supporters = () => {
         textAlign={"center"}
         align={"center"}
         spacing={{ base: 8, md: 10 }}
-        py={{ base: 20, md: 28 }}
+        py={{ base: 12, md: 24 }}
       >
-        <Heading
-          lineHeight={"110%"}
-        >
-          We are Backed by
-        </Heading>
+        <Heading lineHeight={"110%"}>We are Backed by</Heading>
         <Center>
           <SimpleGrid columns={{ base: 1, md: 2 }} spacing={1}>
             <GridItem colSpan={1}>
@@ -36,6 +32,7 @@ const Supporters = () => {
                 title={"Society of Innovation and Entrepreurship IIT Bombay"}
                 bio={""}
                 image={"/sine.jpeg"}
+                href="https://sineiitb.org/"
               />
             </GridItem>
 
@@ -45,9 +42,9 @@ const Supporters = () => {
                 title={"Ministry of Electronics and Telecommunications"}
                 bio={""}
                 image={"/meity.jpg"}
+                href="https://www.meity.gov.in/"
               />
             </GridItem>
-
           </SimpleGrid>
         </Center>
       </Stack>

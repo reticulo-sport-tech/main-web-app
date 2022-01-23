@@ -29,7 +29,7 @@ const TrainEx = () => {
           description="These Smart Sensor based systems control how much effort you put in training"
           featurePlacement={ItemPlacement.RIGHT}
           featureType={FeatureType.IMAGE}
-          featureUrl="/TrainEx/IOT.png"
+          featureUrl="/TrainEx/trainex.jpg"
         />,
         <Section
           key={1}

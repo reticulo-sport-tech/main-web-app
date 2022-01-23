@@ -28,7 +28,7 @@ export const products: Category[] = [
     description:
       "A collection of Smart Training Equipments which can provide very useful insights to your training.",
     icon: BsFillGearFill,
-    featureImage: "/TrainEx/IOT.png",
+    featureImage: "/TrainEx/trainex.jpg",
   },
   {
     name: "Vision Camera",

@@ -12,6 +12,30 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+import React, { ReactNode } from "react";
+
+const SimpleGridWrapper = ({ children }: { children: ReactNode }) => {
+  const grids: Array<ReactNode> = [];
+
+  const elements = React.Children.toArray(children);
+  var i = 0,
+    j = elements.length,
+    temporary: Array<ReactNode>,
+    chunk = 4;
+  for (i = 0, j = elements.length; i < j; i += chunk) {
+    temporary = elements.slice(i, i + chunk);
+    grids.push(
+      <SimpleGrid
+        columns={{ base: 1, md: temporary.length }}
+        spacing={{ base: 0, md: 1 }}
+      >
+        {temporary.map((t) => t)}
+      </SimpleGrid>
+    );
+  }
+
+  return <>{grids.map((t) => t)}</>;
+};
 
 const Team = () => {
   return (
@@ -19,8 +43,8 @@ const Team = () => {
       <Stack
         textAlign={"center"}
         align={"center"}
-        spacing={{ base: 8, md: 10 }}
-        py={{ base: 20, md: 28 }}
+        spacing={{ base: 4, md: 10 }}
+        py={{ base: 16, md: 24 }}
       >
         <Heading
           fontWeight={600}
@@ -32,7 +56,10 @@ const Team = () => {
             Team
           </Text>
         </Heading>
-        <SimpleGrid columns={{ base: 1, md: 5 }} spacing={1}>
+        <SimpleGridWrapper
+          columns={{ base: 1, md: 4 }}
+          spacing={{ base: 0, md: 1 }}
+        >
           <GridItem colSpan={1}>
             <MemberCard
               name={"Arya Bhivpathaki"}
@@ -53,15 +80,6 @@ const Team = () => {
 
           <GridItem colSpan={1}>
             <MemberCard
-              name={`Raghav Khare`}
-              title={"Business Analyst"}
-              bio={""}
-              image={"/raghav.jpeg"}
-            />
-          </GridItem>
-
-          <GridItem colSpan={1}>
-            <MemberCard
               name={"Ashish Chitale"}
               title={"Business Advisor"}
               bio={""}
@@ -77,7 +95,16 @@ const Team = () => {
               image={"/siddharth.jpg"}
             />
           </GridItem>
-        </SimpleGrid>
+
+          <GridItem colSpan={1}>
+            <MemberCard
+              name={`Raghav Khare`}
+              title={"Business Analyst"}
+              bio={""}
+              image={"/raghav.jpeg"}
+            />
+          </GridItem>
+        </SimpleGridWrapper>
       </Stack>
     </Container>
   );

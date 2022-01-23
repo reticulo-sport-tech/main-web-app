@@ -43,7 +43,7 @@ export default function MainEcosystemBrief() {
             fontSize="lg"
             fontWeight="medium"
             lineHeight="6"
-            color={useColorModeValue("gray.900", "gray.900")}
+            color={useColorModeValue("gray.900", "white")}
           >
             {title}
           </chakra.dt>
@@ -87,7 +87,7 @@ export default function MainEcosystemBrief() {
               lineHeight="8"
               fontWeight="extrabold"
               letterSpacing="tight"
-              color={useColorModeValue("gray.900", "gray.900")}
+              color={useColorModeValue("gray.900", "white")}
             >
               A better way to improve your Sports Performance
             </chakra.h1>

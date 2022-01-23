@@ -22,7 +22,7 @@ export default function AboutUs() {
       <Box px={4} mx="auto">
         <Box
           w={{ base: "full", md: 11 / 12, xl: 8 / 12 }}
-          textAlign={{ base: "left", md: "center" }}
+          textAlign={"center"}
           mx="auto"
         >
           <chakra.h1

@@ -35,7 +35,7 @@ function App({ Component, pageProps }: AppProps) {
       selfHosted={true}
       customDomain="https://analytics.reticulo.in"
       trackOutboundLinks={true}
-      enabled={false}
+      enabled={true}
     >
       <ChakraProvider theme={theme}>
         <Head>

@@ -89,7 +89,7 @@ export default function MainUSP() {
               fontSize={{ base: "3xl", md: "4xl" }}
               fontWeight="extrabold"
               textAlign={{ base: "center", sm: "left" }}
-              color={useColorModeValue("black", "black")}
+              color={useColorModeValue("gray.700", "white")}
               lineHeight="shorter"
               letterSpacing="tight"
             >
