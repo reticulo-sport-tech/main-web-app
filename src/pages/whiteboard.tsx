@@ -7,7 +7,14 @@ import { BiDesktop } from "react-icons/bi";
 
 const Whiteboard = () => {
   return (
-    <SEOWrapper title="Reticulo | Whiteboard">
+    <SEOWrapper
+      title="Reticulo | Whiteboard"
+      description={
+        "Theory based fundamentals are the building blocks of an intelligent and successful player who grows into a champion. " +
+        "This digital Whiteboard will help coaches to educate players better from a fundamental level." +
+        " Create, Discuss, Visualize, Simulate and Note down points on a digital platform"
+      }
+    >
       <Product
         name={"Whiteboard"}
         icon={

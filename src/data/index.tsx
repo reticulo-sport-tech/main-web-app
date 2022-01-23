@@ -37,7 +37,7 @@ export const products: Category[] = [
     description:
       "A Low-cost Camera for recording High Quality video for analysing your game.",
     icon: BsCameraVideoFill,
-    featureImage: "/VCam/rpi-camera.jpg",
+    featureImage: "/VCam/rpi-camera-red.jpg",
   },
 ];
 
