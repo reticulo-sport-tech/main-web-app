@@ -56,10 +56,7 @@ const Team = () => {
             Team
           </Text>
         </Heading>
-        <SimpleGridWrapper
-          columns={{ base: 1, md: 4 }}
-          spacing={{ base: 0, md: 1 }}
-        >
+        <SimpleGridWrapper>
           <GridItem colSpan={1}>
             <MemberCard
               name={"Arya Bhivpathaki"}
