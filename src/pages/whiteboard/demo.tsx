@@ -186,10 +186,10 @@ function Register() {
             color={useColorModeValue("gray.800", "gray.300")}
           >
             Login using your credentials through mobile app or website
-            <chakra.a href={"https://app.fala-whiteboard.ml"}>
+            <chakra.a href={"https://whiteboard.retiulo.in"}>
               {" "}
               <Text fontStyle="u" color="blue.400">
-                app.fala-whiteboard.ml{" "}
+              whiteboard.retiulo.in{" "}
               </Text>
             </chakra.a>
           </chakra.span>
