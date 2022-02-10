@@ -233,12 +233,13 @@ export default function ContactUs() {
 
                       <FormControl id="message" isInvalid={!!errors?.message}>
                         <FormLabel>Message</FormLabel>
-                        <Input
+                        <Textarea
                           isDisabled={isSubmitting}
                           type="message"
                           {...register("message", {
                             required: "Required",
                           })}
+                          multiple
                         />
                         <FormErrorMessage>
                           {errors?.message && errors?.message?.message}
