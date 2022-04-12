@@ -98,7 +98,6 @@ export default function MainUSP() {
             <chakra.p
               mb={6}
               fontSize={{ base: "lg", md: "xl" }}
-              textAlign={{ base: "center", sm: "left" }}
               color={useColorModeValue("gray.600", "gray.500")}
             >
               All our products are deeply integrated. You can do all your sport

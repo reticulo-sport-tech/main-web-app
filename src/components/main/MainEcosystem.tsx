@@ -25,7 +25,7 @@ const EcosystemComponent = ({
   isLeft?: boolean;
 }) => {
   const descColor = useColorModeValue("gray.500", "gray.300");
-  const linkColor = useColorModeValue("white", "black");
+  const linkColor = "white";
   const linkBgColor = useColorModeValue("brand.600", "brand.500");
   const linkHoverBgColor = useColorModeValue("brand.700", "brand.600");
   const isMobile = useBreakpointValue({ base: true, md: false })

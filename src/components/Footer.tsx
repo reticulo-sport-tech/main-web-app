@@ -10,6 +10,10 @@ import {
   Flex,
   IconButton,
   Input,
+  useToast,
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { companyLinks, products, resources, solutions } from "../data";
@@ -22,23 +26,31 @@ import {
 import { Logo } from "@/components/Logo";
 import { ReactNode } from "react";
 import { BiMailSend } from "react-icons/bi";
+import { NewsLetterUser } from "data/types";
+import { submitNewsLetterUser } from "api";
+import { useForm } from "react-hook-form";
+import { BsInstagram, BsLinkedin, BsTwitter, BsYoutube } from "react-icons/bs";
 
 const SOCIAL_LINKS = [
   {
     label: "YouTube Channel",
     href: YOUTUBE_CHANNEL_LINK,
+    icon: <BsYoutube size={"24px"} />,
   },
   {
     label: "Instagram Handle",
     href: INSTAGRAM_LINK,
+    icon: <BsInstagram size={"24px"} />,
   },
   {
     label: "Twitter Account",
     href: TWITTER_LINK,
+    icon: <BsTwitter size={"24px"} />,
   },
   {
     label: "LinkedIn Page",
     href: LINKEDIN_PAGE_LINK,
+    icon: <BsLinkedin size={"24px"} />,
   },
 ];
 
@@ -55,22 +67,92 @@ const LEGAL_LINKS = [
 
 const ListHeader = ({ children }: { children: ReactNode }) => {
   return (
-    <Text fontWeight={"500"} fontSize={"lg"} mb={2}>
+    <Text fontWeight={"700"} fontSize={"lg"} mb={2}>
       {children}
     </Text>
+  );
+};
+
+const NewsLetter = () => {
+  const toast = useToast();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<NewsLetterUser>({
+    mode: "onTouched",
+    reValidateMode: "onChange",
+  });
+  const onSubmit = async (data: NewsLetterUser) => {
+    try {
+      await submitNewsLetterUser(data);
+      toast({
+        title: "We will keep you updated reguraly!",
+        status: "success",
+        isClosable: true,
+        position: "top",
+      });
+      reset();
+    } catch (error) {
+      toast({
+        title: "An error has occured!",
+        status: "error",
+        isClosable: true,
+        position: "top",
+      });
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <Stack align={"flex-start"}>
+        <ListHeader>Stay up to date</ListHeader>
+        <Stack direction={"row"}>
+          <FormControl id="email" isInvalid={!!errors?.email}>
+            <Input
+              isDisabled={isSubmitting}
+              type="email"
+              {...register("email", {
+                required: "Required",
+                pattern: {
+                  value: /\S+@\S+\.\S+/,
+                  message: "Invalid Email",
+                },
+              })}
+            />
+            <FormErrorMessage>
+              {errors?.email && errors?.email?.message}
+            </FormErrorMessage>
+          </FormControl>
+          <IconButton
+            bg={useColorModeValue("brand.400", "brand.800")}
+            color={useColorModeValue("white", "gray.800")}
+            _hover={{
+              bg: "brand.600",
+            }}
+            aria-label="Subscribe"
+            icon={<BiMailSend />}
+            isLoading={isSubmitting}
+            type="submit"
+          />
+        </Stack>
+      </Stack>
+    </form>
   );
 };
 
 export const Footer = () => {
   const currYear = new Date().getFullYear();
   const startYear = new Date("2021-01-01").getFullYear();
+  const socialIconHoverColor = useColorModeValue("white", "gray.700");
 
   return (
     <Box
       bg={useColorModeValue("gray.50", "gray.900")}
       color={useColorModeValue("gray.700", "gray.200")}
     >
-      <Container as={Stack} maxW={"6xl"} py={10}>
+      <Container as={Stack} maxW={"6xl"} py={10} px={8}>
         <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
           <Stack align={"flex-start"} hidden>
             <ListHeader>Solutions</ListHeader>
@@ -101,11 +183,22 @@ export const Footer = () => {
 
           <Stack align={"flex-start"}>
             <ListHeader>Social</ListHeader>
-            {SOCIAL_LINKS.map((link) => (
-              <Link key={link.label} href={link.href} isExternal>
-                {link.label}
-              </Link>
-            ))}
+            <Stack direction={"row"}>
+              {SOCIAL_LINKS.map((link) => (
+                <Link key={link.label} href={link.href} isExternal>
+                  <IconButton
+                    aria-label={link.label}
+                    variant="ghost"
+                    icon={link.icon}
+                    _hover={{
+                      bg: "brand.500",
+                      color: socialIconHoverColor,
+                    }}
+                    isRound
+                  />
+                </Link>
+              ))}
+            </Stack>
           </Stack>
 
           <Stack align={"flex-start"} hidden>
@@ -126,28 +219,7 @@ export const Footer = () => {
             ))}
           </Stack>
 
-          <Stack align={"flex-start"}>
-            <ListHeader>Stay up to date</ListHeader>
-            <Stack direction={"row"}>
-              <Input
-                placeholder={"Your email address"}
-                bg={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
-                border={0}
-                _focus={{
-                  bg: "whiteAlpha.300",
-                }}
-              />
-              <IconButton
-                bg={useColorModeValue("brand.400", "brand.800")}
-                color={useColorModeValue("white", "gray.800")}
-                _hover={{
-                  bg: "brand.600",
-                }}
-                aria-label="Subscribe"
-                icon={<BiMailSend />}
-              />
-            </Stack>
-          </Stack>
+          <NewsLetter />
         </SimpleGrid>
       </Container>
       <Box pb={10}>

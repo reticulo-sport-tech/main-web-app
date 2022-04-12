@@ -29,3 +29,13 @@ export enum ItemPlacement {
   RIGHT,
   BOTTOM,
 }
+
+export interface ContactQuery {
+  name: string;
+  email: string;
+  message: string;
+}
+
+export interface NewsLetterUser {
+  email: string;
+}

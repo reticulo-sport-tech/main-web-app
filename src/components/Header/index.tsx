@@ -34,7 +34,7 @@ export const Header = () => {
         top="0"
         w={"full"}
         minH={"60px"}
-        boxShadow={"sm"}
+        boxShadow={"lg"}
         zIndex="999"
         justify={"center"}
         bg={bg}

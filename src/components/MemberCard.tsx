@@ -1,3 +1,4 @@
+import { ExternalLinkIcon } from "@chakra-ui/icons";
 import {
   Heading,
   Avatar,
@@ -5,6 +6,7 @@ import {
   Center,
   Text,
   useColorModeValue,
+  Link,
 } from "@chakra-ui/react";
 
 interface Props {
@@ -12,27 +14,27 @@ interface Props {
   title: string;
   bio: string;
   image: string;
+  href?: string;
 }
 
-const MemberCard = ({ bio, name, title, image }: Props) => {
+const MemberCard = ({ bio, name, title, image, href }: Props) => {
   return (
-    <Center py={6}>
+    <Center py={{ base: 2, md: 6 }}>
       <Box
         maxW={"320px"}
         w={"full"}
         rounded={"lg"}
-        p={6}
+        p={{ base: 2, md: 6 }}
         textAlign={"center"}
       >
-        <Avatar
-          size={"2xl"}
-          src={image}
-          alt={"Avatar Alt"}
-          mb={4}
-          pos={"relative"}
-        />
+        <Avatar size={"2xl"} src={image} alt={name} mb={4} pos={"relative"} />
         <Heading fontSize={"xl"} fontFamily={"body"}>
-          {name}
+          {name}{" "}
+          {href && (
+            <Link href={href} isExternal>
+              <ExternalLinkIcon mx="2px" />
+            </Link>
+          )}
         </Heading>
         <Text fontWeight={600} color={"gray.500"} mb={4}>
           {title}

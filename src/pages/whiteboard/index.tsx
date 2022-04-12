@@ -1,13 +1,31 @@
 import Product from "@/components/Product";
 import { Section } from "@/components/Product/Section";
 import { SEOWrapper } from "@/components/SEO";
-import { chakra, Icon, useColorModeValue } from "@chakra-ui/react";
+import {
+  Button,
+  chakra,
+  Flex,
+  Icon,
+  Link,
+  LinkBox,
+  LinkOverlay,
+  Stack,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { FeatureType, ItemPlacement } from "data/types";
 import { BiDesktop } from "react-icons/bi";
+import NextLink from "next/link";
 
 const Whiteboard = () => {
   return (
-    <SEOWrapper title="Reticulo | Whiteboard">
+    <SEOWrapper
+      title="Reticulo | Whiteboard"
+      description={
+        "Theory based fundamentals are the building blocks of an intelligent and successful player who grows into a champion. " +
+        "This digital Whiteboard will help coaches to educate players better from a fundamental level." +
+        " Create, Discuss, Visualize, Simulate and Note down points on a digital platform"
+      }
+    >
       <Product
         name={"Whiteboard"}
         icon={
@@ -25,6 +43,24 @@ const Whiteboard = () => {
           " Create, Discuss, Visualize, Simulate and Note down points on a digital platform"
         }
         sections={[
+          <Stack key={-1} w="full" scaleX={4} direction="row">
+            <NextLink href="/whiteboard/demo" passHref>
+              <Button isFullWidth colorScheme={"brand"}>
+                Demo
+              </Button>
+            </NextLink>
+            <LinkBox w="full">
+              <Button isFullWidth colorScheme={"blue"}>
+                <LinkOverlay
+                  isExternal
+                  href="https://whiteboard.reticulo.in"
+                  textDecor={"none"}
+                >
+                  Go to Whiteboard
+                </LinkOverlay>
+              </Button>
+            </LinkBox>
+          </Stack>,
           <Section
             key={0}
             name="Boards"

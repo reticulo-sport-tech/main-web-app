@@ -1,14 +1,14 @@
-stage-build:
-	DOCKER_BUILDKIT=1 docker build --progress=plain -t ghcr.io/reticulo-sport-tech/main-web-app:latest .
-
-stage-push: stage-build
-	docker push ghcr.io/reticulo-sport-tech/main-web-app:latest
-
-stage-run: stage-build
-	docker run --rm -p 80:80 -p 443:443 -p 2019:2019 ghcr.io/reticulo-sport-tech/main-web-app
-
 prod-build:
-	az acr build --file Dockerfile --registry reticuloprod --image main-web-app .
+	DOCKER_BUILDKIT=1 docker build -t reticuloprod.azurecr.io/main-web-app:latest .
 
-prod-logs:
-	az webapp log tail --name main-web-app  --resource-group  reticulo-prod
+prod-push: prod-build
+	docker push reticuloprod.azurecr.io/main-web-app:latest
+
+prod-run: prod-build
+	docker run --rm -p 80:80 reticuloprod.azurecr.io/main-web-app
+
+# prod-build:
+# 	az acr build --file Dockerfile --registry reticuloprod --image main-web-app .
+
+# prod-logs:
+# 	az webapp log tail --name main-web-app  --resource-group  reticulo-prod

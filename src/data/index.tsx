@@ -28,7 +28,7 @@ export const products: Category[] = [
     description:
       "A collection of Smart Training Equipments which can provide very useful insights to your training.",
     icon: BsFillGearFill,
-    featureImage: "/TrainEx/IOT.png",
+    featureImage: "/TrainEx/trainex.jpg",
   },
   {
     name: "Vision Camera",
@@ -37,7 +37,7 @@ export const products: Category[] = [
     description:
       "A Low-cost Camera for recording High Quality video for analysing your game.",
     icon: BsCameraVideoFill,
-    featureImage: "/VCam/rpi-camera.jpg",
+    featureImage: "/VCam/rpi-camera-red.jpg",
   },
 ];
 

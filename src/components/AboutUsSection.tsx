@@ -10,6 +10,7 @@ import {
   GridItem,
   Box,
   Image,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { FeatureType, ItemPlacement } from "data/types";
 import { ReactNode } from "react";
@@ -30,13 +31,15 @@ export const AboutUsSection = ({
   featureUrl,
   name,
 }: Props) => {
+  const isMobile = useBreakpointValue({ base: true, md: false });
+
   const featureSection = () => {
     var feature: ReactNode;
     switch (featureType) {
       case FeatureType.YOUTUBE_VIDEO:
         feature = (
           <iframe
-            title="naruto"
+            title={name}
             src={featureUrl}
             allowFullScreen
             style={{
@@ -50,7 +53,7 @@ export const AboutUsSection = ({
         feature = (
           <Image
             src={featureUrl}
-            alt="naruto"
+            alt={name}
             borderRadius={"2%"}
           />
         );
@@ -104,7 +107,7 @@ export const AboutUsSection = ({
           w="full"
         >
           {(featurePlacement === ItemPlacement.TOP ||
-            featurePlacement === ItemPlacement.LEFT) &&
+            featurePlacement === ItemPlacement.LEFT) && !isMobile &&
             featureSection()}
           <GridItem colSpan={1}>
             <Center h="full">
@@ -125,7 +128,7 @@ export const AboutUsSection = ({
           </GridItem>
 
           {(featurePlacement === ItemPlacement.BOTTOM ||
-            featurePlacement === ItemPlacement.RIGHT) &&
+            featurePlacement === ItemPlacement.RIGHT || isMobile) &&
             featureSection()}
         </SimpleGrid>
       </Stack>
