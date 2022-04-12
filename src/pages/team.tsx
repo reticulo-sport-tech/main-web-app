@@ -21,7 +21,7 @@ const SimpleGridWrapper = ({ children }: { children: ReactNode }) => {
   var i = 0,
     j = elements.length,
     temporary: Array<ReactNode>,
-    chunk = 4;
+    chunk = 3;
   for (i = 0, j = elements.length; i < j; i += chunk) {
     temporary = elements.slice(i, i + chunk);
     grids.push(
@@ -77,6 +77,15 @@ const Team = () => {
 
           <GridItem colSpan={1}>
             <MemberCard
+              name={`Raghav Khare`}
+              title={"Chief Relations Officer"}
+              bio={""}
+              image={"/raghav.jpeg"}
+            />
+          </GridItem>
+
+          <GridItem colSpan={1}>
+            <MemberCard
               name={"Ashish Chitale"}
               title={"Business Advisor"}
               bio={""}
@@ -93,14 +102,7 @@ const Team = () => {
             />
           </GridItem>
 
-          <GridItem colSpan={1}>
-            <MemberCard
-              name={`Raghav Khare`}
-              title={"Business Analyst"}
-              bio={""}
-              image={"/raghav.jpeg"}
-            />
-          </GridItem>
+
         </SimpleGridWrapper>
       </Stack>
     </Container>
