@@ -3,11 +3,11 @@ export const PRODUCTION_URL = "https://reticulo.in";
 /**
  * LINKS
  */
-export const TWITTER_LINK = "https://twitter.com/";
+export const TWITTER_LINK = "https://twitter.com/Reticulo_Sport/";
 export const YOUTUBE_CHANNEL_LINK = "https://youtube.com/";
 export const LINKEDIN_PAGE_LINK =
   "https://linkedin.com/company/reticulo-sport-tech/";
-export const INSTAGRAM_LINK = "https://instagram.com/";
+export const INSTAGRAM_LINK = "https://www.instagram.com/reticulo_sport/";
 
 /**
  * SEO constants

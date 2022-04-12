@@ -54,7 +54,7 @@ export default function Product({
             fontSize={{ base: "2xl", sm: "3xl", lg: "4xl" }}
             textAlign={"center"}
           >
-            <Text as={"span"} color={"brand.400"}>
+            <Text as={"span"} color={"brand.400"} >
               {name}
             </Text>
           </Heading>
