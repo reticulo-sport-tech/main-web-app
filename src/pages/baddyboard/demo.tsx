@@ -186,10 +186,10 @@ function Register() {
             color={useColorModeValue("gray.800", "gray.300")}
           >
             Login using your credentials through mobile app or website
-            <chakra.a href={"https://whiteboard.reticulo.in"}>
+            <chakra.a href={"https://baddyboard.reticulo.in"}>
               {" "}
               <Text fontStyle="u" color="blue.400">
-              whiteboard.reticulo.in{" "}
+              baddyboard.reticulo.in{" "}
               </Text>
             </chakra.a>
           </chakra.span>

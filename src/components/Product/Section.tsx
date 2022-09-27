@@ -51,7 +51,7 @@ export const Section = ({
         break;
 
       case FeatureType.IMAGE:
-        feature = <Image src={featureUrl} alt={name} borderRadius={"2%"} />;
+        feature = <Image src={featureUrl} alt={name} borderRadius={"2%"} fit='cover' h={['50vh', '50vh']}/>;
         break;
 
       default:
@@ -60,10 +60,8 @@ export const Section = ({
 
     return (
       <GridItem colSpan={1}>
-        <Center h="full">
-          <AspectRatio w="100%" my={2} ratio={16 / 9}>
+        <Center>
             {feature}
-          </AspectRatio>
         </Center>
       </GridItem>
     );
