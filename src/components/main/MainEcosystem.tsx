@@ -7,6 +7,7 @@ import {
   Image,
   Flex,
   useBreakpointValue,
+  Center,
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { products } from "data";
@@ -17,12 +18,14 @@ const EcosystemComponent = ({
   moreHref,
   title,
   isLeft = true,
+  isPortrait,
 }: {
   title?: string;
   description?: string;
   moreHref?: string;
   img?: string;
   isLeft?: boolean;
+  isPortrait?: boolean
 }) => {
   const descColor = useColorModeValue("gray.500", "gray.300");
   const linkColor = "white";
@@ -35,7 +38,8 @@ const EcosystemComponent = ({
       {!isLeft && !isMobile && (
         <Box w={{ base: "full", md: 10 / 12 }} mx="auto" textAlign="center">
           <Image
-            w="full"
+            h={isPortrait ? '70vh' : ''}
+            w={!isPortrait ? 'full' : ''}
             rounded="lg"
             shadow="2xl"
             src={img}
@@ -65,7 +69,7 @@ const EcosystemComponent = ({
         <Stack
           direction={{ base: "column", sm: "row" }}
           mb={{ base: 4, md: 8 }}
-          spacing={2}
+          spacing={2} flex
         >
           <Box display="inline-flex" rounded="md" shadow="md">
             <Link href={moreHref ?? "#"} passHref>
@@ -93,13 +97,16 @@ const EcosystemComponent = ({
       </Box>
       {(isLeft || isMobile) && (
         <Box w={{ base: "full", md: 10 / 12 }} mx="auto" textAlign="center">
-          <Image
-            w="full"
-            rounded="lg"
-            shadow="2xl"
-            src={img}
-            alt="screenshot"
-          />
+          <Center>
+            <Image
+              h={isPortrait ? '70vh' : ''}
+              w={!isPortrait ? 'full' : ''}
+              rounded="lg"
+              shadow="2xl"
+              src={img}
+              alt="screenshot"
+            />
+          </Center>
         </Box>
       )}
     </>
@@ -129,6 +136,7 @@ const MainEcosystem = () => {
           img={p.featureImage}
           moreHref={`/${p.id}`}
           isLeft={index % 2 === 0}
+          isPortrait={index === 0 ? false : true}
         />
       ))}
     </Box>

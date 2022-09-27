@@ -19,7 +19,7 @@ export const products: Category[] = [
     id: "baddyboard",
     description: "A unique Whiteboard like app tailored to teach basics of badminton in a fun and intuitive way.",
     icon: BiDesktop,
-    featureImage: "/Whiteboard/wb-dash.png",
+    featureImage: "/Baddyboard/dash.png",
   },
   {
     name: "Tennisboard",
@@ -27,25 +27,7 @@ export const products: Category[] = [
     id: "tennisboard",
     description: "A unique Tennisboard like app tailored to teach basics of tennis in a fun and intuitive way.",
     icon: BiDesktop,
-    featureImage: "/Whiteboard/wb-dash.png",
-  },
-  {
-    name: "Training Equipment",
-    subLabel: "Smart Training Machines",
-    id: "trainex",
-    description:
-      "A collection of Smart Training Equipments which can provide very useful insights to your training.",
-    icon: BsFillGearFill,
-    featureImage: "/TrainEx/trainex.jpg",
-  },
-  {
-    name: "Vision Camera",
-    subLabel: "Low-cost Camera Solutions",
-    id: "vcam",
-    description:
-      "A Low-cost Camera for recording High Quality video for analysing your game.",
-    icon: BsCameraVideoFill,
-    featureImage: "/VCam/rpi-camera-red.jpg",
+    featureImage: "/Tennisboard/Dash.png",
   },
 ];
 
