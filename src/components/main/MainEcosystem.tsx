@@ -69,7 +69,8 @@ const EcosystemComponent = ({
         <Stack
           direction={{ base: "column", sm: "row" }}
           mb={{ base: 4, md: 8 }}
-          spacing={2} flex
+          spacing={2}
+          flex={1}
         >
           <Box display="inline-flex" rounded="md" shadow="md">
             <Link href={moreHref ?? "#"} passHref>

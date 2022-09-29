@@ -21,6 +21,8 @@ export const SEO_OG_IMAGE = "https://reticulo.in/favicon.png";
 export const SEO_TWITTER_IMAGE = "https://reticulo.in/favicon.png";
 
 /**
- * Email constants
+ * Contact constants
  */
-export const CONTACT_EMAIL = "support@reticulo.in";
+export const CONTACT_EMAIL = "admin@reticulo.in";
+export const CONTACT_PHONE = "+91 8446554419";
+export const CONTACT_ADDRESS = "Sanskriti, Mukund Nagar, Pune, Maharashtra 411037";

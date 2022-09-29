@@ -1,17 +1,20 @@
 import {
   Box,
   Button,
+  Center,
   Flex,
   FormControl,
   FormErrorMessage,
   FormLabel,
   Heading,
+  HStack,
   IconButton,
   Input,
   InputGroup,
   InputLeftElement,
   Link,
   Stack,
+  Text,
   Textarea,
   Tooltip,
   useClipboard,
@@ -24,6 +27,8 @@ import {
   LINKEDIN_PAGE_LINK,
   TWITTER_LINK,
   CONTACT_EMAIL,
+  CONTACT_PHONE,
+  CONTACT_ADDRESS,
 } from "../constants";
 import React, { useState } from "react";
 import {
@@ -33,7 +38,7 @@ import {
   BsPerson,
   BsTwitter,
 } from "react-icons/bs";
-import { MdEmail, MdOutlineEmail } from "react-icons/md";
+import { MdEmail, MdLocationOn, MdOutlineEmail, MdPhone } from "react-icons/md";
 import { SEOWrapper } from "@/components/SEO";
 import { useForm } from "react-hook-form";
 import { ContactQuery } from "data/types";
@@ -63,7 +68,7 @@ export default function ContactUs() {
     register,
     handleSubmit,
     reset,
-    formState: { errors, isSubmitting, },
+    formState: { errors, isSubmitting },
   } = useForm<ContactQuery>({
     mode: "onTouched",
     reValidateMode: "onChange",
@@ -77,7 +82,7 @@ export default function ContactUs() {
         isClosable: true,
         position: "top",
       });
-      reset()
+      reset();
     } catch (error) {
       toast({
         title: "An error has occured!",
@@ -87,7 +92,6 @@ export default function ContactUs() {
       });
     }
   };
-
 
   return (
     <SEOWrapper title="Contact Us">
@@ -191,75 +195,104 @@ export default function ContactUs() {
                     </Link>
                   </Stack>
 
-                  <Box
-                    bg={useColorModeValue("white", "gray.700")}
-                    borderRadius="lg"
-                    p={8}
-                    color={useColorModeValue("gray.700", "whiteAlpha.900")}
-                    shadow="base"
-                  >
-                    <VStack spacing={5}>
-                      <FormControl id="name" isInvalid={!!errors?.name}>
-                        <FormLabel>Name</FormLabel>
-                        <Input
-                          isDisabled={isSubmitting}
-                          type="name"
-                          {...register("name", {
-                            required: "Required",
-                          })}
-                        />
-                        <FormErrorMessage>
-                          {errors?.name && errors?.name?.message}
-                        </FormErrorMessage>
-                      </FormControl>
+                  <Box>
+                    <Box
+                      bg={useColorModeValue("white", "gray.700")}
+                      borderRadius="lg"
+                      p={8}
+                      color={useColorModeValue("gray.700", "whiteAlpha.900")}
+                      shadow="base"
+                    >
+                      <VStack spacing={5}>
+                        <FormControl id="name" isInvalid={!!errors?.name}>
+                          <FormLabel>Name</FormLabel>
+                          <Input
+                            isDisabled={isSubmitting}
+                            type="name"
+                            {...register("name", {
+                              required: "Required",
+                            })}
+                          />
+                          <FormErrorMessage>
+                            {errors?.name && errors?.name?.message}
+                          </FormErrorMessage>
+                        </FormControl>
 
-                      <FormControl id="email" isInvalid={!!errors?.email}>
-                        <FormLabel>Email </FormLabel>
-                        <Input
-                          isDisabled={isSubmitting}
-                          type="email"
-                          {...register("email", {
-                            required: "Required",
-                            pattern: {
-                              value: /\S+@\S+\.\S+/,
-                              message: "Invalid Email",
-                            },
-                          })}
-                        />
-                        <FormErrorMessage>
-                          {errors?.email && errors?.email?.message}
-                        </FormErrorMessage>
-                      </FormControl>
+                        <FormControl id="email" isInvalid={!!errors?.email}>
+                          <FormLabel>Email </FormLabel>
+                          <Input
+                            isDisabled={isSubmitting}
+                            type="email"
+                            {...register("email", {
+                              required: "Required",
+                              pattern: {
+                                value: /\S+@\S+\.\S+/,
+                                message: "Invalid Email",
+                              },
+                            })}
+                          />
+                          <FormErrorMessage>
+                            {errors?.email && errors?.email?.message}
+                          </FormErrorMessage>
+                        </FormControl>
 
-                      <FormControl id="message" isInvalid={!!errors?.message}>
-                        <FormLabel>Message</FormLabel>
-                        <Textarea
-                          isDisabled={isSubmitting}
-                          type="message"
-                          {...register("message", {
-                            required: "Required",
-                          })}
-                          multiple
-                        />
-                        <FormErrorMessage>
-                          {errors?.message && errors?.message?.message}
-                        </FormErrorMessage>
-                      </FormControl>
+                        <FormControl id="message" isInvalid={!!errors?.message}>
+                          <FormLabel>Message</FormLabel>
+                          <Textarea
+                            isDisabled={isSubmitting}
+                            type="message"
+                            {...register("message", {
+                              required: "Required",
+                            })}
+                            multiple
+                          />
+                          <FormErrorMessage>
+                            {errors?.message && errors?.message?.message}
+                          </FormErrorMessage>
+                        </FormControl>
 
-                      <Button
-                        colorScheme="brand"
-                        bg="brand.400"
-                        color="white"
-                        _hover={{
-                          bg: "brand.500",
-                        }}
-                        isFullWidth
-                        isLoading={isSubmitting}
-                        type="submit"
-                      >
-                        Send Message
-                      </Button>
-                    </VStack>
+                        <Button
+                          colorScheme="brand"
+                          bg="brand.400"
+                          color="white"
+                          _hover={{
+                            bg: "brand.500",
+                          }}
+                          isFullWidth
+                          isLoading={isSubmitting}
+                          type="submit"
+                        >
+                          Send Message
+                        </Button>
+                      </VStack>
+                    </Box>
+
+                    <Center m={4} mt={8} >
+                      <HStack>
+                        <MdPhone size="20px" />
+                        <Text size="md" fontWeight={"bold"}>
+                          {CONTACT_PHONE}
+                        </Text>
+                      </HStack>
+                    </Center>
+
+                    <Center m={4}>
+                      <HStack>
+                        <MdEmail size="20px" />
+                        <Text size="md" fontWeight={"bold"}>
+                          {CONTACT_EMAIL}
+                        </Text>
+                      </HStack>
+                    </Center>
+
+                    <Center m={4}>
+                      <HStack>
+                        <MdLocationOn size="20px" />
+                        <Text size="md" fontWeight={"bold"}>
+                          {CONTACT_ADDRESS}
+                        </Text>
+                      </HStack>
+                    </Center>
                   </Box>
                 </Stack>
               </VStack>

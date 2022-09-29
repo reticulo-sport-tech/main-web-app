@@ -57,12 +57,16 @@ const SOCIAL_LINKS = [
 const LEGAL_LINKS = [
   {
     label: "Privacy Policy",
-    href: `/privacy-policy`,
+    href: `https://merchant.razorpay.com/policy/KNDCAVH09lh2dK/privacy`,
   },
-  /* {
+  {
+    label: "Cancellation & Refund Policy",
+    href: `https://merchant.razorpay.com/policy/KNDCAVH09lh2dK/refund`,
+  },
+  {
     label: "Terms of Service",
-    href: `/terms-of-service`,
-  }, */
+    href: `https://merchant.razorpay.com/policy/KNDCAVH09lh2dK/terms`,
+  },
 ];
 
 const ListHeader = ({ children }: { children: ReactNode }) => {
@@ -213,9 +217,9 @@ export const Footer = () => {
           <Stack align={"flex-start"}>
             <ListHeader>Legal</ListHeader>
             {LEGAL_LINKS.map((link) => (
-              <NextLink key={link.href} passHref href={link.href}>
-                <Link>{link.label}</Link>
-              </NextLink>
+              <Link href={link.href} key={link.href} target="_blank">
+                {link.label}
+              </Link>
             ))}
           </Stack>
 
