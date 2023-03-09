@@ -27,7 +27,7 @@ export const products: Category[] = [
     id: "tennisboard",
     description: "A unique Tennisboard like app tailored to teach basics of tennis in a fun and intuitive way.",
     icon: BiDesktop,
-    featureImage: "/Tennisboard/Dash.png",
+    featureImage: "/Whiteboard/wb-dash.png",
   },
 ];
 

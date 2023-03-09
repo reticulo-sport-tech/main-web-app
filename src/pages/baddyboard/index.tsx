@@ -3,6 +3,7 @@ import { Section } from "@/components/Product/Section";
 import { SEOWrapper } from "@/components/SEO";
 import {
   Button,
+  Center,
   chakra,
   Flex,
   Icon,
@@ -10,13 +11,17 @@ import {
   LinkBox,
   LinkOverlay,
   Stack,
+  Text,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { FeatureType, ItemPlacement } from "data/types";
 import { BiDesktop } from "react-icons/bi";
-import NextLink from "next/link";
+import ReactPlayer from "react-player"
+import useWindowSize from "@rooks/use-window-size"
 
 const Baddyboard = () => {
+  const { innerWidth, innerHeight, outerHeight, outerWidth } = useWindowSize();
+  const hasWindow = typeof window !== 'undefined'
   return (
     <SEOWrapper
       title="Reticulo | Baddyboard"
@@ -26,6 +31,7 @@ const Baddyboard = () => {
         " Create, Discuss, Visualize, Simulate and Note down points on a digital platform"
       }
     >
+
       <Product
         name={"Baddyboard"}
         icon={
@@ -43,7 +49,7 @@ const Baddyboard = () => {
           " Create, Discuss, Visualize, Simulate and Note down points on a digital platform"
         }
         sections={[
-          <Stack key={-1} w="50%" scaleX={4} direction="row">
+          <Stack key={-1} w={{base:"90%", sm:'80%'}} scaleX={4} direction={{base:'column', sm:"row"}}>
             <LinkBox w="full">
               <Button isFullWidth colorScheme={"blue"}>
                 <LinkOverlay
@@ -52,6 +58,17 @@ const Baddyboard = () => {
                   textDecor={"none"}
                 >
                   Go to Baddyboard
+                </LinkOverlay>
+              </Button>
+            </LinkBox>
+            <LinkBox w="full">
+              <Button isFullWidth colorScheme={"red"}>
+                <LinkOverlay
+                  isExternal
+                  href="https://www.youtube.com/watch?v=w7b03ZK6-XY"
+                  textDecor={"none"}
+                >
+                  Click here for Demo!
                 </LinkOverlay>
               </Button>
             </LinkBox>

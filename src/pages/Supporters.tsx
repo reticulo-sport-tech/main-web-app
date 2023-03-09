@@ -13,22 +13,48 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+import React from "react";
+import { ReactNode } from "react";
+
+const SimpleGridWrapper = ({ children }: { children: ReactNode }) => {
+  const grids: Array<ReactNode> = [];
+
+  const elements = React.Children.toArray(children);
+  console.log(elements)
+  var i = 0,
+    j = elements.length,
+    temporary: Array<ReactNode>,
+    chunk = 5;
+  for (i = 0, j = elements.length; i < j; i += chunk) {
+    temporary = elements.slice(i, i + chunk);
+    grids.push(
+      <SimpleGrid
+        columns={{ base: 1, md: temporary.length }}
+        spacing={{ base: 0, md: 1 }}
+      >
+        {temporary.map((t) => t)}
+      </SimpleGrid>
+    );
+  }
+
+  return <>{grids.map((t) => t)}</>;
+};
+
 
 const Supporters = () => {
   return (
-    <Container maxW={"5xl"}>
+    <Container maxW={"6xl"}>
       <Stack
         textAlign={"center"}
         align={"center"}
         spacing={{ base: 8, md: 10 }}
         py={{ base: 12, md: 24 }}
       >
-        <Heading lineHeight={"110%"}>We are Backed by</Heading>
-        <Center>
-          <SimpleGrid columns={{ base: 1, md: 3 }} spacing={1}>
+        <Heading lineHeight={"110%"}>We are backed by</Heading>
+          <SimpleGridWrapper>
             <GridItem colSpan={1}>
               <MemberCard
-                name={"SINE, IIT Bombay"}
+                name={"SINE"}
                 title={"Society of Innovation and Entrepreurship IIT Bombay"}
                 bio={""}
                 image={"/sine.jpeg"}
@@ -47,15 +73,33 @@ const Supporters = () => {
             </GridItem>
             <GridItem colSpan={1}>
               <MemberCard
-                name={"Microsoft for Startups"}
+                name={"Founders Hub"}
                 title={"Founders Hub by Microsoft for Startups"}
                 bio={""}
                 image={"/microsoft-for-startups.jpg"}
+                href="https://www.microsoft.com/en-us/startups"
+              />
+            </GridItem>
+            <GridItem colSpan={1}>
+              <MemberCard
+                name={"DST"}
+                title={"Department of Science and Technology"}
+                bio={""}
+                image={"/dst.png"}
+                href="https://dst.gov.in/"
+              />
+            </GridItem>
+            <GridItem colSpan={1}>
+              <MemberCard
+                name={"TIH-IoT IITB"}
+                title={"Technology Innovation Hub for Internet of Things, IIT Bombay"}
+                bio={""}
+                image={"/tih-iot.jpeg"}
+                href="https://www.tih.iitb.ac.in/"
               />
             </GridItem>
 
-          </SimpleGrid>
-        </Center>
+          </SimpleGridWrapper>
       </Stack>
     </Container>
   );

@@ -35,13 +35,22 @@ export default function AboutUs() {
             About Reticulo Sport Technology
           </chakra.h1>
           <chakra.p
+            fontSize={{ base: "lg", md: "xl" }}
+            color="gray.500"
+            lineHeight="base"
+          >
+            Building a technology first ecosystem for racket games
+            players harnessing the power of AI and digital collaboration
+
+          </chakra.p>
+          <chakra.p
             mb={6}
             fontSize={{ base: "lg", md: "xl" }}
             color="gray.500"
             lineHeight="base"
           >
-            Our ecosystem is the only fully featured and integrated techonology
-            which helps you improve player performances on court and increases productivity of coaches.
+            Our ecosystem is the only fully featured and integrated with state-of-the-art techonology
+            which helps in improving player performances on court and increases productivity of coaches.
           </chakra.p>
         </Box>
       </Box>
@@ -64,7 +73,7 @@ export default function AboutUs() {
         featureType={FeatureType.IMAGE}
         featureUrl="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80"
       />
-      <Supporters/>
+      <Supporters />
     </Box>
   );
 }
