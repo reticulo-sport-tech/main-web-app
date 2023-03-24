@@ -57,15 +57,15 @@ const SOCIAL_LINKS = [
 const LEGAL_LINKS = [
   {
     label: "Privacy Policy",
-    href: `/privacy-policy`,
+    href: `/privacy`,
   },
   {
     label: "Cancellation & Refund Policy",
-    href: `/cancellation-policy`,
+    href: `/cancellation`,
   },
   {
     label: "Terms of Service",
-    href: `/terms-of-service`,
+    href: `/terms`,
   },
 ];
 
