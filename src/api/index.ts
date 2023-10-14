@@ -4,7 +4,7 @@ export const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL ?? "";
 export const publicAPIKey = process.env.NEXT_PUBLIC_API_KEY ?? "";
 
 const getAPIUrl = (url: string) => {
-  return `${apiBaseUrl}/public${url}`;
+  return `${apiBaseUrl}/api/v1/public${url}`;
 };
 
 const getHeaders = () => {

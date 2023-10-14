@@ -17,7 +17,6 @@
     "@rooks/use-window-size": "^4.11.2",
     "framer-motion": "^4",
     "next": "12.0.7",
-    "next-plausible": "^3.1.4",
     "nprogress": "^0.2.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
