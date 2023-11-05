@@ -53,8 +53,8 @@ export const SEO = ({
       <script
         async
         defer
-        data-website-id="910dd7cf-ebe6-4501-96fa-fe8ae858690c"
-        src="https://analytics.reticulo.in/umami.js"
+        data-website-id="de4f108a-2fa4-4e87-ad83-1f57903729b7"
+        src="https://analytics.reticulo.in/script.js"
       />
     </Head>
   );
