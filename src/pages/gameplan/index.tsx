@@ -3,6 +3,7 @@ import { Section } from "@/components/Product/Section";
 import { SEOWrapper } from "@/components/SEO";
 import {
   Button,
+  Center,
   chakra,
   Flex,
   Icon,
@@ -10,24 +11,28 @@ import {
   LinkBox,
   LinkOverlay,
   Stack,
+  Text,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { FeatureType, ItemPlacement } from "data/types";
 import { BiDesktop } from "react-icons/bi";
-import NextLink from "next/link";
+import ReactPlayer from "react-player";
+import useWindowSize from "@rooks/use-window-size";
 
-const Tennisboard = () => {
+const GamePlan = () => {
+  const { innerWidth, innerHeight, outerHeight, outerWidth } = useWindowSize();
+  const hasWindow = typeof window !== "undefined";
   return (
     <SEOWrapper
-      title="Reticulo | Tennisboard"
+      title="Reticulo | GamePlan"
       description={
         "Theory based fundamentals are the building blocks of an intelligent and successful player who grows into a champion. " +
-        "This digital Whiteboard for Tennis will help coaches to educate players better from a fundamental level." +
+        "This digital Whiteboard for Badminton will help coaches to educate players better from a fundamental level." +
         " Create, Discuss, Visualize, Simulate and Note down points on a digital platform"
       }
     >
       <Product
-        name={"Tennisboard"}
+        name={"GamePlan"}
         icon={
           <Icon
             boxSize={8}
@@ -39,19 +44,35 @@ const Tennisboard = () => {
         simpleDescription={"Understanding the game from scratch"}
         description={
           "Theory based fundamentals are the building blocks of an intelligent and successful player who grows into a champion. " +
-          "This digital Whiteboard for Tennis will help coaches to educate players better from a fundamental level." +
+          "This digital Whiteboard for any Sports will help coaches to educate players better from a fundamental level." +
           " Create, Discuss, Visualize, Simulate and Note down points on a digital platform"
         }
         sections={[
-          <Stack key={-1} w="50%" scaleX={4} direction="row">
+          <Stack
+            key={-1}
+            w={{ base: "90%", sm: "80%" }}
+            scaleX={4}
+            direction={{ base: "column", sm: "row" }}
+          >
             <LinkBox w="full">
               <Button isFullWidth colorScheme={"blue"}>
                 <LinkOverlay
                   isExternal
-                  href="https://tennisboard.reticulo.in"
+                  href="https://gameplan.reticulo.in"
                   textDecor={"none"}
                 >
-                  Go to Tennisboard
+                  Go to GamePlan
+                </LinkOverlay>
+              </Button>
+            </LinkBox>
+            <LinkBox w="full">
+              <Button isFullWidth colorScheme={"red"}>
+                <LinkOverlay
+                  isExternal
+                  href="https://www.youtube.com/watch?v=w7b03ZK6-XY"
+                  textDecor={"none"}
+                >
+                  Click here for Demo!
                 </LinkOverlay>
               </Button>
             </LinkBox>
@@ -62,7 +83,7 @@ const Tennisboard = () => {
             description="Create multiple boards for players to train using different types of interfaces"
             featurePlacement={ItemPlacement.RIGHT}
             featureType={FeatureType.IMAGE}
-            featureUrl="/Tennisboard/Dash.png"
+            featureUrl="/gameplan/cover.png"
           />,
           <Section
             key={1}
@@ -70,7 +91,7 @@ const Tennisboard = () => {
             description="Rallies on a 2D Court with simulations for scheduling drills and improving basics"
             featurePlacement={ItemPlacement.LEFT}
             featureType={FeatureType.IMAGE}
-            featureUrl="/Tennisboard/Rally.png"
+            featureUrl="/Baddyboard/Rally.png"
           />,
           <Section
             key={2}
@@ -78,7 +99,7 @@ const Tennisboard = () => {
             description="Fundamentally understand smaller details of shuttlecock path, become a better player"
             featurePlacement={ItemPlacement.RIGHT}
             featureType={FeatureType.IMAGE}
-            featureUrl="/Tennisboard/Trajectory.png"
+            featureUrl="/Baddyboard/Trajectory.png"
           />,
           <Section
             key={3}
@@ -86,7 +107,7 @@ const Tennisboard = () => {
             description="Footwork improvement, understand positioning in different situations in match, practice efficiently"
             featurePlacement={ItemPlacement.LEFT}
             featureType={FeatureType.IMAGE}
-            featureUrl="/Tennisboard/Movements.png"
+            featureUrl="/Baddyboard/Movements.png"
           />,
         ]}
       />
@@ -94,4 +115,4 @@ const Tennisboard = () => {
   );
 };
 
-export default Tennisboard;
+export default GamePlan;

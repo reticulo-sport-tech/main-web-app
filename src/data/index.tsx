@@ -14,20 +14,13 @@ export const products: Category[] = [
     featureImage: "/Studio/stats.png",
   },
   {
-    name: "Baddyboard",
-    subLabel: "Baddyboard for Badminton teaching",
-    id: "baddyboard",
-    description: "A unique Whiteboard like app tailored to teach basics of badminton in a fun and intuitive way.",
+    name: "GamePlan",
+    subLabel: "GamePlan for Sports teaching",
+    id: "gameplan",
+    description:
+      "A unique Whiteboard like app tailored to teach basics of any sport in a fun and intuitive way.",
     icon: BiDesktop,
-    featureImage: "/Baddyboard/dash.png",
-  },
-  {
-    name: "Tennisboard",
-    subLabel: "Tennisboard for Tennis teaching",
-    id: "tennisboard",
-    description: "A unique Tennisboard like app tailored to teach basics of tennis in a fun and intuitive way.",
-    icon: BiDesktop,
-    featureImage: "/Whiteboard/wb-dash.png",
+    featureImage: "/gameplan/cover.png",
   },
 ];
 
