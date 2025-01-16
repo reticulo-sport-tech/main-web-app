@@ -1,8 +1,8 @@
 build:
 	yarn export
 
-deploy: build
-	wrangler pages deploy out --project-name main-web-app
+deploy:
+	firebase deploy
 
 prod-build:
 	DOCKER_BUILDKIT=1 docker build -t reticuloprod.azurecr.io/main-web-app:latest .
