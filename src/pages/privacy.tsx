@@ -45,7 +45,15 @@ const PrivacyPolicy = () => {
             Reticulo Sport Techonology only collects such personal information
             that is necessary for you to access and use our services. This
             personal information includes, but is not limited to, first and last
-            name, email address.
+            name, email address, mobile number, billing information, and
+            transaction details.
+          </chakra.p>
+
+          <chakra.p py={2}>
+            Payment Information: All payment processing is securely managed by a
+            licensed Payment Aggregator. We do not store any card, UPI, or bank
+            details. The payment aggregator complies with RBI and PCI-DSS
+            regulations for secure handling of payment data.
           </chakra.p>
 
           <chakra.p py={2}>

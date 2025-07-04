@@ -1,3 +1,6 @@
+dev:
+	yarn dev
+
 build:
 	yarn export
 

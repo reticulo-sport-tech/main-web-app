@@ -9,7 +9,7 @@ import {
 
 const TOS = () => {
   return (
-    <SEOWrapper title="Reticulo Privacy Policy">
+    <SEOWrapper title="Reticulo Terms of Service">
       <Box px={4} py={16} mx="auto">
         <Box w={{ base: "full" }} mx="auto" maxW="3xl">
           <chakra.h1
@@ -44,10 +44,24 @@ const TOS = () => {
               permission.
             </ListItem>
             <ListItem>
-              Fees: You agree to pay all fees associated with your use of the
-              Product. We reserve the right to change our fees at any time, but
-              will provide notice of any fee changes at least 30 days in
-              advance.
+              Roles and Responsibilities: Our platform acts as a facilitator
+              between players and coaches. Players can use the Product to pay
+              their coach’s fees and the app fee (charged by us) in a single
+              transaction. We are not a service provider for coaching and are
+              not responsible for coaching quality, cancellations, or disputes.
+            </ListItem>
+            <ListItem>
+              Payments and Fees: By using the platform, you agree to pay: The
+              coach’s fee, which is collected on the coach’s behalf and passed
+              through. The app/platform fee, which is retained by us. We use a
+              licensed Payment Aggregator for all transactions. You may receive
+              a payment receipt showing the full amount paid. advance.
+            </ListItem>
+            <ListItem>
+              Refunds: Refunds for the app fee are handled solely by us, and
+              only under specific exceptions outlined in our Cancellation &
+              Refund Policy. Refunds for coach fees are not our responsibility
+              and must be resolved directly with the coach.
             </ListItem>
             Privacy: We are committed to protecting your privacy and personal
             information. Our Privacy Policy describes our practices regarding

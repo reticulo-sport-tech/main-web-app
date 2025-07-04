@@ -3,7 +3,7 @@ import { Box, chakra, useColorModeValue } from "@chakra-ui/react";
 
 const CancellationPolicy = () => {
   return (
-    <SEOWrapper title="Reticulo Privacy Policy">
+    <SEOWrapper title="Reticulo Cancellation and Refund Policy">
       <Box px={4} py={16} mx="auto">
         <Box w={{ base: "full" }} mx="auto" maxW="3xl">
           <chakra.h1
@@ -21,7 +21,7 @@ const CancellationPolicy = () => {
             lineHeight="base"
             fontWeight={{ base: "bold", md: "extrabold" }}
           >
-            Cancellation
+            Cancellation (Radlo Subscription Fees)
           </chakra.p>
 
           <chakra.p py={2}>
@@ -37,14 +37,31 @@ const CancellationPolicy = () => {
             lineHeight="base"
             fontWeight={{ base: "bold", md: "extrabold" }}
           >
-            Refunds
+            Refunds for Radlo Subscription Fees
           </chakra.p>
 
           <chakra.p py={2}>
-            As stated above, all sales are final, and we do not offer refunds
-            for any reason. This includes, but is not limited to, technical
-            issues, dissatisfaction with the product, or changes in your
-            business needs.
+            All app fee payments are final and non-refundable. Exceptions may be
+            made at our sole discretion in the following cases: Duplicate
+            charges or technical billing errors Technical issues preventing
+            access to our platform that we cannot resolve Refund requests must
+            be made within 7 days of the transaction.
+          </chakra.p>
+
+          <chakra.p
+            my={4}
+            fontSize={{ base: "lg", md: "xl" }}
+            lineHeight="base"
+            fontWeight={{ base: "bold", md: "extrabold" }}
+          >
+            Coach Fee Refunds
+          </chakra.p>
+
+          <chakra.p py={2}>
+            Fees paid to coaches are handled directly between the player and
+            coach. We are not responsible for coaching service quality,
+            cancellations, no-shows, or refunds. Players must resolve all coach
+            fee-related issues with the coach directly.
           </chakra.p>
 
           <chakra.p

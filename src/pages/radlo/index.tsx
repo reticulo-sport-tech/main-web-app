@@ -19,12 +19,12 @@ import { BiDesktop } from "react-icons/bi";
 import ReactPlayer from "react-player";
 import useWindowSize from "@rooks/use-window-size";
 
-const GamePlan = () => {
+const Radlo = () => {
   const { innerWidth, innerHeight, outerHeight, outerWidth } = useWindowSize();
   const hasWindow = typeof window !== "undefined";
   return (
     <SEOWrapper
-      title="Reticulo | GamePlan"
+      title="Reticulo | Radlo"
       description={
         "Theory based fundamentals are the building blocks of an intelligent and successful player who grows into a champion. " +
         "This digital Whiteboard for Badminton will help coaches to educate players better from a fundamental level." +
@@ -32,7 +32,7 @@ const GamePlan = () => {
       }
     >
       <Product
-        name={"GamePlan"}
+        name={"Radlo"}
         icon={
           <Icon
             boxSize={8}
@@ -115,4 +115,4 @@ const GamePlan = () => {
   );
 };
 
-export default GamePlan;
+export default Radlo;

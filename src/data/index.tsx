@@ -14,11 +14,11 @@ export const products: Category[] = [
     featureImage: "/Studio/stats.png",
   },
   {
-    name: "GamePlan",
-    subLabel: "GamePlan for Sports teaching",
-    id: "gameplan",
+    name: "Radlo",
+    subLabel: "A Multi sport collaboration app",
+    id: "radlo",
     description:
-      "A unique Whiteboard like app tailored to teach basics of any sport in a fun and intuitive way.",
+      "A Multi sport collaboration app tailored to teach basics of any sport in a fun and intuitive way and manage day to day activities.",
     icon: BiDesktop,
     featureImage: "/gameplan/cover.png",
   },
