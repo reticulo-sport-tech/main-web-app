@@ -47,7 +47,7 @@ export const MobileNav = ({ isOpen, onClose = () => {} }: MobileNavProps) => {
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} onClose={onClose} />
       ))}
-      <Box onClick={onClose} h="100rem"/>
+      <Box onClick={onClose} h="100rem" />
     </Stack>
   );
 };
@@ -108,11 +108,17 @@ const MobileNavItem = ({
         >
           {children &&
             children.map((child) => (
-              <NextLink href={child.href!} passHref={true} key={child.href!}>
-                <Link key={child.label} py={2} hidden={child.show === false} onClick={onClose}>
-                  {child.label}
-                </Link>
-              </NextLink>
+              <Link
+                as={NextLink}
+                href={child.href!}
+                passHref={true}
+                key={child.href!}
+                py={2}
+                hidden={child.show === false}
+                onClick={onClose}
+              >
+                {child.label}
+              </Link>
             ))}
         </Stack>
       </Collapse>

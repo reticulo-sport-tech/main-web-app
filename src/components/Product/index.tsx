@@ -1,13 +1,5 @@
-import {
-  Container,
-  Stack,
-  Flex,
-  Heading,
-  Text,
-  AspectRatio,
-  Center,
-} from "@chakra-ui/react";
-import { FeatureType, ItemPlacement } from "data/types";
+import { Container, Stack, Heading, Text, Center } from "@chakra-ui/react";
+import { FeatureType, ItemPlacement } from "@/data/types";
 import { ReactNode } from "react";
 
 interface Props {
@@ -17,16 +9,15 @@ interface Props {
   description: string;
   featureType?: FeatureType;
   featurePlacement?: ItemPlacement;
-  sections?: ReactNode[];
+  children?: ReactNode;
 }
 
 export default function Product({
   name,
   description,
   icon,
-  featureType,
   featurePlacement,
-  sections,
+  children,
   simpleDescription,
 }: Props) {
   return (
@@ -34,7 +25,7 @@ export default function Product({
       <Stack
         align={"center"}
         spacing={{ base: 8, md: 10 }}
-        py={{ base: 20, md: 28 }}
+        py={{ base: 8, md: 16 }}
         direction={{
           md:
             featurePlacement === ItemPlacement.LEFT ||
@@ -54,7 +45,7 @@ export default function Product({
             fontSize={{ base: "2xl", sm: "3xl", lg: "4xl" }}
             textAlign={"center"}
           >
-            <Text as={"span"} color={"brand.400"} >
+            <Text as={"span"} color={"brand.400"}>
               {name}
             </Text>
           </Heading>
@@ -74,16 +65,7 @@ export default function Product({
             </Text>
           </Center>
         </Stack>
-        <Flex
-          flex={1}
-          justify={"center"}
-          align={"center"}
-          position={"relative"}
-          w={"full"}
-          borderRadius={"2%"}
-        >
-        </Flex>
-        {sections?.map((s) => s)}
+        {children}
       </Stack>
     </Container>
   );

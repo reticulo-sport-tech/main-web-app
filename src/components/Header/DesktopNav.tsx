@@ -10,7 +10,6 @@ import {
   Text,
   Flex,
   Icon,
-  SimpleGrid,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 
@@ -75,41 +74,42 @@ export const DesktopNav = (props: BoxProps) => {
 
 const DesktopSubNav = ({ label, href, subLabel, show }: NavItem) => {
   return (
-    <NextLink href={href!} passHref={true}>
-      <Link
-        role={"group"}
-        display={"block"}
-        p={2}
-        rounded={"md"}
-        _hover={{ bg: useColorModeValue("brand.50", "gray.900") }}
-        hidden={show === false}
-      >
-        <Stack direction={"row"} align={"center"}>
-          <Box>
-            <Text
-              transition={"all .3s ease"}
-              _groupHover={{ color: "brand.400" }}
-              fontWeight={500}
-            >
-              {label}
-            </Text>
-            <Text fontSize={"sm"} color={"gray.500"}>
-              {subLabel}
-            </Text>
-          </Box>
-          <Flex
+    <Link
+      as={NextLink}
+      href={href!}
+      passHref={true}
+      role={"group"}
+      display={"block"}
+      p={2}
+      rounded={"md"}
+      _hover={{ bg: useColorModeValue("brand.50", "gray.900") }}
+      hidden={show === false}
+    >
+      <Stack direction={"row"} align={"center"}>
+        <Box>
+          <Text
             transition={"all .3s ease"}
-            transform={"translateX(-10px)"}
-            opacity={0}
-            _groupHover={{ opacity: "100%", transform: "translateX(0)" }}
-            justify={"flex-end"}
-            align={"center"}
-            flex={1}
+            _groupHover={{ color: "brand.400" }}
+            fontWeight={500}
           >
-            <Icon color={"brand.400"} w={5} h={5} as={ChevronRightIcon} />
-          </Flex>
-        </Stack>
-      </Link>
-    </NextLink>
+            {label}
+          </Text>
+          <Text fontSize={"sm"} color={"gray.500"}>
+            {subLabel}
+          </Text>
+        </Box>
+        <Flex
+          transition={"all .3s ease"}
+          transform={"translateX(-10px)"}
+          opacity={0}
+          _groupHover={{ opacity: "100%", transform: "translateX(0)" }}
+          justify={"flex-end"}
+          align={"center"}
+          flex={1}
+        >
+          <Icon color={"brand.400"} w={5} h={5} as={ChevronRightIcon} />
+        </Flex>
+      </Stack>
+    </Link>
   );
 };

@@ -12,7 +12,6 @@ import {
   Input,
   useToast,
   FormControl,
-  FormLabel,
   FormErrorMessage,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
@@ -26,8 +25,8 @@ import {
 import { Logo } from "@/components/Logo";
 import { ReactNode } from "react";
 import { BiMailSend } from "react-icons/bi";
-import { NewsLetterUser } from "data/types";
-import { submitNewsLetterUser } from "api";
+import { NewsLetterUser } from "@/data/types";
+import { submitNewsLetterUser } from "@/api";
 import { useForm } from "react-hook-form";
 import { BsInstagram, BsLinkedin, BsTwitter, BsYoutube } from "react-icons/bs";
 
@@ -99,6 +98,7 @@ const NewsLetter = () => {
       });
       reset();
     } catch (error) {
+      console.log(error);
       toast({
         title: "An error has occured!",
         status: "error",
@@ -161,27 +161,44 @@ export const Footer = () => {
           <Stack align={"flex-start"} hidden>
             <ListHeader>Solutions</ListHeader>
             {solutions.map((category) => (
-              <NextLink key={category.id} passHref href={`/${category.id}`}>
-                <Link>{category.name}</Link>
-              </NextLink>
+              <Link
+                as={NextLink}
+                key={category.id}
+                passHref
+                href={`/${category.id}`}
+              >
+                {category.name}
+              </Link>
             ))}
           </Stack>
 
           <Stack align={"flex-start"}>
             <ListHeader>Products</ListHeader>
             {products.map((category) => (
-              <NextLink key={category.id} passHref href={`/${category.id}`}>
-                <Link hidden={category.show === false}>{category.name}</Link>
-              </NextLink>
+              <Link
+                as={NextLink}
+                key={category.id}
+                passHref
+                href={`/${category.id}`}
+                hidden={category.show === false}
+              >
+                {category.name}
+              </Link>
             ))}
           </Stack>
 
           <Stack align={"flex-start"}>
             <ListHeader>Company</ListHeader>
             {companyLinks.map((category) => (
-              <NextLink key={category.id} passHref href={`/${category.id}`}>
-                <Link hidden={category.show === false}>{category.name}</Link>
-              </NextLink>
+              <Link
+                as={NextLink}
+                key={category.id}
+                passHref
+                href={`/${category.id}`}
+                hidden={category.show === false}
+              >
+                {category.name}
+              </Link>
             ))}
           </Stack>
 
@@ -208,18 +225,24 @@ export const Footer = () => {
           <Stack align={"flex-start"} hidden>
             <ListHeader>Resources</ListHeader>
             {resources.map((category) => (
-              <NextLink key={category.id} passHref href={`/${category.id}`}>
-                <Link hidden={category.show === false}>{category.name}</Link>
-              </NextLink>
+              <Link
+                as={NextLink}
+                key={category.id}
+                passHref
+                href={`/${category.id}`}
+                hidden={category.show === false}
+              >
+                {category.name}
+              </Link>
             ))}
           </Stack>
 
           <Stack align={"flex-start"}>
             <ListHeader>Legal</ListHeader>
             {LEGAL_LINKS.map((link) => (
-              <NextLink href={link.href} key={link.href} passHref>
-                <Link>{link.label}</Link>
-              </NextLink>
+              <Link as={NextLink} href={link.href} key={link.href} passHref>
+                {link.label}
+              </Link>
             ))}
           </Stack>
 
@@ -244,11 +267,9 @@ export const Footer = () => {
             ml: 8,
           }}
         >
-          <NextLink href={"/"} passHref>
-            <Link>
-              <Icon as={Logo} w={{ base: 12 }} h={{ base: 12 }} />
-            </Link>
-          </NextLink>
+          <Link as={NextLink} href={"/"} passHref>
+            <Icon as={Logo} w={{ base: 12 }} h={{ base: 12 }} />
+          </Link>
         </Flex>
         <Text pt={6} fontSize={{ base: "sm", md: "md" }} textAlign={"center"}>
           {`©${

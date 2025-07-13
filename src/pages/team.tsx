@@ -1,16 +1,11 @@
 import MemberCard from "@/components/MemberCard";
 import {
-  Box,
-  Button,
-  chakra,
   Container,
-  Flex,
   GridItem,
   Heading,
   SimpleGrid,
   Stack,
   Text,
-  useColorModeValue,
 } from "@chakra-ui/react";
 import React, { ReactNode } from "react";
 
@@ -18,10 +13,10 @@ const SimpleGridWrapper = ({ children }: { children: ReactNode }) => {
   const grids: Array<ReactNode> = [];
 
   const elements = React.Children.toArray(children);
-  var i = 0,
+  let i = 0,
     j = elements.length,
-    temporary: Array<ReactNode>,
-    chunk = 4;
+    temporary: Array<ReactNode>;
+  const chunk = 4;
   for (i = 0, j = elements.length; i < j; i += chunk) {
     temporary = elements.slice(i, i + chunk);
     grids.push(
@@ -92,8 +87,6 @@ const Team = () => {
               image={"/siddharth.jpg"}
             />
           </GridItem>
-
-
         </SimpleGridWrapper>
       </Stack>
     </Container>

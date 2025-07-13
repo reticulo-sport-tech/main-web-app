@@ -8,7 +8,7 @@ import {
   Stack,
   Button,
 } from "@chakra-ui/react";
-import { products } from "data";
+import { products } from "@/data";
 import NextLink from "next/link";
 
 export default function MainEcosystemBrief() {
@@ -50,21 +50,22 @@ export default function MainEcosystemBrief() {
           <chakra.dd mt={2} color={useColorModeValue("gray.500", "gray.400")}>
             {children}
           </chakra.dd>
-          <NextLink href={href} passHref>
-            <Button
-              display={{ base: "none", md: "inline-flex" }}
-              fontSize={"sm"}
-              fontWeight={600}
-              color={"white"}
-              bg={"brand.400"}
-              _hover={{
-                bg: "brand.300",
-              }}
-              my={2}
-            >
-              Learn More
-            </Button>
-          </NextLink>
+          <Button
+            as={NextLink}
+            href={href}
+            passHref
+            display={{ base: "none", md: "inline-flex" }}
+            fontSize={"sm"}
+            fontWeight={600}
+            color={"white"}
+            bg={"brand.400"}
+            _hover={{
+              bg: "brand.300",
+            }}
+            my={2}
+          >
+            Learn More
+          </Button>
         </Box>
       </Flex>
     );

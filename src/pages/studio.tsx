@@ -1,8 +1,15 @@
 import Product from "@/components/Product";
 import { Section } from "@/components/Product/Section";
 import { SEOWrapper } from "@/components/SEO";
-import { Button, Center, Icon, LinkBox, LinkOverlay, Stack, useColorModeValue } from "@chakra-ui/react";
-import { FeatureType, ItemPlacement } from "data/types";
+import {
+  Button,
+  Icon,
+  LinkBox,
+  LinkOverlay,
+  Stack,
+  useColorModeValue,
+} from "@chakra-ui/react";
+import { FeatureType, ItemPlacement } from "@/data/types";
 import { IoMdAnalytics } from "react-icons/io";
 
 const Studio = () => {
@@ -32,98 +39,102 @@ const Studio = () => {
           " and automated highlights generation. It also removes any unnecessary video footage keeping only the points that are played in context. " +
           "Studio clips shots from rallies and helps players search for patterns of shots in the game."
         }
-        sections={[
-          <Stack key={-1} w={{ base: "90%", sm: '80%' }} scaleX={4} direction={{ base: 'column', sm: "row" }}>
-            <LinkBox w="full">
-              <Button colorScheme={"brand"} isFullWidth >
-                <LinkOverlay
-                  isExternal
-                  href="https://studio.reticulo.in"
-                  textDecor={"none"}
-                >
-                  Go to Studio
-                </LinkOverlay>
-              </Button>
-            </LinkBox>
-            <LinkBox w='full'>
-              <Button colorScheme={"blue"} isFullWidth>
-                <LinkOverlay
-                  isExternal
-                  href="https://www.youtube.com/watch?v=nN_4CxG2TRI"
-                  textDecor={"none"}
-                >
-                  Click here to see a Demo!
-                </LinkOverlay>
-              </Button>
-            </LinkBox>
-          </Stack>,
-          <Section
-            key={0}
-            name="Physical Statistics"
-            description="Get accurate statistics of physical performance"
-            featurePlacement={ItemPlacement.RIGHT}
-            featureType={FeatureType.IMAGE}
-            featureUrl={"/Studio/Player-Stats.png"}
-          />,
-          <Section
-            key={1}
-            name="Hit Statistics"
-            description="Get accurate statistics of shots played by players"
-            featurePlacement={ItemPlacement.LEFT}
-            featureType={FeatureType.IMAGE}
-            featureUrl={"/Studio/General-Stats.png"}
-          />,
-          <Section
-            key={2}
-            name="Graphs"
-            description="Compare Performance Graphs between players"
-            featurePlacement={ItemPlacement.RIGHT}
-            featureType={FeatureType.IMAGE}
-            featureUrl="/Studio/graphs.png"
-          />,
-          <Section
-            key={3}
-            name="Reports"
-            description="Match wise reports for detailed analysis"
-            featurePlacement={ItemPlacement.LEFT}
-            featureType={FeatureType.IMAGE}
-            featureUrl="/Studio/reports.png"
-          />,
-          <Section
-            key={4}
-            name="Advanced Video Player"
-            description="A video player designed for Analysis of your game by viewing rally by rally, based on movements, based on shot patterns or based on shots"
-            featurePlacement={ItemPlacement.RIGHT}
-            featureType={FeatureType.IMAGE}
-            featureUrl="/Studio/By-Rally.png"
-          />,
-          <Section
-            key={5}
-            name="Shot Patterns"
-            description="Identify and search for Shot Patterns of play and strategize accordingly"
-            featurePlacement={ItemPlacement.LEFT}
-            featureType={FeatureType.IMAGE}
-            featureUrl="/Studio/Shot-Pattern.png"
-          />,
-          
-          <Section
-            key={6}
-            name="Drawing Tool and annotator tool"
-            description="In-editor tool to understand and visualize strategy"
-            featurePlacement={ItemPlacement.RIGHT}
-            featureType={FeatureType.IMAGE}
-            featureUrl="/Studio/By-Rally.png"
-          />,
-          <Section
-            key={6}
-            name="Shot based videos"
-            description="AI automatically creates shot based videos for easier access"
-            featurePlacement={ItemPlacement.LEFT}
-            featureType={FeatureType.IMAGE}
-            featureUrl="/Studio/Shots.png"
-          />,
-        ]}
-      />
+      >
+        <Stack
+          key={-1}
+          w={{ base: "90%", sm: "80%" }}
+          scaleX={4}
+          direction={{ base: "column", sm: "row" }}
+        >
+          <LinkBox w="full">
+            <Button colorScheme={"brand"} w="100%">
+              <LinkOverlay
+                isExternal
+                href="https://studio.reticulo.in"
+                textDecor={"none"}
+              >
+                Go to Studio
+              </LinkOverlay>
+            </Button>
+          </LinkBox>
+          <LinkBox w="full">
+            <Button colorScheme={"blue"} w="100%">
+              <LinkOverlay
+                isExternal
+                href="https://www.youtube.com/watch?v=nN_4CxG2TRI"
+                textDecor={"none"}
+              >
+                Click here to see a Demo!
+              </LinkOverlay>
+            </Button>
+          </LinkBox>
+        </Stack>
+        ,
+        <Section
+          key={0}
+          name="Physical Statistics"
+          description="Get accurate statistics of physical performance"
+          featurePlacement={ItemPlacement.RIGHT}
+          featureType={FeatureType.IMAGE}
+          featureUrl={"/studio/Player-Stats.png"}
+        />
+        <Section
+          key={1}
+          name="Hit Statistics"
+          description="Get accurate statistics of shots played by players"
+          featurePlacement={ItemPlacement.LEFT}
+          featureType={FeatureType.IMAGE}
+          featureUrl={"/studio/General-Stats.png"}
+        />
+        <Section
+          key={2}
+          name="Graphs"
+          description="Compare Performance Graphs between players"
+          featurePlacement={ItemPlacement.RIGHT}
+          featureType={FeatureType.IMAGE}
+          featureUrl="/studio/graphs.png"
+        />
+        <Section
+          key={3}
+          name="Reports"
+          description="Match wise reports for detailed analysis"
+          featurePlacement={ItemPlacement.LEFT}
+          featureType={FeatureType.IMAGE}
+          featureUrl="/studio/reports.png"
+        />
+        <Section
+          key={4}
+          name="Advanced Video Player"
+          description="A video player designed for Analysis of your game by viewing rally by rally, based on movements, based on shot patterns or based on shots"
+          featurePlacement={ItemPlacement.RIGHT}
+          featureType={FeatureType.IMAGE}
+          featureUrl="/studio/By-Rally.png"
+        />
+        <Section
+          key={5}
+          name="Shot Patterns"
+          description="Identify and search for Shot Patterns of play and strategize accordingly"
+          featurePlacement={ItemPlacement.LEFT}
+          featureType={FeatureType.IMAGE}
+          featureUrl="/studio/Shot-Pattern.png"
+        />
+        <Section
+          key={6}
+          name="Drawing Tool and annotator tool"
+          description="In-editor tool to understand and visualize strategy"
+          featurePlacement={ItemPlacement.RIGHT}
+          featureType={FeatureType.IMAGE}
+          featureUrl="/studio/By-Rally.png"
+        />
+        <Section
+          key={6}
+          name="Shot based videos"
+          description="AI automatically creates shot based videos for easier access"
+          featurePlacement={ItemPlacement.LEFT}
+          featureType={FeatureType.IMAGE}
+          featureUrl="/studio/Shots.png"
+        />
+      </Product>
     </SEOWrapper>
   );
 };

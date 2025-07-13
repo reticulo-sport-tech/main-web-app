@@ -4,12 +4,9 @@ import {
   Heading,
   Stack,
   Text,
-  Button,
   AspectRatio,
-  Image
+  Image,
 } from "@chakra-ui/react";
-import next from "next";
-import NextLink from "next/link";
 
 export default function MainCTA() {
   return (
@@ -32,8 +29,8 @@ export default function MainCTA() {
         </Heading>
         <Text color={"gray.500"} maxW={"3xl"}>
           We provide revolutionary technology based solutions for improving your
-          Sport Performance. Our products cater to all levels of players, from novices to professionals,
-          based on their requirements.
+          Sport Performance. Our products cater to all levels of players, from
+          novices to professionals, based on their requirements.
         </Text>
         {/* <Stack spacing={6} direction={"row"}>
           <NextLink href="/contact-us">
@@ -60,7 +57,6 @@ export default function MainCTA() {
               alt="Sports Data Analytics"
               title="Sports Data Analytics"
               src="/sports-Data-Analytics.jpg"
-              allowFullScreen
               style={{
                 borderRadius: "2%",
               }}

@@ -1,17 +1,6 @@
 import { AboutUsSection } from "@/components/AboutUsSection";
-import {
-  Box,
-  Button,
-  chakra,
-  Flex,
-  Heading,
-  Image,
-  Stack,
-  Text,
-  useBreakpointValue,
-  useColorModeValue,
-} from "@chakra-ui/react";
-import { FeatureType, ItemPlacement } from "data/types";
+import { Box, chakra, useColorModeValue } from "@chakra-ui/react";
+import { FeatureType, ItemPlacement } from "@/data/types";
 import Supporters from "./Supporters";
 import Team from "./team";
 
@@ -39,9 +28,8 @@ export default function AboutUs() {
             color="gray.500"
             lineHeight="base"
           >
-            Building a technology first ecosystem for racket games
-            players harnessing the power of AI and digital collaboration
-
+            Building a technology first ecosystem for racket games players
+            harnessing the power of AI and digital collaboration
           </chakra.p>
           <chakra.p
             mb={6}
@@ -49,8 +37,9 @@ export default function AboutUs() {
             color="gray.500"
             lineHeight="base"
           >
-            Our ecosystem is the only fully featured and integrated with state-of-the-art techonology
-            which helps in improving player performances on court and increases productivity of coaches.
+            Our ecosystem is the only fully featured and integrated with
+            state-of-the-art techonology which helps in improving player
+            performances on court and increases productivity of coaches.
           </chakra.p>
         </Box>
       </Box>

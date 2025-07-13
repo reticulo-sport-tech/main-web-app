@@ -10,8 +10,6 @@ import {
   HStack,
   IconButton,
   Input,
-  InputGroup,
-  InputLeftElement,
   Link,
   Stack,
   Text,
@@ -30,19 +28,13 @@ import {
   CONTACT_PHONE,
   CONTACT_ADDRESS,
 } from "../constants";
-import React, { useState } from "react";
-import {
-  BsGithub,
-  BsInstagram,
-  BsLinkedin,
-  BsPerson,
-  BsTwitter,
-} from "react-icons/bs";
-import { MdEmail, MdLocationOn, MdOutlineEmail, MdPhone } from "react-icons/md";
+import React from "react";
+import { BsInstagram, BsLinkedin, BsTwitter } from "react-icons/bs";
+import { MdEmail, MdLocationOn, MdPhone } from "react-icons/md";
 import { SEOWrapper } from "@/components/SEO";
 import { useForm } from "react-hook-form";
-import { ContactQuery } from "data/types";
-import { submitContactQuery } from "api";
+import { ContactQuery } from "@/data/types";
+import { submitContactQuery } from "@/api";
 
 const confetti = {
   light: {
@@ -84,6 +76,7 @@ export default function ContactUs() {
       });
       reset();
     } catch (error) {
+      console.log(error);
       toast({
         title: "An error has occured!",
         status: "error",
@@ -240,11 +233,9 @@ export default function ContactUs() {
                           <FormLabel>Message</FormLabel>
                           <Textarea
                             isDisabled={isSubmitting}
-                            type="message"
                             {...register("message", {
                               required: "Required",
                             })}
-                            multiple
                           />
                           <FormErrorMessage>
                             {errors?.message && errors?.message?.message}
@@ -258,7 +249,7 @@ export default function ContactUs() {
                           _hover={{
                             bg: "brand.500",
                           }}
-                          isFullWidth
+                          w="100%"
                           isLoading={isSubmitting}
                           type="submit"
                         >
@@ -267,7 +258,7 @@ export default function ContactUs() {
                       </VStack>
                     </Box>
 
-                    <Center m={4} mt={8} >
+                    <Center m={4} mt={8}>
                       <HStack>
                         <MdPhone size="20px" />
                         <Text size="md" fontWeight={"bold"}>

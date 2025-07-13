@@ -2,22 +2,13 @@ dev:
 	yarn dev
 
 build:
-	yarn export
+	yarn build
 
 deploy:
 	firebase deploy
 
-prod-build:
-	DOCKER_BUILDKIT=1 docker build -t reticuloprod.azurecr.io/main-web-app:latest .
+run:
+	docker run --rm -v ./nginx.conf:/etc/nginx/nginx.conf:ro -v ./out:/usr/share/nginx/html -p 80:80 nginx:alpine
 
-prod-push: prod-build
-	docker push reticuloprod.azurecr.io/main-web-app:latest
-
-prod-run: prod-build
-	docker run --rm -p 80:80 reticuloprod.azurecr.io/main-web-app
-
-# prod-build:
-# 	az acr build --file Dockerfile --registry reticuloprod --image main-web-app .
-
-# prod-logs:
-# 	az webapp log tail --name main-web-app  --resource-group  reticulo-prod
+deploy-v2:
+	firebase hosting:channel:deploy v2

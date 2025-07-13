@@ -27,7 +27,7 @@ const MemberCard = ({ bio, name, title, image, href }: Props) => {
         p={{ base: 2, md: 6 }}
         textAlign={"center"}
       >
-        <Avatar size={"2xl"} src={image} alt={name} mb={4} pos={"relative"}/>
+        <Avatar size={"2xl"} src={image} name={name} mb={4} pos={"relative"} />
         <Heading fontSize={"xl"} fontFamily={"body"}>
           {name}{" "}
           {href && (

@@ -4,7 +4,6 @@ import {
   chakra,
   Box,
   Stack,
-  Image,
   Text,
   HStack,
   Center,
@@ -14,25 +13,6 @@ import {
 import { useState } from "react";
 
 export default function Demo() {
-  const arrowStyles = {
-    cursor: "pointer",
-    pos: "absolute",
-    top: "50%",
-    w: "auto",
-    mt: "-22px",
-    p: "16px",
-    color: "black",
-    fontWeight: "bold",
-    fontSize: "18px",
-    transition: "0.6s ease",
-    borderRadius: "0 3px 3px 0",
-    userSelect: "none",
-    _hover: {
-      opacity: 0.8,
-      bg: "gray",
-    },
-  };
-
   const slides = [
     {
       func: Register,
@@ -61,7 +41,7 @@ export default function Demo() {
   const nextSlide = () => {
     setCurrentSlide((s) => (s === slidesCount - 1 ? 0 : s + 1));
   };
-  const setSlide = (slide: any) => {
+  const setSlide = (slide: number) => {
     setCurrentSlide(slide);
   };
   const carouselStyle = {

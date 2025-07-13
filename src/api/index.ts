@@ -1,4 +1,4 @@
-import { ContactQuery, NewsLetterUser } from "data/types";
+import { ContactQuery, NewsLetterUser } from "@/data/types";
 
 export const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL ?? "";
 export const publicAPIKey = process.env.NEXT_PUBLIC_API_KEY ?? "";

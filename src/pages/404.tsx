@@ -36,17 +36,17 @@ export const NotFound = () => {
             </Text>
           </Stack>
           <Flex>
-            <NextLink href={"/"} passHref>
-              <Button
-                as={"a"}
-                colorScheme={"brand"}
-                rounded={"full"}
-                bg={"brand.400"}
-                _hover={{ bg: "brand.500" }}
-              >
-                Take me to the home page
-              </Button>
-            </NextLink>
+            <Button
+              as={NextLink}
+              href={"/"}
+              passHref
+              colorScheme={"brand"}
+              rounded={"full"}
+              bg={"brand.400"}
+              _hover={{ bg: "brand.500" }}
+            >
+              Take me to the home page
+            </Button>
           </Flex>
         </Stack>
       </Flex>

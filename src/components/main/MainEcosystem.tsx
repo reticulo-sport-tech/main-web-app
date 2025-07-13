@@ -8,9 +8,10 @@ import {
   Flex,
   useBreakpointValue,
   Center,
+  Link,
 } from "@chakra-ui/react";
-import Link from "next/link";
-import { products } from "data";
+import { products } from "@/data";
+import NextLink from "next/link";
 
 const EcosystemComponent = ({
   description,
@@ -25,21 +26,21 @@ const EcosystemComponent = ({
   moreHref?: string;
   img?: string;
   isLeft?: boolean;
-  isPortrait?: boolean
+  isPortrait?: boolean;
 }) => {
   const descColor = useColorModeValue("gray.500", "gray.300");
   const linkColor = "white";
   const linkBgColor = useColorModeValue("brand.600", "brand.500");
   const linkHoverBgColor = useColorModeValue("brand.700", "brand.600");
-  const isMobile = useBreakpointValue({ base: true, md: false })
+  const isMobile = useBreakpointValue({ base: true, md: false });
 
   const mainSection = (isLeft: boolean) => (
     <>
       {!isLeft && !isMobile && (
         <Box w={{ base: "full", md: 10 / 12 }} mx="auto" textAlign="center">
           <Image
-            h={isPortrait ? '70vh' : ''}
-            w={!isPortrait ? 'full' : ''}
+            h={"30vw"}
+            w="auto"
             rounded="lg"
             shadow="2xl"
             src={img}
@@ -73,35 +74,50 @@ const EcosystemComponent = ({
           flex={1}
         >
           <Box display="inline-flex" rounded="md" shadow="md">
-            <Link href={moreHref ?? "#"} passHref>
-              <chakra.a
-                display="inline-flex"
-                alignItems="center"
-                justifyContent="center"
-                px={5}
-                py={3}
-                border="solid transparent"
-                fontWeight="bold"
-                w="full"
-                rounded="md"
-                color={linkColor}
-                bg={linkBgColor}
-                _hover={{
-                  bg: linkHoverBgColor,
-                }}
-              >
-                Learn More
-              </chakra.a>
+            <Link
+              href={moreHref ?? "#"}
+              passHref
+              as={NextLink}
+              display="inline-flex"
+              alignItems="center"
+              justifyContent="center"
+              px={5}
+              py={3}
+              border="solid transparent"
+              fontWeight="bold"
+              w="full"
+              rounded="md"
+              color={linkColor}
+              bg={linkBgColor}
+              _hover={{
+                bg: linkHoverBgColor,
+              }}
+            >
+              Learn More
             </Link>
           </Box>
         </Stack>
       </Box>
-      {(isLeft || isMobile) && (
+      {isLeft && !isMobile && (
         <Box w={{ base: "full", md: 10 / 12 }} mx="auto" textAlign="center">
           <Center>
             <Image
-              h={isPortrait ? '70vh' : ''}
-              w={!isPortrait ? 'full' : ''}
+              h={"30vw"}
+              w="auto"
+              rounded="lg"
+              shadow="2xl"
+              src={img}
+              alt="screenshot"
+            />
+          </Center>
+        </Box>
+      )}
+      {isMobile && (
+        <Box w={{ base: "full", md: 10 / 12 }} mx="auto" textAlign="center">
+          <Center>
+            <Image
+              h={isPortrait ? "70vh" : ""}
+              w={!isPortrait ? "full" : ""}
               rounded="lg"
               shadow="2xl"
               src={img}
@@ -137,7 +153,7 @@ const MainEcosystem = () => {
           img={p.featureImage}
           moreHref={`/${p.id}`}
           isLeft={index % 2 === 0}
-          isPortrait={index === 0 ? false : true}
+          isPortrait={index % 2 === 0 ? false : true}
         />
       ))}
     </Box>

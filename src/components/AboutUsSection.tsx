@@ -3,16 +3,14 @@ import {
   Stack,
   Center,
   Heading,
-  Flex,
   AspectRatio,
   Text,
   SimpleGrid,
   GridItem,
-  Box,
   Image,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import { FeatureType, ItemPlacement } from "data/types";
+import { FeatureType, ItemPlacement } from "@/data/types";
 import { ReactNode } from "react";
 
 interface Props {
@@ -34,7 +32,7 @@ export const AboutUsSection = ({
   const isMobile = useBreakpointValue({ base: true, md: false });
 
   const featureSection = () => {
-    var feature: ReactNode;
+    let feature: ReactNode;
     switch (featureType) {
       case FeatureType.YOUTUBE_VIDEO:
         feature = (
@@ -50,13 +48,7 @@ export const AboutUsSection = ({
         break;
 
       case FeatureType.IMAGE:
-        feature = (
-          <Image
-            src={featureUrl}
-            alt={name}
-            borderRadius={"2%"}
-          />
-        );
+        feature = <Image src={featureUrl} alt={name} borderRadius={"2%"} />;
         break;
 
       default:
@@ -103,11 +95,12 @@ export const AboutUsSection = ({
                 : 2,
           }}
           spacing={{ base: 5 }}
-          align={"center"}
+          alignItems={"center"}
           w="full"
         >
           {(featurePlacement === ItemPlacement.TOP ||
-            featurePlacement === ItemPlacement.LEFT) && !isMobile &&
+            featurePlacement === ItemPlacement.LEFT) &&
+            !isMobile &&
             featureSection()}
           <GridItem colSpan={1}>
             <Center h="full">
@@ -128,7 +121,8 @@ export const AboutUsSection = ({
           </GridItem>
 
           {(featurePlacement === ItemPlacement.BOTTOM ||
-            featurePlacement === ItemPlacement.RIGHT || isMobile) &&
+            featurePlacement === ItemPlacement.RIGHT ||
+            isMobile) &&
             featureSection()}
         </SimpleGrid>
       </Stack>

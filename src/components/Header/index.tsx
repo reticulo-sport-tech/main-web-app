@@ -9,8 +9,6 @@ import {
   Icon,
   useColorMode,
   Heading,
-  Button,
-  Link,
 } from "@chakra-ui/react";
 import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import { IoMoon, IoSunny } from "react-icons/io5";
@@ -72,23 +70,19 @@ export const Header = () => {
             flex={{ base: 1, md: "auto" }}
             justify={{ base: "center", md: "start" }}
           >
-            <NextLink href={"/"} passHref>
-              <Stack
-                as={"a"}
-                direction={"row"}
-                alignItems={"center"}
-                spacing={{ base: 2, sm: 4 }}
-              >
-                <Icon as={Logo} w={{ base: 8 }} h={{ base: 8 }} />
-                <Heading
-                  as={"h1"}
-                  fontSize={"xl"}
-                  display={{ base: "block" }}
-                >
-                  <TextUnderline>Reticulo</TextUnderline>
-                </Heading>
-              </Stack>
-            </NextLink>
+            <Stack
+              as={NextLink}
+              href={"/"}
+              passHref
+              direction={"row"}
+              alignItems={"center"}
+              spacing={{ base: 2, sm: 4 }}
+            >
+              <Icon as={Logo} w={{ base: 8 }} h={{ base: 8 }} />
+              <Heading as={"h1"} fontSize={"xl"} display={{ base: "block" }}>
+                <TextUnderline>Reticulo</TextUnderline>
+              </Heading>
+            </Stack>
           </Flex>
 
           <Stack
@@ -112,7 +106,7 @@ export const Header = () => {
                 )
               }
             />
-        
+
             {/*  <Link style={{ textDecoration: "none" }} href="https://app.reticulo.in">
               <Button fontSize={"sm"} fontWeight={400} variant={"ghost"}>
                 Sign In

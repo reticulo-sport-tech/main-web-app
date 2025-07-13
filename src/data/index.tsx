@@ -1,18 +1,8 @@
 import { Category } from "./types";
 import { IoMdAnalytics } from "react-icons/io";
 import { BiDesktop } from "react-icons/bi";
-import { BsCameraVideoFill, BsFillGearFill } from "react-icons/bs";
 
 export const products: Category[] = [
-  {
-    name: "Studio",
-    subLabel: "AI Based Video Analytics Platform",
-    id: "studio",
-    description:
-      "A state of the art AI based Video Analytics platform which provides with valuable insights to your game.",
-    icon: IoMdAnalytics,
-    featureImage: "/Studio/stats.png",
-  },
   {
     name: "Radlo",
     subLabel: "A Multi sport collaboration app",
@@ -20,7 +10,16 @@ export const products: Category[] = [
     description:
       "A Multi sport collaboration app tailored to teach basics of any sport in a fun and intuitive way and manage day to day activities.",
     icon: BiDesktop,
-    featureImage: "/gameplan/cover.png",
+    featureImage: "/radlo/coverimage.png",
+  },
+  {
+    name: "Studio",
+    subLabel: "AI Based Video Analytics Platform",
+    id: "studio",
+    description:
+      "A state of the art AI based Video Analytics platform which provides with valuable insights to your game.",
+    icon: IoMdAnalytics,
+    featureImage: "/studio/stats.png",
   },
 ];
 
