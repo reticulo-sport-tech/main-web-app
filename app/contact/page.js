@@ -48,25 +48,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      details: ['support@reticulo.in', 'sales@reticulo.in'],
+      details: ['admin@reticulo.in'],
       color: 'from-blue-500 to-cyan-500'
     },
     {
       icon: Phone,
       title: 'Call Us',
-      details: ['+1 (555) 123-4567', '+1 (555) 987-6543'],
+      details: ['+91 8275879439'],
       color: 'from-purple-500 to-pink-500'
-    },
-    {
-      icon: MapPin,
-      title: 'Visit Us',
-      details: ['123 Sports Tech Boulevard', 'Innovation City, IC 12345'],
-      color: 'from-green-500 to-emerald-500'
     },
     {
       icon: Clock,
       title: 'Business Hours',
-      details: ['Monday - Friday: 9:00 AM - 6:00 PM', 'Saturday: 10:00 AM - 4:00 PM'],
+      details: ['Monday - Friday: 9:00 AM - 6:00 PM', 'Saturday & Sunday: 10:00 AM - 4:00 PM'],
       color: 'from-orange-500 to-red-500'
     }
   ];

@@ -48,10 +48,15 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+            {/* <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-sm">R</span>
-            </div>
-            <span className="text-xl font-bold text-gray-900">Reticulo</span>
+            </div> */}
+            <img 
+              src="/Reticulo-Logo.png" 
+              alt="Reticulo Logo" 
+              className="w-8 h-8 rounded-lg"
+            />
+            <span className="text-xl font-bold text-red-400">Reticulo</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -221,8 +226,8 @@ const Header = () => {
                 <Link href="/about" className="block py-2 text-gray-700 hover:text-blue-600">About</Link>
                 <Link href="/contact" className="block py-2 text-gray-700 hover:text-blue-600">Contact</Link>
                 
-                <button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-2 rounded-full font-medium">
-                  Get Started
+                <button className="w-full bg-gradient-to-r from-red-600 to-blue-900 text-white py-2 rounded-full font-medium">
+                  Let's Connect!
                 </button>
               </div>
             </motion.div>

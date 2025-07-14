@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Twitter, Linkedin, Github } from 'lucide-react';
+import { Mail, Phone, MapPin, Twitter, Linkedin, Github, Instagram } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -34,9 +34,11 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">R</span>
-              </div>
+            <img 
+              src="/Reticulo-Logo.png" 
+              alt="Reticulo Logo" 
+              className="w-8 h-8 rounded-lg"
+            />
               <span className="text-xl font-bold">Reticulo</span>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
@@ -63,7 +65,7 @@ const Footer = () => {
                 href="#"
                 className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
               >
-                <Github size={18} />
+                <Instagram size={18} />
               </motion.a>
             </div>
           </div>
@@ -150,7 +152,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © {currentYear} Reticulo. All rights reserved.
+              © Reticulo {currentYear}. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-2 md:mt-0">
               <Link href="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors">

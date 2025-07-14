@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reticulo Radlo - Architecture</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light gray/off-white background */
+        }
+        .diagram-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem;
+            overflow: hidden;
+        }
+        .architecture-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem; /* Space between central hub and rows */
+            width: 100%;
+            max-width: 800px;
+        }
+        .central-hub {
+            background: linear-gradient(145deg, #6366f1, #d946ef); /* Brighter Indigo to Fuchsia gradient */
+            color: white;
+            padding: 1.5rem 2.5rem;
+            border-radius: 1.5rem;
+            text-align: center;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            z-index: 10;
+        }
+        .connector {
+            width: 3px;
+            height: 50px;
+            background: linear-gradient(to bottom, #818cf8, #f472b6); /* Brighter gradient connector */
+            opacity: 0.8;
+        }
+        .feature-row {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            width: 100%;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        }
+        .feature-card {
+            background-color: #ffffff; /* White cards */
+            border: 1px solid #e2e8f0;
+            border-radius: 1rem;
+            padding: 1.25rem;
+            text-align: center;
+            width: 160px;
+            min-height: 160px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            color: #1e293b; /* Dark slate text */
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            cursor: default;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border-color: #6366f1;
+        }
+        .feature-card svg {
+            width: 2.5rem;
+            height: 2.5rem;
+            stroke-width: 1.5;
+        }
+        .feature-card h3 {
+            color: #0f172a; /* Even darker for heading */
+        }
+        .icon-blue { color: #3b82f6; }
+        .icon-green { color: #22c55e; }
+        .icon-purple { color: #8b5cf6; }
+        .icon-yellow { color: #eab308; }
+        .icon-pink { color: #ec4899; }
+        .icon-cyan { color: #06b6d4; }
+        .icon-orange { color: #f97316; }
+        .icon-teal { color: #14b8a6; }
+
+        .user-roles {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        .role-badge {
+            background-color: #e2e8f0;
+            color: #475569;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border: 1px solid #cbd5e1;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 640px) {
+            .feature-row {
+                flex-direction: column;
+                align-items: center;
+            }
+            .feature-card {
+                width: 80%;
+                max-width: 250px;
+            }
+            .central-hub {
+                padding: 1rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="diagram-container">
+        <div class="architecture-column">
+            <!-- Central Hub -->
+            <div class="central-hub">
+                <h1 class="text-3xl md:text-4xl font-bold">Reticulo Radlo</h1>
+                <p class="text-lg font-light opacity-90 mt-1">The All-In-One Academy Engine</p>
+            </div>
+
+            <!-- Connector Line -->
+            <div class="connector"></div>
+
+            <!-- Top Row: Core Management -->
+            <div class="feature-row">
+                <div class="feature-card">
+                    <svg class="icon-blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><path d="M12 18v-6"></path><path d="M9 15h6"></path></svg>
+                    <h3 class="font-semibold text-lg">Center & Batch Mgmt</h3>
+                </div>
+                <div class="feature-card">
+                    <svg class="icon-green" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    <h3 class="font-semibold text-lg">Associate & Assistant Coach Mgmt</h3>
+                </div>
+                <div class="feature-card">
+                    <svg class="icon-purple" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                    <h3 class="font-semibold text-lg">App & WhatsApp Updates</h3>
+                </div>
+            </div>
+            
+            <!-- Middle Row: Operations & Finance -->
+            <div class="feature-row">
+                 <div class="feature-card">
+                    <svg class="icon-yellow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M7 7h2v2H7zM7 15h2v2H7zM15 7h2v2h-2zM15 15h2v2h-2zM11 7h2v2h-2zM11 15h2v2h-2zM7 11h2v2H7zM15 11h2v2h-2z"></path></svg>
+                    <h3 class="font-semibold text-lg">QR Attendance</h3>
+                </div>
+                <div class="feature-card">
+                    <svg class="icon-pink" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                    <h3 class="font-semibold text-lg">Fee Payments & Payouts</h3>
+                </div>
+                <div class="feature-card">
+                    <svg class="icon-teal" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    <h3 class="font-semibold text-lg">WhatsApp Support & Invoicing</h3>
+                </div>
+            </div>
+
+            <!-- Bottom Row: Player Development -->
+            <div class="feature-row">
+                <div class="feature-card">
+                    <svg class="icon-cyan" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                    <h3 class="font-semibold text-lg">Performance Reports</h3>
+                </div>
+                <div class="feature-card">
+                     <svg class="icon-orange" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 8-4 4 4 4"></path><path d="M12 12h8"></path><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"></path></svg>
+                    <h3 class="font-semibold text-lg">Player Progress Timeline</h3>
+                </div>
+                <div class="feature-card">
+                    <svg class="icon-blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 15h1.5a2.5 2.5 0 0 1 0 5H4"></path><path d="M18 15h1.5a2.5 2.5 0 0 0 0 5H18"></path><path d="M12 6V4"></path><path d="M12 20v-2"></path><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path></svg>
+                    <h3 class="font-semibold text-lg">Tournament Coordination</h3>
+                </div>
+            </div>
+            
+            <!-- Connector Line -->
+            <div class="connector"></div>
+            
+            <!-- User Roles -->
+            <div class="user-roles">
+                <div class="role-badge">Academy Owner</div>
+                <div class="role-badge">Coaches</div>
+                <div class="role-badge">Players & Parents</div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
+
