@@ -111,7 +111,7 @@ const Radlo = () => {
   return (
     <MainLayout>
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-blue-600 to-cyan-600">
+      <section className="relative py-20 bg-gradient-to-r from-blue-800 to-blue-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -150,7 +150,7 @@ const Radlo = () => {
                   whileTap={{ scale: 0.95 }}
                   className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl transition-all flex items-center gap-2"
                 >
-                  Start Free Trial
+                  Book a Free Demo
                   <ArrowRight size={20} />
                 </motion.button>
                 <motion.button
@@ -159,7 +159,7 @@ const Radlo = () => {
                   className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-blue-600 transition-all flex items-center gap-2"
                 >
                   <Play size={20} />
-                  Watch Demo
+                  Connect with our Team
                 </motion.button>
               </motion.div>
             </motion.div>

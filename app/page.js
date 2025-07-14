@@ -59,10 +59,8 @@ const Home = () => {
   ];
 
   const stats = [
-    { value: '10,000+', label: 'Athletes Trained' },
-    { value: '500+', label: 'Academies Connected' },
-    { value: '1,000+', label: 'Events Managed' },
-    { value: '98%', label: 'Success Rate' }
+    { value: '5,000+', label: 'Athletes Reached' },
+    { value: '30+', label: 'Academies Connected' },
   ];
 
   const testimonials = [
@@ -158,7 +156,7 @@ const Home = () => {
             whileInView="visible"
             viewport={{ once: true }}
             variants={staggerChildren}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8"
+            className="grid grid-cols-2 md:grid-cols-2 gap-8"
           >
             {stats.map((stat, index) => (
               <motion.div
