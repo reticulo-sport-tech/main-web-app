@@ -5,11 +5,6 @@ import { motion } from 'framer-motion';
 import { Users, Award, Target, Heart, Zap, Globe } from 'lucide-react';
 import MainLayout from '../../components/MainLayout';
 
-export const metadata = {
-  title: 'About Us - Reticulo',
-  description: 'Learn about Reticulo\'s mission to revolutionize sports technology and empower athletes, coaches, and organizations worldwide.',
-}
-
 const About = () => {
   const fadeInUp = {
     hidden: { opacity: 0, y: 60 },
