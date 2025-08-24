@@ -6,10 +6,25 @@ export const theme = extendTheme({
     heading: "Poppins",
   },
   colors: {
-    brand: defaultTheme.colors.red,
+    brand: {
+      50: "#EEF2FF",
+      100: "#E0E7FF",
+      200: "#C7D2FE",
+      300: "#A5B4FC",
+      400: "#818CF8",
+      500: "#6366F1",
+      600: "#4F46E5",
+      700: "#4338CA",
+      800: "#3730A3",
+      900: "#312E81",
+    },
+    accent: {
+      500: "#2563EB",
+      600: "#1D4ED8",
+    },
   },
   shadows: {
-    largeSoft: "rgba(60, 64, 67, 0.15) 0px 2px 10px 6px;",
+    largeSoft: "rgba(2, 6, 23, 0.08) 0px 8px 24px",
   },
   styles: {
     global: {
@@ -32,7 +47,7 @@ export const theme = extendTheme({
         pointerEvents: "none",
       },
       "#nprogress .bar": {
-        background: "brand.200",
+        background: "brand.400",
         position: "fixed",
         zIndex: "1031",
         top: 0,

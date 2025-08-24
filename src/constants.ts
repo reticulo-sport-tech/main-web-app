@@ -12,11 +12,11 @@ export const INSTAGRAM_LINK = "https://www.instagram.com/reticulo_sport/";
 /**
  * SEO constants
  */
-export const SEO_TITLE = "Reticulo";
+export const SEO_TITLE = "Reticulo | AI Sports Platform";
 export const SEO_DESCRIPTION =
-  "A eco-system of innovative technology based solution for Sports.";
+  "AI-integrated analysis, digital academy infrastructure, payment automation, and WhatsApp-driven operations for modern sports academies and athletes.";
 export const SEO_KEYWORDS =
-  "sport, sports, sports analysis, racket, tennis, badmintion";
+  "sports, ai analysis, academy infrastructure, payments, razorpay, idfc first bank, hdfc bank, zoho, whatsapp ops, tennis, badminton, racket";
 export const SEO_OG_IMAGE = "https://reticulo.in/favicon.png";
 export const SEO_TWITTER_IMAGE = "https://reticulo.in/favicon.png";
 
@@ -26,3 +26,6 @@ export const SEO_TWITTER_IMAGE = "https://reticulo.in/favicon.png";
 export const CONTACT_EMAIL = "admin@reticulo.in";
 export const CONTACT_PHONE = "+91 8446554419";
 export const CONTACT_ADDRESS = "Sanskriti, Mukund Nagar, Pune, Maharashtra 411037";
+
+// WhatsApp support link (E.164 number without '+')
+export const WHATSAPP_LINK = "https://wa.me/918446554419";

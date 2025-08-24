@@ -1,15 +1,6 @@
-import Product from "@/components/Product";
-import { Section } from "@/components/Product/Section";
 import { SEOWrapper } from "@/components/SEO";
-import {
-  Button,
-  Icon,
-  LinkBox,
-  LinkOverlay,
-  Stack,
-  useColorModeValue,
-} from "@chakra-ui/react";
-import { FeatureType, ItemPlacement } from "@/data/types";
+import TwProduct from "@/components/tw/Product";
+import FeatureSection, { TwFeatureType, TwItemPlacement } from "@/components/tw/FeatureSection";
 import { IoMdAnalytics } from "react-icons/io";
 
 const Studio = () => {
@@ -21,16 +12,9 @@ const Studio = () => {
       to identifying playing patterns and automated highlights generation. It also removes any unnecessary video footage keeping only the points that are played in context. 
       Studio clips shots from rallies and helps players search for patterns of shots in the game."
     >
-      <Product
+      <TwProduct
         name={"Studio"}
-        icon={
-          <Icon
-            boxSize={10}
-            aria-hidden="true"
-            as={IoMdAnalytics}
-            color={useColorModeValue("white", "gray.900")}
-          />
-        }
+        icon={<IoMdAnalytics />}
         simpleDescription={"AI Based Video Analytics Platform"}
         description={
           "A state of the art AI based Video Analytics platform which provides with valuable insights to your game. " +
@@ -40,101 +24,76 @@ const Studio = () => {
           "Studio clips shots from rallies and helps players search for patterns of shots in the game."
         }
       >
-        <Stack
-          key={-1}
-          w={{ base: "90%", sm: "80%" }}
-          scaleX={4}
-          direction={{ base: "column", sm: "row" }}
-        >
-          <LinkBox w="full">
-            <Button colorScheme={"brand"} w="100%">
-              <LinkOverlay
-                isExternal
-                href="https://studio.reticulo.in"
-                textDecor={"none"}
-              >
-                Go to Studio
-              </LinkOverlay>
-            </Button>
-          </LinkBox>
-          <LinkBox w="full">
-            <Button colorScheme={"blue"} w="100%">
-              <LinkOverlay
-                isExternal
-                href="https://www.youtube.com/watch?v=nN_4CxG2TRI"
-                textDecor={"none"}
-              >
-                Click here to see a Demo!
-              </LinkOverlay>
-            </Button>
-          </LinkBox>
-        </Stack>
-        ,
-        <Section
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-3xl mx-auto">
+          <a className="rounded-lg bg-indigo-600 text-white px-5 py-3 text-center shadow-soft hover:bg-indigo-700" href="https://studio.reticulo.in" target="_blank" rel="noreferrer">Go to Studio</a>
+          <a className="rounded-lg border border-slate-300 px-5 py-3 text-center hover:border-slate-400" href="https://www.youtube.com/watch?v=nN_4CxG2TRI" target="_blank" rel="noreferrer">Click here to see a Demo!</a>
+        </div>
+
+        <FeatureSection
           key={0}
           name="Physical Statistics"
           description="Get accurate statistics of physical performance"
-          featurePlacement={ItemPlacement.RIGHT}
-          featureType={FeatureType.IMAGE}
+          featurePlacement={TwItemPlacement.RIGHT}
+          featureType={TwFeatureType.IMAGE}
           featureUrl={"/studio/Player-Stats.png"}
         />
-        <Section
+        <FeatureSection
           key={1}
           name="Hit Statistics"
           description="Get accurate statistics of shots played by players"
-          featurePlacement={ItemPlacement.LEFT}
-          featureType={FeatureType.IMAGE}
+          featurePlacement={TwItemPlacement.LEFT}
+          featureType={TwFeatureType.IMAGE}
           featureUrl={"/studio/General-Stats.png"}
         />
-        <Section
+        <FeatureSection
           key={2}
           name="Graphs"
           description="Compare Performance Graphs between players"
-          featurePlacement={ItemPlacement.RIGHT}
-          featureType={FeatureType.IMAGE}
+          featurePlacement={TwItemPlacement.RIGHT}
+          featureType={TwFeatureType.IMAGE}
           featureUrl="/studio/graphs.png"
         />
-        <Section
+        <FeatureSection
           key={3}
           name="Reports"
           description="Match wise reports for detailed analysis"
-          featurePlacement={ItemPlacement.LEFT}
-          featureType={FeatureType.IMAGE}
+          featurePlacement={TwItemPlacement.LEFT}
+          featureType={TwFeatureType.IMAGE}
           featureUrl="/studio/reports.png"
         />
-        <Section
+        <FeatureSection
           key={4}
           name="Advanced Video Player"
           description="A video player designed for Analysis of your game by viewing rally by rally, based on movements, based on shot patterns or based on shots"
-          featurePlacement={ItemPlacement.RIGHT}
-          featureType={FeatureType.IMAGE}
+          featurePlacement={TwItemPlacement.RIGHT}
+          featureType={TwFeatureType.IMAGE}
           featureUrl="/studio/By-Rally.png"
         />
-        <Section
+        <FeatureSection
           key={5}
           name="Shot Patterns"
           description="Identify and search for Shot Patterns of play and strategize accordingly"
-          featurePlacement={ItemPlacement.LEFT}
-          featureType={FeatureType.IMAGE}
+          featurePlacement={TwItemPlacement.LEFT}
+          featureType={TwFeatureType.IMAGE}
           featureUrl="/studio/Shot-Pattern.png"
         />
-        <Section
+        <FeatureSection
           key={6}
           name="Drawing Tool and annotator tool"
           description="In-editor tool to understand and visualize strategy"
-          featurePlacement={ItemPlacement.RIGHT}
-          featureType={FeatureType.IMAGE}
+          featurePlacement={TwItemPlacement.RIGHT}
+          featureType={TwFeatureType.IMAGE}
           featureUrl="/studio/By-Rally.png"
         />
-        <Section
+        <FeatureSection
           key={6}
           name="Shot based videos"
           description="AI automatically creates shot based videos for easier access"
-          featurePlacement={ItemPlacement.LEFT}
-          featureType={FeatureType.IMAGE}
+          featurePlacement={TwItemPlacement.LEFT}
+          featureType={TwFeatureType.IMAGE}
           featureUrl="/studio/Shots.png"
         />
-      </Product>
+      </TwProduct>
     </SEOWrapper>
   );
 };

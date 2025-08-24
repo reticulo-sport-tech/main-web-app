@@ -76,13 +76,8 @@ export default function MainUSP() {
           spacingX={{ base: 10, lg: 24 }}
         >
           <Box alignSelf="start">
-            <chakra.h2
-              color={useColorModeValue("brand.500", "gray.500")}
-              fontWeight="semibold"
-              textTransform="uppercase"
-              letterSpacing="wide"
-            >
-              Everything you need
+            <chakra.h2 color={useColorModeValue("brand.500", "gray.500")} fontWeight="semibold" textTransform="uppercase" letterSpacing="wide">
+              Built for Modern Academies
             </chakra.h2>
             <chakra.h2
               mb={3}
@@ -100,8 +95,8 @@ export default function MainUSP() {
               fontSize={{ base: "lg", md: "xl" }}
               color={useColorModeValue("gray.600", "gray.500")}
             >
-              All our products are deeply integrated. You can do all your sport
-              improvement in a single platform.
+              AI insights, operations, curriculum, and payments — deeply integrated
+              so you can run and grow with clarity.
             </chakra.p>
           </Box>
           <GridItem colSpan={2}>
@@ -112,18 +107,20 @@ export default function MainUSP() {
               gridColumnGap={{ md: 8 }}
               gridRowGap={{ md: 10 }}
             >
-              <Feature title="Performance Improvement">
-                Improve your performance by monitoring exactly what’s going on
-                during the game.{" "}
+              <Feature title="AI Integrated Analysis">
+                Video-driven, automated insights for players and coaches with
+                actionable metrics and benchmarks.
               </Feature>
-              <Feature title="Unify your training">
-                Manage all your training schedules in one place.
+              <Feature title="Digital Academy Infrastructure">
+                Schedules, rosters, curriculum, attendance, and performance tracking
+                in a single, secure system.
               </Feature>
-              <Feature title="State of the Art AI Engine">
-                Benefit from constantly improving State of the Art AI Engine.
+              <Feature title="Payment Automation">
+                Standardised, compliant billing and collections with Razorpay, IDFC FIRST Bank,
+                HDFC Bank and Zoho Payments.
               </Feature>
-              <Feature title="Teaching Made Easy">
-                Bring more attention to techinical training to your Sports.
+              <Feature title="WhatsApp Operations">
+                Seamless communication for academies, players, and parents — daily ops that just work.
               </Feature>
             </Stack>
           </GridItem>

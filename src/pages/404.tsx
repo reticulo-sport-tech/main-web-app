@@ -1,57 +1,18 @@
-import {
-  Container,
-  Icon,
-  Stack,
-  Flex,
-  Heading,
-  Text,
-  Button,
-  useColorModeValue,
-} from "@chakra-ui/react";
-import NextLink from "next/link";
-
-import { Logo } from "@/components/Logo";
+import Link from "next/link";
 import { SEOWrapper } from "@/components/SEO";
 
-export const NotFound = () => {
+export default function NotFound() {
   return (
     <SEOWrapper title="Page Not Found">
-      <Flex align={"center"} justify={"center"} h={"100vh"} w={"full"}>
-        <Stack
-          as={Container}
-          bg={useColorModeValue("gray.50", "gray.900")}
-          rounded={"xl"}
-          p={8}
-          spacing={6}
-          maxW={"lg"}
-          align={"center"}
-          textAlign={"center"}
-        >
-          <Icon as={Logo} w={10} h={10} />
-          <Stack spacing={2}>
-            <Heading>Page not found</Heading>
-            <Text>
-              This page was not found. You may have mistyped the address or the
-              page may have moved.
-            </Text>
-          </Stack>
-          <Flex>
-            <Button
-              as={NextLink}
-              href={"/"}
-              passHref
-              colorScheme={"brand"}
-              rounded={"full"}
-              bg={"brand.400"}
-              _hover={{ bg: "brand.500" }}
-            >
-              Take me to the home page
-            </Button>
-          </Flex>
-        </Stack>
-      </Flex>
+      <main className="min-h-[60vh] flex items-center justify-center py-24">
+        <div className="max-w-lg mx-auto text-center">
+          <div className="text-4xl font-semibold">Page not found</div>
+          <p className="mt-2 text-slate-600">This page was not found. You may have mistyped the address or the page may have moved.</p>
+          <div className="mt-6">
+            <Link href="/" className="rounded-full bg-indigo-600 text-white px-5 py-3 shadow-soft hover:bg-indigo-700">Take me to the home page</Link>
+          </div>
+        </div>
+      </main>
     </SEOWrapper>
   );
-};
-
-export default NotFound;
+}

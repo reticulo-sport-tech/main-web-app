@@ -17,20 +17,13 @@ export default function MainCTA() {
         spacing={{ base: 8, md: 10 }}
         py={{ base: 8, md: 16 }}
       >
-        <Heading
-          fontWeight={700}
-          fontSize={{ base: "3xl", sm: "4xl", md: "6xl" }}
-          lineHeight={"110%"}
-        >
-          Sport Analytics{" "}
-          <Text as={"span"} color={"brand.400"}>
-            made easy
-          </Text>
+        <Heading fontWeight={700} fontSize={{ base: "3xl", sm: "4xl", md: "6xl" }} lineHeight={"110%"}>
+          AI-Integrated Sports Platform
+          <Text as={"span"} color={"brand.400"}> for Academies & Athletes</Text>
         </Heading>
         <Text color={"gray.500"} maxW={"3xl"}>
-          We provide revolutionary technology based solutions for improving your
-          Sport Performance. Our products cater to all levels of players, from
-          novices to professionals, based on their requirements.
+          Reticulo unifies AI performance analysis, digital academy infrastructure, automated payments,
+          and WhatsApp-driven operations — a clean, modern stack built for scale.
         </Text>
         {/* <Stack spacing={6} direction={"row"}>
           <NextLink href="/contact-us">
@@ -54,9 +47,9 @@ export default function MainCTA() {
         <Flex w={"full"}>
           <AspectRatio w="100%" ratio={16 / 9}>
             <Image
-              alt="Sports Data Analytics"
-              title="Sports Data Analytics"
-              src="/sports-Data-Analytics.jpg"
+              alt="Reticulo AI Sports Platform"
+              title="Reticulo AI Sports Platform"
+              src="/sports-analytics.png"
               style={{
                 borderRadius: "2%",
               }}

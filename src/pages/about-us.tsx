@@ -1,68 +1,52 @@
-import { AboutUsSection } from "@/components/AboutUsSection";
-import { Box, chakra, useColorModeValue } from "@chakra-ui/react";
-import { FeatureType, ItemPlacement } from "@/data/types";
-import Supporters from "./Supporters";
-import Team from "./team";
+import SupportersSection from "@/components/SupportersSection";
+import FinancialPartners from "@/components/FinancialPartners";
+import { SEOWrapper } from "@/components/SEO";
 
 export default function AboutUs() {
   return (
-    <Box pb={8}>
-      <Team />
-      <Box px={4} mx="auto">
-        <Box
-          w={{ base: "full", md: 11 / 12, xl: 8 / 12 }}
-          textAlign={"center"}
-          mx="auto"
-        >
-          <chakra.h1
-            mb={3}
-            fontSize={{ base: "3xl", md: "4xl" }}
-            fontWeight={{ base: "bold", md: "extrabold" }}
-            color={useColorModeValue("gray.900", "gray.100")}
-            lineHeight="shorter"
-          >
-            About Reticulo Sport Technology
-          </chakra.h1>
-          <chakra.p
-            fontSize={{ base: "lg", md: "xl" }}
-            color="gray.500"
-            lineHeight="base"
-          >
-            Building a technology first ecosystem for racket games players
-            harnessing the power of AI and digital collaboration
-          </chakra.p>
-          <chakra.p
-            mb={6}
-            fontSize={{ base: "lg", md: "xl" }}
-            color="gray.500"
-            lineHeight="base"
-          >
-            Our ecosystem is the only fully featured and integrated with
-            state-of-the-art techonology which helps in improving player
-            performances on court and increases productivity of coaches.
-          </chakra.p>
-        </Box>
-      </Box>
+    <SEOWrapper title="About Reticulo | AI Sports Platform">
+      <main className="pt-20">
+        <section className="py-12">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+            <h1 className="text-4xl font-semibold tracking-tight text-slate-900">About Reticulo Sport Technology</h1>
+            <p className="mt-3 text-lg text-slate-600">Building an AI-first sports ecosystem combining integrated performance analysis, digital academy infrastructure, automated payments, and WhatsApp-driven operations.</p>
+            <p className="mt-2 text-lg text-slate-600">Our platform unifies athlete development and academy operations — from video analytics to curriculum management to billing — all in one clean, professional experience.</p>
+          </div>
+        </section>
 
-      <AboutUsSection
-        name="Our Philosophy"
-        description={`We’re on a mission to change how we think of sport analysis and
-        bring ground breaking technologies to help improving sport in India
-        from grassroot level upto the elite level`}
-        featurePlacement={ItemPlacement.RIGHT}
-        featureType={FeatureType.IMAGE}
-        featureUrl="/mission_statement.png"
-      />
+        <section className="py-10">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-6 items-center">
+            <div>
+              <h2 className="text-2xl font-semibold">Our Philosophy</h2>
+              <p className="mt-2 text-slate-600">We’re on a mission to change how sport analysis is practiced — bringing ground breaking technologies to improve sport in India from the grassroots to the elite level.</p>
+            </div>
+            <div>
+              <div className="aspect-video rounded-xl overflow-hidden border border-slate-200">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/mission_statement.png" alt="Our Philosophy" className="h-full w-full object-cover" />
+              </div>
+            </div>
+          </div>
+        </section>
 
-      <AboutUsSection
-        name="Why Us"
-        description={`We understand the mammoth process of becoming a professional athlete. Data driven analytics has taken center stage in 
-        a lot of sports already, we believe that we are capable of providing right value to all athletes who want to compete at a high level.`}
-        featurePlacement={ItemPlacement.LEFT}
-        featureType={FeatureType.IMAGE}
-        featureUrl="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80"
-      />
-      <Supporters />
-    </Box>
+        <section className="py-10">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-6 items-center">
+            <div className="order-2 md:order-1">
+              <div className="aspect-video rounded-xl overflow-hidden border border-slate-200">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/philosophy-image.jpg" alt="Why Us" className="h-full w-full object-cover" />
+              </div>
+            </div>
+            <div className="order-1 md:order-2">
+              <h2 className="text-2xl font-semibold">Why Us</h2>
+              <p className="mt-2 text-slate-600">We understand the process of becoming a professional athlete. Data-driven analytics is central in modern sport; we deliver the right value to athletes who want to compete at a high level.</p>
+            </div>
+          </div>
+        </section>
+
+        <SupportersSection />
+        <FinancialPartners />
+      </main>
+    </SEOWrapper>
   );
 }

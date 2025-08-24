@@ -1,73 +1,18 @@
-import Product from "@/components/Product";
-import { Section } from "@/components/Product/Section";
 import { SEOWrapper } from "@/components/SEO";
-import {
-  Box,
-  Center,
-  Flex,
-  HStack,
-  Image,
-  Tab,
-  TabList,
-  TabPanel,
-  TabPanels,
-  Tabs,
-  Text,
-  useColorModeValue,
-} from "@chakra-ui/react";
-import { FeatureType, ItemPlacement } from "@/data/types";
-import {
-  GooglePlayButton,
-  AppStoreButton,
-} from "@/components/mobile-app-button";
+import TwProduct from "@/components/tw/Product";
+import FeatureSection, { TwFeatureType, TwItemPlacement } from "@/components/tw/FeatureSection";
+import { GooglePlayButton, AppStoreButton } from "@/components/mobile-app-button";
 
-function PriceWrapper({ price }: { price: number }) {
+function PriceCard({ price }: { price: number }) {
   return (
-    <Box
-      mb={4}
-      shadow="base"
-      borderWidth="1px"
-      alignSelf={{ base: "center", lg: "flex-start" }}
-      borderColor={useColorModeValue("gray.200", "gray.500")}
-      borderRadius={"xl"}
-      maxW={"lg"}
-      bg={"brand.50"}
-    >
-      <Box position="relative">
-        <Box
-          position="absolute"
-          top="-16px"
-          left="50%"
-          style={{ transform: "translate(-50%)" }}
-        >
-          <Text
-            textTransform="uppercase"
-            bg={useColorModeValue("red.300", "red.700")}
-            px={3}
-            py={1}
-            color={useColorModeValue("gray.900", "gray.300")}
-            fontSize="sm"
-            fontWeight="600"
-            rounded="xl"
-          >
-            Pricing
-          </Text>
-        </Box>
-        <Box py={4} px={12}>
-          <HStack justifyContent="center">
-            <Text fontSize="3xl" fontWeight="600">
-              ₹
-            </Text>
-            <Text fontSize="5xl" fontWeight="900">
-              {price}
-            </Text>
-            <Text fontSize="3xl" color="gray.500">
-              /month
-            </Text>
-          </HStack>
-        </Box>
-      </Box>
-    </Box>
+    <div className="max-w-lg mx-auto border border-slate-200 rounded-2xl shadow-soft bg-indigo-50">
+      <div className="-mt-5 text-center">
+        <span className="uppercase inline-block bg-rose-200 text-slate-900 text-xs font-semibold px-3 py-1 rounded-xl">Pricing</span>
+      </div>
+      <div className="px-12 py-6 text-center">
+        <div className="text-3xl font-semibold">₹ <span className="text-5xl font-black">{price}</span> <span className="text-3xl text-slate-500">/month</span></div>
+      </div>
+    </div>
   );
 }
 
@@ -83,27 +28,16 @@ const Radlo = () => {
         "Revolutionize your sports academy experience with our comprehensive platform, built to empower coaches and elevate players."
       }
     >
-      {/* <Icon
-            boxSize={8}
-            aria-hidden="true"
-            as={BiDesktop}
-            color={useColorModeValue("white", "gray.900")}
-          /> */}
-      <Product
+      <TwProduct
         name={"Radlo"}
-        icon={<Image src="/radlo/logo.png" alt="Radlo Logo" width={100} />}
+        icon={<img src="/radlo/logo.png" alt="Radlo Logo" className="h-7 w-7" />}
         simpleDescription={"Your All-in-One Sports Academy Ecosystem"}
         description={
           "Revolutionize your sports academy experience with our comprehensive platform, built to empower coaches and elevate players."
         }
       >
-        <Flex
-          direction={{
-            base: "column",
-            md: "row",
-          }}
-        >
-          <Box px={{ base: 0, md: 2 }} py={{ base: 2, md: 0 }}>
+        <div className="flex flex-col md:flex-row gap-3 items-center justify-center">
+          <div>
             <GooglePlayButton
               url={APKUrl}
               width={190}
@@ -111,8 +45,8 @@ const Radlo = () => {
               height={64}
               className="app-store-button"
             />
-          </Box>
-          <Box px={{ base: 0, md: 2 }} py={{ base: 2, md: 0 }}>
+          </div>
+          <div>
             <AppStoreButton
               url={IOSUrl}
               width={190}
@@ -120,8 +54,8 @@ const Radlo = () => {
               height={64}
               className="app-store-button"
             />
-          </Box>
-        </Flex>
+          </div>
+        </div>
         {/* <Stack
           w={{ base: "90%", sm: "80%" }}
           scaleX={4}
@@ -139,103 +73,84 @@ const Radlo = () => {
             </Button>
           </LinkBox>
         </Stack> */}
-        <Tabs
-          variant="soft-rounded"
-          colorScheme="brand"
-          align="center"
-          size={{ base: "lg", md: "lg" }}
-        >
-          <Center>
-            <TabList
-              borderWidth={1}
-              borderColor="brand.500"
-              p={2}
-              rounded={"full"}
-              bg="brand.50"
-            >
-              <Tab>
-                <Text px={{ base: 1, md: 4 }}>For Players</Text>
-              </Tab>
-              <Tab>
-                <Text px={{ base: 1, md: 4 }}>For Coaches</Text>
-              </Tab>
-            </TabList>
-          </Center>
-          <TabPanels>
-            <TabPanel>
-              <Section
+        <div className="mt-8">
+          <div className="flex items-center justify-center gap-2">
+            <button className="px-4 py-2 rounded-full border border-indigo-500 bg-indigo-50 text-indigo-700">For Players</button>
+            <button className="px-4 py-2 rounded-full border border-slate-300">For Coaches</button>
+          </div>
+        </div>
+        <div className="mt-8">
+              <FeatureSection
                 name="Tournaments"
                 description="Keep track of all your tournaments and get notified whenever there is a new one or changes"
-                featurePlacement={ItemPlacement.RIGHT}
-                featureType={FeatureType.IMAGE}
+                featurePlacement={TwItemPlacement.RIGHT}
+                featureType={TwFeatureType.IMAGE}
                 featureUrl="/radlo/tournaments.png"
               />
-              <Section
+              <FeatureSection
                 name="Digital Diary"
                 description="Keep track of your daily activities and record your progress"
-                featurePlacement={ItemPlacement.LEFT}
-                featureType={FeatureType.IMAGE}
+                featurePlacement={TwItemPlacement.LEFT}
+                featureType={TwFeatureType.IMAGE}
                 featureUrl="/radlo/diary.png"
               />
-              <Section
+              <FeatureSection
                 name="Fees"
                 description="Pay your fees directly with all your payment methods like UPI, Net Banking, Credit Cards, Debit Cards, EMI, etc."
-                featurePlacement={ItemPlacement.RIGHT}
-                featureType={FeatureType.IMAGE}
+                featurePlacement={TwItemPlacement.RIGHT}
+                featureType={TwFeatureType.IMAGE}
                 featureUrl="/radlo/fees.png"
               />
-              <Section
+              <FeatureSection
                 name="Attendance"
                 description="Keep track of your attendance and get detailed reports"
-                featurePlacement={ItemPlacement.LEFT}
-                featureType={FeatureType.IMAGE}
+                featurePlacement={TwItemPlacement.LEFT}
+                featureType={TwFeatureType.IMAGE}
                 featureUrl="/radlo/player_attendance.png"
               />
-              <Section
+              <FeatureSection
                 name="Notice Board"
                 description="Get notified whenever there is a new notice or holiday"
-                featurePlacement={ItemPlacement.RIGHT}
-                featureType={FeatureType.IMAGE}
+                featurePlacement={TwItemPlacement.RIGHT}
+                featureType={TwFeatureType.IMAGE}
                 featureUrl="/radlo/updates.png"
               />
-              <Box pt={{ base: 16, md: 24 }}></Box>
-              <PriceWrapper price={100} />
-            </TabPanel>
-            <TabPanel>
-              <Section
+              <div className="pt-16" />
+              <PriceCard price={100} />
+
+              <div className="pt-16" />
+              <FeatureSection
                 name="Fee Management"
                 description="Easily collect and manage your player's fees"
-                featurePlacement={ItemPlacement.RIGHT}
-                featureType={FeatureType.IMAGE}
+                featurePlacement={TwItemPlacement.RIGHT}
+                featureType={TwFeatureType.IMAGE}
                 featureUrl="/radlo/fees.png"
               />
-              <Section
+              <FeatureSection
                 name="Attendance"
                 description="Manage your player's attendance and get detailed reports"
-                featurePlacement={ItemPlacement.LEFT}
-                featureType={FeatureType.IMAGE}
+                featurePlacement={TwItemPlacement.LEFT}
+                featureType={TwFeatureType.IMAGE}
                 featureUrl="/radlo/attendancemanagement.png"
               />
-              <Section
+              <FeatureSection
                 name="Finances"
                 description="Track your academy's finances and get a easy to view dashboard"
-                featurePlacement={ItemPlacement.RIGHT}
-                featureType={FeatureType.IMAGE}
+                featurePlacement={TwItemPlacement.RIGHT}
+                featureType={TwFeatureType.IMAGE}
                 featureUrl="/radlo/finances.png"
               />
-              <Section
+              <FeatureSection
                 name="Notice Board"
                 description="Convey any important information to your players in a clear and concise manner along with holiday notices"
-                featurePlacement={ItemPlacement.LEFT}
-                featureType={FeatureType.IMAGE}
+                featurePlacement={TwItemPlacement.LEFT}
+                featureType={TwFeatureType.IMAGE}
                 featureUrl="/radlo/holidays.png"
               />
-              <Box pt={{ base: 16, md: 24 }}></Box>
-              <PriceWrapper price={0} />
-            </TabPanel>
-          </TabPanels>
-        </Tabs>
-      </Product>
+              <div className="pt-16" />
+              <PriceCard price={0} />
+        </div>
+      </TwProduct>
     </SEOWrapper>
   );
 };
