@@ -1,40 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+Reticulo Main Web App
+======================
 
-## Getting Started
+Production marketing website for Reticulo Sport Technology. Built with Next.js + TailwindCSS, with selective Chakra UI usage for a few landing components.
 
-First, run the development server:
+Key features:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- AI-first product pages (Studio, Radlo, Eventlo, Shuttle Rover)
+- Financial partners and integrations sections with brand assets
+- Dark mode with persistent theme toggle
+- Contact form posting to public API
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Quick Start
+-----------
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- Requirements: Node 18+, Yarn (recommended). See `.nvmrc` for version.
+- Install deps: `yarn`
+ - Dev: `yarn dev` then open http://localhost:3000
+- Lint: `yarn lint`
+- Build (static export): `yarn build`
+- Preview build locally: `npx serve@latest out` then open http://localhost:3000 (or any port `serve` prints)
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Note: This project is configured for static export (`next.config.ts` has `output: "export"`).
+Use a static file server (Nginx, Firebase Hosting, GitHub Pages, etc.) to host the `out/` folder.
+Running `yarn start` (the Next.js Node server) is not supported in export mode and will error with missing `.next/server/pages/_document.js`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+Environment
+-----------
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Set in `.env` or CI/CD secrets:
 
-## Learn More
+- `NEXT_PUBLIC_API_URL`: Public API base (e.g. https://api.reticulo.in)
+- `NEXT_PUBLIC_API_KEY`: Public API key used for contact/newsletter endpoints
 
-To learn more about Next.js, take a look at the following resources:
+Tech Stack
+----------
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+- Next.js 15, React 19
+- TailwindCSS 3 (configured in `tailwind.config.ts`)
+- Dark mode via `class` strategy with `ThemeToggle` component
+- React Icons (`react-icons/io5`) for feature/iconography
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Project Structure
+-----------------
 
-## Deploy on Vercel
+- `src/pages/`: Next.js pages (marketing pages, product pages)
+- `src/components/`: Reusable UI (Header/Footer, product sections, partners)
+- `src/components/tw/`: Tailwind-first primitive sections (`TwProduct`, `FeatureSection`)
+- `src/components/mobile-app-button/`: Store badge buttons
+- `src/layout/`: App shell (`AppLayout` wraps every page)
+- `src/styles/`: Global CSS and Tailwind layers
+- `src/api/`: Thin HTTP helpers for public endpoints
+- `public/`: Static assets (images, partner logos)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Dark Mode
+---------
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+- Tailwind `darkMode: 'class'` is enabled in `tailwind.config.ts`.
+- `ThemeToggle` toggles the `dark` class on `<html>` and stores preference in `localStorage`.
+- Cards/lists use `bg-white dark:bg-slate-800` and `border-slate-200 dark:border-slate-700`.
+- Financial partners cards follow theme; Razorpay SVG contains a white rect background to ensure correct contrast in dark mode without altering its card.
+
+Assets & Branding
+-----------------
+
+- Partner logos live in `public/partners/`. Use optimized SVGs where possible.
+- Product icons:
+  - `public/eventlo/logo.svg`
+  - `public/shuttle-rover/logo.svg`
+- Keep SVGs single-color where possible; use internal fills/strokes to control brand-specific contrast (e.g., Razorpay white background rect).
+
+Adding A Product Page
+---------------------
+
+1. Create a page in `src/pages/<product>.tsx` using `TwProduct`.
+2. Add a concise feature grid using icons from `react-icons/io5`.
+3. Link it from `src/components/Header/index.tsx`.
+4. Optionally add assets under `public/<product>/`.
+
+Financial Partners
+------------------
+
+- Source: `src/components/FinancialPartners.tsx` and the “Trusted Integrations” on `src/pages/index.tsx`.
+- To add a partner: place the logo in `public/partners/` and add to the list with `name`, `role`, `href`, `logo`.
+
+Contact Form
+------------
+
+- Page: `src/pages/contact-us.tsx`
+- Posts to `submitContactQuery` in `src/api/index.ts` using `NEXT_PUBLIC_API_URL` and `NEXT_PUBLIC_API_KEY`.
+
+Coding Guidelines
+-----------------
+
+- Tailwind-first styling; prefer utility classes over bespoke CSS.
+- Keep components small and composable. Reuse primitives in `src/components/tw/`.
+- Favor SVG assets and `object-contain` for brand logos.
+- Use dark variants for colors and borders on cards and textual elements.
+
+Deployment
+----------
+
+- Static export: `yarn build` generates `out/`.
+- Serve `out/` with your platform of choice:
+  - Nginx: point `root` to the exported directory; see `nginx.conf`.
+  - Firebase Hosting: deploy as static hosting; see `firebase.json`.
+  - Any static host (S3, Netlify, Vercel static): upload `out/`.

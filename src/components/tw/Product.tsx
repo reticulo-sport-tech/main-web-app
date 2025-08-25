@@ -17,12 +17,11 @@ export default function TwProduct({ name, description, icon, simpleDescription, 
           <h1 className="mt-6 text-3xl sm:text-4xl font-semibold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
             {name}
           </h1>
-          {simpleDescription && <h2 className="mt-2 text-xl sm:text-2xl text-slate-600">{simpleDescription}</h2>}
-          {description && <p className="mt-4 text-slate-600">{description}</p>}
+          {simpleDescription && <h2 className="mt-2 text-xl sm:text-2xl text-slate-600 dark:text-slate-300">{simpleDescription}</h2>}
+          {description && <p className="mt-4 text-slate-600 dark:text-slate-300">{description}</p>}
         </div>
         <div className="mt-8">{children}</div>
       </div>
     </section>
   );
 }
-

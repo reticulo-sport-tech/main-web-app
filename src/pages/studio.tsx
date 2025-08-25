@@ -1,7 +1,6 @@
 import { SEOWrapper } from "@/components/SEO";
 import TwProduct from "@/components/tw/Product";
-import FeatureSection, { TwFeatureType, TwItemPlacement } from "@/components/tw/FeatureSection";
-import { IoMdAnalytics } from "react-icons/io";
+import { IoAnalyticsOutline, IoBarChartOutline, IoDocumentTextOutline, IoCutOutline, IoSearchOutline } from "react-icons/io5";
 
 const Studio = () => {
   return (
@@ -12,9 +11,10 @@ const Studio = () => {
       to identifying playing patterns and automated highlights generation. It also removes any unnecessary video footage keeping only the points that are played in context. 
       Studio clips shots from rallies and helps players search for patterns of shots in the game."
     >
+      <main className="pt-20">
       <TwProduct
         name={"Studio"}
-        icon={<IoMdAnalytics />}
+        icon={<IoAnalyticsOutline />}
         simpleDescription={"AI Based Video Analytics Platform"}
         description={
           "A state of the art AI based Video Analytics platform which provides with valuable insights to your game. " +
@@ -26,74 +26,56 @@ const Studio = () => {
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-3xl mx-auto">
           <a className="rounded-lg bg-indigo-600 text-white px-5 py-3 text-center shadow-soft hover:bg-indigo-700" href="https://studio.reticulo.in" target="_blank" rel="noreferrer">Go to Studio</a>
-          <a className="rounded-lg border border-slate-300 px-5 py-3 text-center hover:border-slate-400" href="https://www.youtube.com/watch?v=nN_4CxG2TRI" target="_blank" rel="noreferrer">Click here to see a Demo!</a>
+          <a className="rounded-lg border border-slate-300 dark:border-slate-700 px-5 py-3 text-center hover:border-slate-400 dark:hover:border-slate-600" href="https://www.youtube.com/watch?v=nN_4CxG2TRI" target="_blank" rel="noreferrer">Click here to see a Demo!</a>
         </div>
 
-        <FeatureSection
-          key={0}
-          name="Physical Statistics"
-          description="Get accurate statistics of physical performance"
-          featurePlacement={TwItemPlacement.RIGHT}
-          featureType={TwFeatureType.IMAGE}
-          featureUrl={"/studio/Player-Stats.png"}
-        />
-        <FeatureSection
-          key={1}
-          name="Hit Statistics"
-          description="Get accurate statistics of shots played by players"
-          featurePlacement={TwItemPlacement.LEFT}
-          featureType={TwFeatureType.IMAGE}
-          featureUrl={"/studio/General-Stats.png"}
-        />
-        <FeatureSection
-          key={2}
-          name="Graphs"
-          description="Compare Performance Graphs between players"
-          featurePlacement={TwItemPlacement.RIGHT}
-          featureType={TwFeatureType.IMAGE}
-          featureUrl="/studio/graphs.png"
-        />
-        <FeatureSection
-          key={3}
-          name="Reports"
-          description="Match wise reports for detailed analysis"
-          featurePlacement={TwItemPlacement.LEFT}
-          featureType={TwFeatureType.IMAGE}
-          featureUrl="/studio/reports.png"
-        />
-        <FeatureSection
-          key={4}
-          name="Advanced Video Player"
-          description="A video player designed for Analysis of your game by viewing rally by rally, based on movements, based on shot patterns or based on shots"
-          featurePlacement={TwItemPlacement.RIGHT}
-          featureType={TwFeatureType.IMAGE}
-          featureUrl="/studio/By-Rally.png"
-        />
-        <FeatureSection
-          key={5}
-          name="Shot Patterns"
-          description="Identify and search for Shot Patterns of play and strategize accordingly"
-          featurePlacement={TwItemPlacement.LEFT}
-          featureType={TwFeatureType.IMAGE}
-          featureUrl="/studio/Shot-Pattern.png"
-        />
-        <FeatureSection
-          key={6}
-          name="Drawing Tool and annotator tool"
-          description="In-editor tool to understand and visualize strategy"
-          featurePlacement={TwItemPlacement.RIGHT}
-          featureType={TwFeatureType.IMAGE}
-          featureUrl="/studio/By-Rally.png"
-        />
-        <FeatureSection
-          key={6}
-          name="Shot based videos"
-          description="AI automatically creates shot based videos for easier access"
-          featurePlacement={TwItemPlacement.LEFT}
-          featureType={TwFeatureType.IMAGE}
-          featureUrl="/studio/Shots.png"
-        />
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
+          {[{
+            icon: IoAnalyticsOutline,
+            title: 'Physical Statistics',
+            desc: 'Accurate statistics for physical performance.'
+          },{
+            icon: IoBarChartOutline,
+            title: 'Hit Statistics',
+            desc: 'Detailed shot metrics and distribution.'
+          },{
+            icon: IoBarChartOutline,
+            title: 'Graphs',
+            desc: 'Compare performance trends across players.'
+          },{
+            icon: IoDocumentTextOutline,
+            title: 'Reports',
+            desc: 'Match-wise reports for deep analysis.'
+          },{
+            icon: IoCutOutline,
+            title: 'Advanced Video Player',
+            desc: 'Rally-based playback and pattern views.'
+          },{
+            icon: IoSearchOutline,
+            title: 'Shot Patterns',
+            desc: 'Identify, search and strategize on patterns.'
+          },{
+            icon: IoCutOutline,
+            title: 'Drawing & Annotation',
+            desc: 'In-editor tools to visualize strategy.'
+          },{
+            icon: IoCutOutline,
+            title: 'Shot-based Videos',
+            desc: 'AI compiles shot-based highlight reels.'
+          }].map(({icon:Icon,title,desc}) => (
+            <div key={title} className="flex items-start gap-3 p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-soft">
+              <div className="h-10 w-10 rounded-lg bg-indigo-600 text-white flex items-center justify-center">
+                <Icon size={20} />
+              </div>
+              <div>
+                <div className="font-semibold text-slate-900 dark:text-white">{title}</div>
+                <div className="text-sm text-slate-600 dark:text-slate-300">{desc}</div>
+              </div>
+            </div>
+          ))}
+        </div>
       </TwProduct>
+      </main>
     </SEOWrapper>
   );
 };

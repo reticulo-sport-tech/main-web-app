@@ -24,8 +24,8 @@ export const SEO_TWITTER_IMAGE = "https://reticulo.in/favicon.png";
  * Contact constants
  */
 export const CONTACT_EMAIL = "admin@reticulo.in";
-export const CONTACT_PHONE = "+91 8446554419";
-export const CONTACT_ADDRESS = "Sanskriti, Mukund Nagar, Pune, Maharashtra 411037";
+export const CONTACT_PHONE = "+91 8275879439";
+// export const CONTACT_ADDRESS = "Sanskriti, Mukund Nagar, Pune, Maharashtra 411037";
 
 // WhatsApp support link (E.164 number without '+')
-export const WHATSAPP_LINK = "https://wa.me/918446554419";
+export const WHATSAPP_LINK = "https://wa.me/918275879439";

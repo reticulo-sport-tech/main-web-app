@@ -10,7 +10,7 @@ export default function Home() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
             <div className="text-center max-w-3xl mx-auto">
               <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-white/60 px-3 py-1 text-xs text-indigo-700">AI-first sports infrastructure</div>
-              <h1 className="mt-6 text-4xl sm:text-5xl font-semibold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">
+              <h1 className="mt-6 text-4xl sm:text-5xl font-semibold tracking-tight leading-[1.15] sm:leading-[1.2] pb-1 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">
                 AI-Integrated Sports Platform
               </h1>
               <p className="mt-4 text-slate-600">
@@ -57,11 +57,26 @@ export default function Home() {
             <h2 className="text-2xl font-semibold">Trusted Integrations</h2>
             <p className="mt-2 text-slate-600">Best-in-class financial and operational partners.</p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
-              {[['Razorpay','Payments Infrastructure'],['IDFC FIRST Bank','Banking Partner'],['HDFC Bank','Banking Partner'],['Zoho Payments','Automation & Billing']].map(([name,role]) => (
-                <div key={name} className="px-4 py-3 rounded-xl border border-slate-200 shadow-soft bg-white min-w-[220px]">
-                  <div className="font-medium">{name}</div>
-                  <div className="mt-1 text-xs text-indigo-700 bg-indigo-50 inline-block px-2 py-0.5 rounded-full">{role}</div>
-                </div>
+              {[
+                { name: 'Razorpay', role: 'Payments Infrastructure', logo: '/partners/razorpay.svg', href: 'https://razorpay.com/' },
+                { name: 'IDFC FIRST Bank', role: 'Banking Partner', logo: '/partners/idfc-first-bank.svg', href: 'https://www.idfcfirstbank.com/' },
+                { name: 'HDFC Bank', role: 'Banking Partner', logo: '/partners/hdfc-bank.svg', href: 'https://www.hdfcbank.com/' },
+                { name: 'Zoho Payments', role: 'Automation & Billing', logo: '/partners/zoho-payments.svg', href: 'https://www.zoho.com/' },
+              ].map((p) => (
+                <a
+                  key={p.name}
+                  href={p.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 shadow-soft bg-white dark:bg-slate-800 min-w-[220px] text-left"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <div className="h-10 flex items-center">
+                    <img src={p.logo} alt={`${p.name} logo`} className="h-8 w-auto object-contain" />
+                  </div>
+                  <div className="mt-2 font-medium text-slate-900 dark:text-white">{p.name}</div>
+                  <div className="mt-1 text-xs text-indigo-700 bg-indigo-50 dark:text-indigo-300 dark:bg-indigo-900/40 inline-block px-2 py-0.5 rounded-full">{p.role}</div>
+                </a>
               ))}
             </div>
           </div>
