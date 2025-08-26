@@ -1,7 +1,8 @@
 import { Box, Container, GridItem, Heading, Icon, SimpleGrid, Text, useColorModeValue } from "@chakra-ui/react";
 import { IoAnalyticsOutline, IoSchoolOutline, IoCardOutline, IoLogoWhatsapp, IoCloudOutline, IoShieldCheckmarkOutline } from "react-icons/io5";
+import type { IconType } from "react-icons";
 
-const Feature = ({ icon, title, desc }: { icon: any; title: string; desc: string }) => (
+const Feature = ({ icon, title, desc }: { icon: IconType; title: string; desc: string }) => (
   <Box
     p={{ base: 5, md: 6 }}
     rounded="xl"
@@ -46,4 +47,3 @@ export default function PremiumFeatures() {
     </Box>
   );
 }
-

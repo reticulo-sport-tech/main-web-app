@@ -1,4 +1,6 @@
 import { SEOWrapper } from "@/components/SEO";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -17,8 +19,8 @@ export default function Home() {
                 Premium, modern experience that unifies AI analysis, digital academy operations, automated payments, and WhatsApp-first workflows.
               </p>
               <div className="mt-8 flex items-center justify-center gap-3">
-                <a href="/contact-us" className="rounded-lg bg-indigo-600 text-white px-5 py-3 shadow-soft hover:bg-indigo-700">Get a Demo</a>
-                <a href="/about-us" className="rounded-lg px-5 py-3 border border-slate-300 hover:border-slate-400 text-slate-700 dark:text-slate-200 dark:border-slate-700 dark:hover:border-slate-600">Learn More</a>
+                <Link href="/contact-us" className="rounded-lg bg-indigo-600 text-white px-5 py-3 shadow-soft hover:bg-indigo-700">Get a Demo</Link>
+                <Link href="/about-us" className="rounded-lg px-5 py-3 border border-slate-300 hover:border-slate-400 text-slate-700 dark:text-slate-200 dark:border-slate-700 dark:hover:border-slate-600">Learn More</Link>
               </div>
             </div>
           </div>
@@ -70,9 +72,8 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 shadow-soft bg-white dark:bg-slate-800 min-w-[220px] text-left"
                 >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <div className="h-10 flex items-center">
-                    <img src={p.logo} alt={`${p.name} logo`} className="h-8 w-auto object-contain" />
+                    <Image src={p.logo} alt={`${p.name} logo`} width={120} height={32} className="h-8 w-auto object-contain" />
                   </div>
                   <div className="mt-2 font-medium text-slate-900 dark:text-white">{p.name}</div>
                   <div className="mt-1 text-xs text-indigo-700 bg-indigo-50 dark:text-indigo-300 dark:bg-indigo-900/40 inline-block px-2 py-0.5 rounded-full">{p.role}</div>
@@ -88,7 +89,7 @@ export default function Home() {
             <h2 className="text-2xl font-semibold">Experience a premium, unified sports platform</h2>
             <p className="mt-2 text-slate-600 dark:text-slate-300">Book a live demo and explore AI insights, academy ops and automated billing — all in one place.</p>
             <div className="mt-6">
-              <a href="/contact-us" className="rounded-lg bg-indigo-600 text-white px-5 py-3 shadow-soft hover:bg-indigo-700">Book a Demo</a>
+              <Link href="/contact-us" className="rounded-lg bg-indigo-600 text-white px-5 py-3 shadow-soft hover:bg-indigo-700">Book a Demo</Link>
             </div>
           </div>
         </section>

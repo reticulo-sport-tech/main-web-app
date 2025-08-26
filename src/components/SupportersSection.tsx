@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 export default function SupportersSection() {
   const supporters = [
@@ -16,8 +17,7 @@ export default function SupportersSection() {
           {supporters.map((s) => (
             <a key={s.name} className="p-4 rounded-xl border border-slate-200 shadow-soft hover:shadow-md transition text-left" href={s.href} target="_blank" rel="noreferrer">
               <div className="flex flex-col items-center">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={s.image} alt={s.name} className="h-16 w-16 rounded-full object-cover" />
+                <Image src={s.image} alt={s.name} width={64} height={64} className="h-16 w-16 rounded-full object-cover" />
                 <div className="mt-3 font-semibold">{s.name}</div>
                 <div className="text-xs text-slate-600 text-center">{s.title}</div>
               </div>

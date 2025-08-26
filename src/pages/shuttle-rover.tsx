@@ -1,6 +1,7 @@
 import { SEOWrapper } from "@/components/SEO";
 import TwProduct from "@/components/tw/Product";
 import { IoGitNetworkOutline, IoCubeOutline, IoFitnessOutline, IoRocketOutline } from "react-icons/io5";
+import Image from "next/image";
 
 const ShuttleRover = () => {
   return (
@@ -13,7 +14,7 @@ const ShuttleRover = () => {
       <main className="pt-20">
         <TwProduct
           name={"Shuttle Rover"}
-          icon={<img src="/shuttle-rover/logo.svg" alt="Shuttle Rover logo" className="h-7 w-7" />}
+          icon={<Image src="/shuttle-rover/logo.svg" alt="Shuttle Rover logo" width={28} height={28} className="h-7 w-7" />}
           simpleDescription={"AI-Powered Shuttlecock Shooter"}
           description={
             "A hardware-based product line focusing on reliable, portable feeding machines using modern AI algorithms — 9-axis motion, 100+ shuttle capacity, and under 5 kg weight for easy transport and setup."

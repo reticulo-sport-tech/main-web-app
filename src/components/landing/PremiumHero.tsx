@@ -1,8 +1,9 @@
 import { Box, Button, Container, Flex, Heading, HStack, Icon, Stack, Tag, Text, useColorModeValue } from "@chakra-ui/react";
+import type { BoxProps } from "@chakra-ui/react";
 import { IoFlashOutline, IoShieldCheckmarkOutline } from "react-icons/io5";
 import NextLink from "next/link";
 
-const BgBlob = (props: any) => (
+const BgBlob = (props: BoxProps) => (
   <Box
     position="absolute"
     inset={0}
@@ -85,4 +86,3 @@ export default function PremiumHero() {
     </Box>
   );
 }
-

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export const Footer = () => {
   const currYear = new Date().getFullYear();
@@ -20,10 +21,15 @@ export const Footer = () => {
           </ul>
         </div>
         <div>
-          <div className="font-semibold text-slate-900 dark:text-white mb-2">Products</div>
+          <div className="flex items-center gap-2 font-semibold text-slate-900 dark:text-white mb-2">
+            <Image src="/reticulo-logo.png" alt="Reticulo" width={20} height={20} />
+            <span>Products</span>
+          </div>
           <ul className="space-y-2 text-slate-600 dark:text-slate-300 text-sm">
             <li><Link href="/radlo" className="hover:text-slate-900 hover:dark:text-white">Radlo</Link></li>
             <li><Link href="/studio" className="hover:text-slate-900 hover:dark:text-white">Studio</Link></li>
+            <li><Link href="/eventlo" className="hover:text-slate-900 hover:dark:text-white">Eventlo</Link></li>
+            <li><Link href="/shuttle-rover" className="hover:text-slate-900 hover:dark:text-white">Shuttle Rover</Link></li>
           </ul>
         </div>
         <div>

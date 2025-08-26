@@ -1,6 +1,7 @@
 import { SEOWrapper } from "@/components/SEO";
 import TwProduct from "@/components/tw/Product";
 import { IoCalendarOutline, IoCardOutline, IoLogoWhatsapp, IoAnalyticsOutline } from "react-icons/io5";
+import Image from "next/image";
 
 const Eventlo = () => {
   return (
@@ -13,7 +14,7 @@ const Eventlo = () => {
       <main className="pt-20">
         <TwProduct
           name={"Eventlo"}
-          icon={<img src="/eventlo/logo.svg" alt="Eventlo logo" className="h-7 w-7" />}
+          icon={<Image src="/eventlo/logo.svg" alt="Eventlo logo" width={28} height={28} className="h-7 w-7" />}
           simpleDescription={"Event-First Registration & Payments"}
           description={
             "A similar app to Radlo with an event-only focus. It automates payments and provides WhatsApp support to end users, with a wide range of applications where payment automation, event registration, and informed tracking are required."

@@ -1,6 +1,7 @@
 import SupportersSection from "@/components/SupportersSection";
 import FinancialPartners from "@/components/FinancialPartners";
 import { SEOWrapper } from "@/components/SEO";
+import Image from "next/image";
 
 export default function AboutUs() {
   return (
@@ -21,9 +22,8 @@ export default function AboutUs() {
               <p className="mt-2 text-slate-600 dark:text-slate-300">We’re on a mission to change how sport analysis is practiced — bringing ground breaking technologies to improve sport in India from the grassroots to the elite level.</p>
             </div>
             <div>
-              <div className="aspect-video rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/mission_statement.png" alt="Our Philosophy" className="h-full w-full object-cover" />
+              <div className="aspect-video rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 relative">
+                <Image src="/mission_statement.png" alt="Our Philosophy" fill className="object-cover" />
               </div>
             </div>
           </div>
@@ -32,9 +32,8 @@ export default function AboutUs() {
         <section className="py-10">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-6 items-center">
             <div className="order-2 md:order-1">
-              <div className="aspect-video rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/philosophy-image.jpg" alt="Why Us" className="h-full w-full object-cover" />
+              <div className="aspect-video rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 relative">
+                <Image src="/philosophy-image.jpg" alt="Why Us" fill className="object-cover" />
               </div>
             </div>
             <div className="order-1 md:order-2">

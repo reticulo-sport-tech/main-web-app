@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 export enum TwFeatureType {
   IMAGE = "IMAGE",
@@ -20,10 +21,9 @@ interface Props {
 export default function FeatureSection({ name, description, featureUrl, featureType = TwFeatureType.IMAGE, featurePlacement = TwItemPlacement.RIGHT }: Props) {
   const ImageBlock = () => (
     <div className="w-full">
-      <div className="aspect-video w-full overflow-hidden rounded-xl border border-slate-200 bg-slate-100">
+      <div className="aspect-video w-full overflow-hidden rounded-xl border border-slate-200 bg-slate-100 relative">
         {featureType === TwFeatureType.IMAGE && featureUrl && (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img src={featureUrl} alt={name} className="h-full w-full object-cover" />
+          <Image src={featureUrl} alt={name} fill className="object-cover" />
         )}
       </div>
     </div>
@@ -56,4 +56,3 @@ export default function FeatureSection({ name, description, featureUrl, featureT
     </section>
   );
 }
-

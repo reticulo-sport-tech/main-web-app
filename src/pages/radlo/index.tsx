@@ -3,19 +3,7 @@ import TwProduct from "@/components/tw/Product";
 import { GooglePlayButton, AppStoreButton } from "@/components/mobile-app-button";
 import { useState } from "react";
 import { IoTrophyOutline, IoBookOutline, IoCardOutline, IoCalendarOutline, IoPeopleOutline, IoCashOutline, IoClipboardOutline, IoMegaphoneOutline, IoStatsChartOutline } from "react-icons/io5";
-
-function PriceCard({ price }: { price: number }) {
-  return (
-    <div className="max-w-lg mx-auto border border-slate-200 dark:border-slate-700 rounded-2xl shadow-soft bg-indigo-50 dark:bg-slate-800">
-      <div className="-mt-5 text-center">
-        <span className="uppercase inline-block bg-rose-200 text-slate-900 dark:text-slate-900 text-xs font-semibold px-3 py-1 rounded-xl">Pricing</span>
-      </div>
-      <div className="px-12 py-6 text-center">
-        <div className="text-3xl font-semibold">₹ <span className="text-5xl font-black">{price}</span> <span className="text-3xl text-slate-500 dark:text-slate-300">/month</span></div>
-      </div>
-    </div>
-  );
-}
+import Image from "next/image";
 
 const Radlo = () => {
   const APKUrl =
@@ -33,7 +21,7 @@ const Radlo = () => {
       <main className="pt-20">
       <TwProduct
         name={"Radlo"}
-        icon={<img src="/radlo/logo.png" alt="Radlo Logo" className="h-7 w-7" />}
+        icon={<Image src="/radlo/logo.png" alt="Radlo Logo" width={28} height={28} className="h-7 w-7" />}
         simpleDescription={"Your All-in-One Sports Academy Ecosystem"}
         description={
           "Revolutionize your sports academy experience with our comprehensive platform, built to empower coaches and elevate players."
@@ -120,7 +108,7 @@ const Radlo = () => {
                 ))}
               </div>
               <div className="pt-12" />
-              <PriceCard price={100} />
+              {/* <PriceCard price={100} /> */}
             </>
           ) : (
             <>
@@ -148,7 +136,7 @@ const Radlo = () => {
                 ))}
               </div>
               <div className="pt-12" />
-              <PriceCard price={0} />
+              {/* <PriceCard price={0} /> */}
             </>
           )}
         </div>

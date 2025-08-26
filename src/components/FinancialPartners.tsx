@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 export default function FinancialPartners() {
   const partners = [
@@ -20,9 +21,8 @@ export default function FinancialPartners() {
               rel="noopener noreferrer"
               className="p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-soft hover:shadow-md transition text-left bg-white dark:bg-slate-800"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
               <div className="h-12 flex items-center">
-                <img src={p.logo} alt={`${p.name} logo`} className="h-10 w-auto object-contain" />
+                <Image src={p.logo} alt={`${p.name} logo`} width={160} height={40} className="h-10 w-auto object-contain" />
               </div>
               <div className="mt-3 font-semibold text-slate-900 dark:text-white">{p.name}</div>
               <div className="text-xs text-indigo-700 bg-indigo-50 dark:text-indigo-300 dark:bg-indigo-900/40 inline-block px-2 py-0.5 rounded-full mt-1">{p.role}</div>
