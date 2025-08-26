@@ -5,27 +5,27 @@ export default function Home() {
     <SEOWrapper>
       <main className="pt-20">
         {/* Hero */}
-        <section className="relative overflow-hidden">
-          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-indigo-50 via-purple-50 to-blue-50" />
+        <section className="relative overflow-hidden bg-white dark:bg-slate-900">
+          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-indigo-50 via-purple-50 to-blue-50 dark:hidden" />
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
             <div className="text-center max-w-3xl mx-auto">
-              <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-white/60 px-3 py-1 text-xs text-indigo-700">AI-first sports infrastructure</div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-white/60 px-3 py-1 text-xs text-indigo-700 dark:border-indigo-500/40 dark:bg-indigo-500/10 dark:text-indigo-200">AI-first sports infrastructure</div>
               <h1 className="mt-6 text-4xl sm:text-5xl font-semibold tracking-tight leading-[1.15] sm:leading-[1.2] pb-1 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">
                 AI-Integrated Sports Platform
               </h1>
-              <p className="mt-4 text-slate-600">
+              <p className="mt-4 text-slate-600 dark:text-slate-300">
                 Premium, modern experience that unifies AI analysis, digital academy operations, automated payments, and WhatsApp-first workflows.
               </p>
               <div className="mt-8 flex items-center justify-center gap-3">
                 <a href="/contact-us" className="rounded-lg bg-indigo-600 text-white px-5 py-3 shadow-soft hover:bg-indigo-700">Get a Demo</a>
-                <a href="/about-us" className="rounded-lg px-5 py-3 border border-slate-300 hover:border-slate-400">Learn More</a>
+                <a href="/about-us" className="rounded-lg px-5 py-3 border border-slate-300 hover:border-slate-400 text-slate-700 dark:text-slate-200 dark:border-slate-700 dark:hover:border-slate-600">Learn More</a>
               </div>
             </div>
           </div>
         </section>
 
         {/* Features */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-white dark:bg-slate-900">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl font-semibold text-center">All-in-One, Premium Platform</h2>
             <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -42,9 +42,9 @@ export default function Home() {
               },{
                 title: 'Privacy & Security', desc: 'Enterprise-grade access controls and data protection across workflows.'
               }].map((f) => (
-                <div key={f.title} className="p-6 rounded-xl border border-slate-200 shadow-soft">
-                  <h3 className="font-semibold">{f.title}</h3>
-                  <p className="mt-2 text-sm text-slate-600">{f.desc}</p>
+                <div key={f.title} className="p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-soft bg-white dark:bg-slate-800">
+                  <h3 className="font-semibold text-slate-900 dark:text-white">{f.title}</h3>
+                  <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">{f.desc}</p>
                 </div>
               ))}
             </div>
@@ -55,7 +55,7 @@ export default function Home() {
         <section className="py-16">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-2xl font-semibold">Trusted Integrations</h2>
-            <p className="mt-2 text-slate-600">Best-in-class financial and operational partners.</p>
+            <p className="mt-2 text-slate-600 dark:text-slate-300">Best-in-class financial and operational partners.</p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
               {[
                 { name: 'Razorpay', role: 'Payments Infrastructure', logo: '/partners/razorpay.svg', href: 'https://razorpay.com/' },
@@ -83,10 +83,10 @@ export default function Home() {
         </section>
 
         {/* CTA */}
-        <section className="py-16 bg-gradient-to-r from-indigo-50 to-purple-50">
+        <section className="py-16 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-950 dark:to-purple-950">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-2xl font-semibold">Experience a premium, unified sports platform</h2>
-            <p className="mt-2 text-slate-600">Book a live demo and explore AI insights, academy ops and automated billing — all in one place.</p>
+            <p className="mt-2 text-slate-600 dark:text-slate-300">Book a live demo and explore AI insights, academy ops and automated billing — all in one place.</p>
             <div className="mt-6">
               <a href="/contact-us" className="rounded-lg bg-indigo-600 text-white px-5 py-3 shadow-soft hover:bg-indigo-700">Book a Demo</a>
             </div>
