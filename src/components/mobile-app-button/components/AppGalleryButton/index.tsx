@@ -1,16 +1,17 @@
 import React, { FC } from "react";
 
-import Huawei from "../../assets/icons/Huawei";
+import AppStore from "../../assets/icons/Apple";
+import AppStoreLight from "../../assets/icons/Apple-light";
 import Button from "../Button";
 
-type AppGalleryButtonProps = {
+type AppStoreButtonProps = {
   /**
    * @default dark
    */
   theme?: "dark" | "light";
 
   /**
-   * @default EXPLORE IT ON
+   * @default Download on the
    */
   title?: string;
 
@@ -43,13 +44,13 @@ type AppGalleryButtonProps = {
  * @param {string} title Set custom title for the button
  * @param {string} className Add className to the button in order to customize the button appearance
  * @param {string} url Add your store url to the button
- * @example <AppGalleryButton theme="light" height={70} width={130} className="button-container" url="https://appgallery.huawei.com/" />
+ * @example <AppStoreButton theme="light" height={70} width={130} className="button-container" url="https://www.apple.com/app-store/" />
  * @returns
  */
-const AppGalleryButton: FC<AppGalleryButtonProps> = ({
+const AppStoreButton: FC<AppStoreButtonProps> = ({
   theme = "light",
   height,
-  title = "EXPLORE IT ON",
+  title = "Download on the",
   width,
   className,
   url,
@@ -60,12 +61,12 @@ const AppGalleryButton: FC<AppGalleryButtonProps> = ({
       height={height}
       width={width}
       url={url}
-      storeName={"AppGallery"}
-      logo={Huawei}
+      storeName={"App Store"}
+      logo={theme === "dark" ? AppStoreLight : AppStore}
       className={className}
       title={title}
     />
   );
 };
 
-export default AppGalleryButton;
+export default AppStoreButton;

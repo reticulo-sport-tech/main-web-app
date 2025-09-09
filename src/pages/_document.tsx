@@ -1,4 +1,10 @@
-import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
+import Document, {
+  Html,
+  Head,
+  Main,
+  NextScript,
+  DocumentContext,
+} from "next/document";
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -10,8 +16,12 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           {/* Favicon: use Reticulo logo */}
-          <link rel="icon" href="/reticulo-logo.png" type="image/png" />
-          <link rel="shortcut icon" href="/reticulo-logo.png" type="image/png" />
+          <link rel="icon" href="/reticulo-logo-dark.png" type="image/png" />
+          <link
+            rel="shortcut icon"
+            href="/reticulo-logo-dark.png"
+            type="image/png"
+          />
           {/* Set initial color mode before hydration to avoid flash/mismatch */}
           <script
             dangerouslySetInnerHTML={{

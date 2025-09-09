@@ -12,3 +12,6 @@ run:
 
 deploy-v2:
 	firebase hosting:channel:deploy v2
+
+deploy-v3:
+	firebase hosting:channel:deploy v3

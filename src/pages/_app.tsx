@@ -16,7 +16,11 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="shortcut icon" type="image/x-icon" href="/favicon.png" />
+        <link
+          rel="shortcut icon"
+          type="image/x-icon"
+          href="/reticulo-logo-dark-bg.png"
+        />
       </Head>
       <AppLayout>
         <Component {...pageProps} />
